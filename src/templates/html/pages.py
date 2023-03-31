@@ -21,9 +21,10 @@ index = bs.base_template(
     header=bs.base_header_template(active='index'),
     main=bs.base_main_template(main=ms.main_section_template(
         title='Metrology & Python',
-        description=(f'MetPy is an ecosystem of Python tools for metrology. '
-                     f'It includes a set of Python packages and '
-                     f'a PyPI-like package server to provide those packages.'),
+        description=(f'MetPy is an ecosystem of Python projects for metrology. '
+                     f'It includes a set of Python packages and a PyPI-like package server to provide those packages. '
+                     f'Here you can find the projects of the MetPy ecosystem, '
+                     f'the server of the MetPy packages and the documentation of the MetPy packages.'),
         cards=index_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
@@ -35,8 +36,10 @@ projects = bs.base_template(
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='projects'),
     main=bs.base_main_template(main=ms.main_section_template(
-        title='Projects page title',  # TODO
-        description='Projects page description',  # TODO
+        title='MetPy Projects',
+        description=(f'MetPy includes a set of Python packages useful for metrology applications. '
+                     f'MetPy also includes a PyPI-like package server to provide those packages. '
+                     f'Here you can find the package server and the packages of the MetPy ecosystem.'),
         cards=project_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
