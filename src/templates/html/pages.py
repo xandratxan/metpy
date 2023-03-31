@@ -3,47 +3,63 @@
 import src.definitions as df
 import src.functions as fnc
 import src.templates.html.base as bs
+import src.templates.html.main_section as ms
 
 # Common sections
 footer = bs.base_footer_template(
-    url_author_github=df.author_xcb['github'],
-    url_author_email=df.author_xcb['email'],
+    url_author_github=df.xcb['github'],
+    url_author_email=df.xcb['email'],
     url_lmri=df.external_urls['lmri'],
     url_ciemat=df.external_urls['ciemat']
 )
 
 # MetPy website index page
+index_cards = [df.projects, df.server, df.documentation]
 index = bs.base_template(
     title='MetPy',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='index'),
-    main=bs.base_main_template(main='MetPy website index page.'),
+    main=bs.base_main_template(main=ms.main_section_template(
+        title='Metrology & Python',
+        description=(f'MetPy is an ecosystem of Python tools for metrology. '
+                     f'It includes a set of Python packages and '
+                     f'a PyPI-like package server to provide those packages.'),
+        cards=index_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website projects page
+project_cards = [df.server, df.magnitude]
 projects = bs.base_template(
     title='MetPy-Projects',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='projects'),
-    main=bs.base_main_template(main='MetPy website projects page.'),
+    main=bs.base_main_template(main=ms.main_section_template(
+        title='Projects page title',  # TODO
+        description='Projects page description',  # TODO
+        cards=project_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website server page
+server_cards = [df.magnitude]
 server = bs.base_template(
     title='MetPy-Package Server',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='server'),
-    main=bs.base_main_template(main='MetPy website server page.'),
+    main=bs.base_main_template('Package Server page'),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website documentation page
+docs_cards = [df.magnitude]
 documentation = bs.base_template(
     title='MetPy-Documentation',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='docs'),
-    main=bs.base_main_template(main='MetPy website documentation page.'),
+    main=bs.base_main_template(main=ms.main_section_template(
+        title='Documentation page title',  # TODO
+        description='Documentation page description',  # TODO
+        cards=docs_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))

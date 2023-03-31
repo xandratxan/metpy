@@ -5,7 +5,7 @@ import src.templates.html.pages as pages
 
 
 def metpy_page():
-    files = [df.metpy_files['index'], df.metpy_files['projects'], df.metpy_files['server'], df.metpy_files['docs']]
+    files = [df.file_paths['index'], df.file_paths['projects'], df.file_paths['server'], df.file_paths['docs']]
     texts = [pages.index, pages.projects, pages.server, pages.documentation]
     fnc.write_files(texts, files)
 
