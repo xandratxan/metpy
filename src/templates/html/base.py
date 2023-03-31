@@ -1,4 +1,6 @@
 # Base html template for MetPy website
+import src.definitions as df
+
 
 def base_template(title, assets, header, main, footer, scripts):
     text = (
@@ -28,7 +30,12 @@ def base_template(title, assets, header, main, footer, scripts):
     return text
 
 
-def base_header_template(active, html_index, html_projects, html_server, html_docs, url_author_github):
+def base_header_template(active):
+    html_index = df.metpy_pages['index']
+    html_projects = df.metpy_pages['projects']
+    html_server = df.metpy_pages['server']
+    html_docs = df.metpy_pages['docs']
+    url_author_github = df.author_xcb['github']
     active_tab = '<li class="active">'
     inactive_tab = '<li>'
     text = (
