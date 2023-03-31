@@ -18,27 +18,27 @@ def main_section_template(title, description, cards):
     return text
 
 
-def card_template(name, title, brief_description, html_path, images_path, image_name):
+def card_template(name, title, brief_description, href, images_path, image_name):
     # Card HTML template for main section of MetPy website
     text = (
         f'            <!-- Card {name} -->\n'
         f'            <section class="posts">\n'
         f'                <article>\n'
         f'                    <header>\n'
-        f'                        <h2><a href="{html_path}">{title}</a></h2>\n'
+        f'                        <h2><a href="{href}">{title}</a></h2>\n'
         f'                        <span class="date"></span>\n'
         f'                    </header>\n'
         f'                    <div class="row">\n'
         f'                        <div class="col-4 col-12-small"></div>\n'
         f'                        <div class="col-4 col-12-small">\n'
-        f'                        <a href="{html_path}" class="image fit"><img src="{images_path}{image_name}" alt="{image_name}"/></a>\n'
+        f'                        <a href="{href}" class="image fit"><img src="{images_path}{image_name}" alt="{image_name}"/></a>\n'
         f'                        </div>\n'
         f'                        <div class="col-4 col-12-small"></div>\n'
         f'                    </div>\n'
         f'                    {brief_description}\n'
         f'                    <p></p>\n'
         f'                    <ul class="actions special">\n'
-        f'                    <li><a href="{html_path}" class="button">Read more</a></li>\n'
+        f'                    <li><a href="{href}" class="button">Read more</a></li>\n'
         f'                    </ul>\n'
         f'                </article>\n'
         f'            </section>\n'
