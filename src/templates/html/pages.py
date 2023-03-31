@@ -13,8 +13,11 @@ footer = bs.base_footer_template(
     url_ciemat=df.external_urls['ciemat']
 )
 
+# Project cards
+index_cards = [df.packages, df.server, df.documentation]
+package_cards = [df.magnitude]
+
 # MetPy website index page
-index_cards = [df.projects, df.server, df.documentation]
 index = bs.base_template(
     title='MetPy',
     assets=fnc.html_assets(parent=False),
@@ -30,17 +33,16 @@ index = bs.base_template(
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website projects page
-project_cards = [df.server, df.magnitude]
 projects = bs.base_template(
-    title='MetPy-Projects',
+    title='MetPy-Packages',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='projects'),
     main=bs.base_main_template(main=ms.main_section_template(
-        title='MetPy Projects',
+        title='MetPy Packages',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                      f'MetPy also includes a PyPI-like package server to provide those packages. '
                      f'Here you can find the package server and the packages of the MetPy ecosystem.'),
-        cards=project_cards)),
+        cards=package_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
@@ -64,6 +66,6 @@ documentation = bs.base_template(
         title='MetPy Documentation',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                      f'Here you can find the documentation of the MetPy packages.'),
-        cards=docs_cards)),
+        cards=package_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))

@@ -30,17 +30,17 @@ external_urls = {
     'lmri': 'http://rdgroups.ciemat.es/web/lmri/inicio?p_p_id=2_WAR_kaleodesignerportlet&p_p_lifecycle=0',
 }
 # HTML cards
-projects = {
-    'name': 'projects',
-    'title': 'MetPy projects',
-    'brief_description': 'Projects of the MetPy ecosystem',
+packages = {
+    'name': 'packages',
+    'title': 'Packages',
+    'brief_description': 'Packages of the MetPy ecosystem',
     'html_path': html_pages['projects'],
     'image_path': fnc.html_images(parent=False),
     'image_name': 'python.png'
 }
 server = {
     'name': 'server',
-    'title': 'MetPy Python package server',
+    'title': 'Python package server',
     'brief_description': 'Python package server for the MetPy packages',
     'html_path': html_pages['server'],
     'image_path': fnc.html_images(parent=False),
@@ -48,7 +48,7 @@ server = {
 }
 documentation = {
     'name': 'documentation',
-    'title': 'MetPy documentation',
+    'title': 'Documentation',
     'brief_description': 'Documentation of the MetPy packages',
     'html_path': html_pages['docs'],
     'image_path': fnc.html_images(parent=False),

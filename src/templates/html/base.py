@@ -32,7 +32,7 @@ def base_template(title, assets, header, main, footer, scripts):
 
 def base_header_template(active):
     html_index = df.html_pages['index']
-    html_projects = df.html_pages['projects']
+    html_packages = df.html_pages['projects']
     html_server = df.html_pages['server']
     html_docs = df.html_pages['docs']
     url_author_github = df.xcb['github']
@@ -45,7 +45,7 @@ def base_header_template(active):
         f'        <nav id="nav">\n'
         f'            <ul class="links">\n'
         f'                {active_tab if active == "index" else inactive_tab}<a href="{html_index}">MetPy</a></li>\n'
-        f'                {active_tab if active == "projects" else inactive_tab}<a href="{html_projects}">Projects</a></li>\n'
+        f'                {active_tab if active == "packages" else inactive_tab}<a href="{html_packages}">Packages</a></li>\n'
         f'                {active_tab if active == "server" else inactive_tab}<a href="{html_server}">Package Server</a></li>\n'
         f'                {active_tab if active == "docs" else inactive_tab}<a href="{html_docs}">Documentation</a></li>\n'
         f'            </ul>'
