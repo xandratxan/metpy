@@ -61,8 +61,9 @@ documentation = bs.base_template(
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='docs'),
     main=bs.base_main_template(main=ms.main_section_template(
-        title='Documentation page title',  # TODO
-        description='Documentation page description',  # TODO
+        title='MetPy Documentation',
+        description=(f'MetPy includes a set of Python packages useful for metrology applications. '
+                     f'Here you can find the documentation of the MetPy packages.'),
         cards=docs_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
