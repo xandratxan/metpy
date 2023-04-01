@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to guides &mdash; physical-magnitude 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            physical-magnitude
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="info.html">About <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="info.html#release-history">Release History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#authors-and-contributors">Authors and contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#operating-with-magnitudes">Operating with magnitudes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-define-a-magnitude">How to define a magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-define-a-magnitude-with-uncertainty">How to define a magnitude with uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-define-a-magnitude-without-uncertainty">How to define a magnitude without uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-define-a-non-dimensional-magnitude">How to define a non-dimensional magnitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-not-define-a-magnitude">How to not define a magnitude</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-operate-with-magnitudes">How to operate with magnitudes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-sum-and-subtract-magnitudes">How to sum and subtract magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-multiply-and-divide-magnitudes">How to multiply and divide magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-operate-with-more-than-two-magnitudes">How to operate with more than two magnitudes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-magnitude.magnitude">magnitude.magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude"><code class="docutils literal notranslate"><span class="pre">Magnitude</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.value"><code class="docutils literal notranslate"><span class="pre">Magnitude.value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.uncertainty</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.unit"><code class="docutils literal notranslate"><span class="pre">Magnitude.unit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.percentage_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.percentage_uncertainty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.relative_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.relative_uncertainty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">physical-magnitude</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to guides</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/howto.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-guides">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">How to guides</a><a class="headerlink" href="#how-to-guides" title="Permalink to this heading"></a></h1>
+<p>This section describes how to accomplish common tasks with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
+<nav class="contents" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-to-guides" id="id1">How to guides</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-define-a-magnitude" id="id2">How to define a magnitude</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-define-a-magnitude-with-uncertainty" id="id3">How to define a magnitude with uncertainty</a></p></li>
+<li><p><a class="reference internal" href="#how-to-define-a-magnitude-without-uncertainty" id="id4">How to define a magnitude without uncertainty</a></p></li>
+<li><p><a class="reference internal" href="#how-to-define-a-non-dimensional-magnitude" id="id5">How to define a non-dimensional magnitude</a></p></li>
+<li><p><a class="reference internal" href="#how-to-not-define-a-magnitude" id="id6">How to not define a magnitude</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-to-operate-with-magnitudes" id="id7">How to operate with magnitudes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-sum-and-subtract-magnitudes" id="id8">How to sum and subtract magnitudes</a></p></li>
+<li><p><a class="reference internal" href="#how-to-multiply-and-divide-magnitudes" id="id9">How to multiply and divide magnitudes</a></p></li>
+<li><p><a class="reference internal" href="#how-to-operate-with-more-than-two-magnitudes" id="id10">How to operate with more than two magnitudes</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="how-to-define-a-magnitude">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">How to define a magnitude</a><a class="headerlink" href="#how-to-define-a-magnitude" title="Permalink to this heading"></a></h2>
+<section id="how-to-define-a-magnitude-with-uncertainty">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">How to define a magnitude with uncertainty</a><a class="headerlink" href="#how-to-define-a-magnitude-with-uncertainty" title="Permalink to this heading"></a></h3>
+<p>There are two options to define a magnitude with uncertainty:</p>
+<ul class="simple">
+<li><p>Provide the standard uncertainty of the magnitude.</p></li>
+<li><p>Provide the relative standard uncertainty of the magnitude.</p></li>
+</ul>
+<p>If standard uncertainty is provided, for example d = 100 ± 1 m, relative standard uncertainty will be calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="go">100.0 ± 1.0 m (1.0%)</span>
+</pre></div>
+</div>
+<p>If relative standard uncertainty is provided, for example d = 100 m ± 1%, standard uncertainty will be calculated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">relative_uncertainty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">100.0 ± 1.0 m (1.0%)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-define-a-magnitude-without-uncertainty">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">How to define a magnitude without uncertainty</a><a class="headerlink" href="#how-to-define-a-magnitude-without-uncertainty" title="Permalink to this heading"></a></h3>
+<p>Magnitudes without uncertainties, for example d = 100 m, can be defined with zero uncertainty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="go">100.0 ± 0.0 m (0.0%)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">relative_uncertainty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">100.0 ± 0.0 m (0.0%)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-define-a-non-dimensional-magnitude">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">How to define a non-dimensional magnitude</a><a class="headerlink" href="#how-to-define-a-non-dimensional-magnitude" title="Permalink to this heading"></a></h3>
+<p>Non-dimensional magnitudes, for example d = 100 ± 1 (1%), can be defined with an empty string as unit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">100.0 ± 1.0  (1.0%)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-not-define-a-magnitude">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">How to not define a magnitude</a><a class="headerlink" href="#how-to-not-define-a-magnitude" title="Permalink to this heading"></a></h3>
+<p>Magnitudes cannot be defined with negative uncertainties, since it has no physical meaning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="go">ValueError: Uncertainty must be positive.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=-</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">relative_uncertainty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">ValueError: Uncertainty must be positive.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-operate-with-magnitudes">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">How to operate with magnitudes</a><a class="headerlink" href="#how-to-operate-with-magnitudes" title="Permalink to this heading"></a></h2>
+<section id="how-to-sum-and-subtract-magnitudes">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">How to sum and subtract magnitudes</a><a class="headerlink" href="#how-to-sum-and-subtract-magnitudes" title="Permalink to this heading"></a></h3>
+<p>First, define some magnitudes to operate with them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m3</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Magnitudes can be summed or subtracted as long as they have the same units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
+<span class="go">300.0 ± 2.23606797749979 m (0.74535599249993%)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span>
+<span class="go">100.0 ± 2.23606797749979 m (2.23606797749979%)</span>
+</pre></div>
+</div>
+<p>If they have different units, an exception will be raised:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">+</span> <span class="n">m3</span>
+<span class="go">TypeError: Added magnitudes must have the same units.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">-</span> <span class="n">m3</span>
+<span class="go">TypeError: Subtracted magnitudes must have the same units.</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-multiply-and-divide-magnitudes">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">How to multiply and divide magnitudes</a><a class="headerlink" href="#how-to-multiply-and-divide-magnitudes" title="Permalink to this heading"></a></h3>
+<p>First, define some magnitudes to operate with them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Magnitudes can be multiplied or divided independently of their units.
+The unit resulting from the product or the division will be the concatenation of the individual magnitudes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
+<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">/</span> <span class="n">m1</span>
+<span class="go">2.0 ± 0.0282842712474619 (m)/(m) (1.4142135623730951%)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-operate-with-more-than-two-magnitudes">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">How to operate with more than two magnitudes</a><a class="headerlink" href="#how-to-operate-with-more-than-two-magnitudes" title="Permalink to this heading"></a></h3>
+<p>First, define some magnitudes to operate with them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m3</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m4</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m²&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Multiple magnitudes can be summed and/or subtracted as long as they have the same units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span> <span class="o">+</span> <span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span>
+<span class="go">200.0 ± 3.1622776601683795 m (1.58113883008419%)</span>
+</pre></div>
+</div>
+<p>Multiple magnitudes can be multiplied and/or divided independently of their units:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span> <span class="o">/</span> <span class="n">m3</span>
+<span class="go">100.0 ± 1.7320508075688772 ((m)·(m))/(cm) (1.7320508075688772%)</span>
+</pre></div>
+</div>
+<p>Combining summation/subtraction with product/division require some unit management.
+Trying to do <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span> <span class="pre">+</span> <span class="pre">m4</span></code> will raise an error since the units of <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span></code> are <code class="docutils literal notranslate"><span class="pre">'m·m'</span></code>
+while the units of <code class="docutils literal notranslate"><span class="pre">m4</span></code> are <code class="docutils literal notranslate"><span class="pre">'m²'</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span> <span class="o">+</span> <span class="n">m4</span>
+<span class="go">TypeError: Added magnitudes must have the same units.</span>
+</pre></div>
+</div>
+<p>To work around this, first we need to define a new magnitude <code class="docutils literal notranslate"><span class="pre">m</span></code> as <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+</pre></div>
+</div>
+<p>Then, we need to change the unit of <code class="docutils literal notranslate"><span class="pre">m</span></code> from <code class="docutils literal notranslate"><span class="pre">'(m)·(m)'</span></code> to <code class="docutils literal notranslate"><span class="pre">'m²'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m²&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+</pre></div>
+</div>
+<p>Finally we can do <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">+</span> <span class="pre">m4</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">+</span> <span class="n">m4</span>
+<span class="go">20000.0 ± 282.842712474619 m² (1.4142135623730951%)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Xandra Campo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

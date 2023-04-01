@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial &mdash; physical-magnitude 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to guides" href="howto.html" />
+    <link rel="prev" title="About physical-magnitude" href="info.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            physical-magnitude
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="info.html">About <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="info.html#release-history">Release History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#authors-and-contributors">Authors and contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operating-with-magnitudes">Operating with magnitudes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How to guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howto.html#how-to-define-a-magnitude">How to define a magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-magnitude-with-uncertainty">How to define a magnitude with uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-magnitude-without-uncertainty">How to define a magnitude without uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-non-dimensional-magnitude">How to define a non-dimensional magnitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-not-define-a-magnitude">How to not define a magnitude</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howto.html#how-to-operate-with-magnitudes">How to operate with magnitudes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-sum-and-subtract-magnitudes">How to sum and subtract magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-multiply-and-divide-magnitudes">How to multiply and divide magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-operate-with-more-than-two-magnitudes">How to operate with more than two magnitudes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-magnitude.magnitude">magnitude.magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude"><code class="docutils literal notranslate"><span class="pre">Magnitude</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.value"><code class="docutils literal notranslate"><span class="pre">Magnitude.value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.uncertainty</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.unit"><code class="docutils literal notranslate"><span class="pre">Magnitude.unit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.percentage_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.percentage_uncertainty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.relative_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.relative_uncertainty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">physical-magnitude</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
+<p>This tutorial is a good introduction in how to get started with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code> can be installed in three different ways.</p>
+<p>Install via pip from PyPi-like server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">xandratxan</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">server</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Install via pip with GitHub repository url:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">xandratxan</span><span class="o">/</span><span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span><span class="o">.</span><span class="n">git</span><span class="c1">#egg=physical-magnitude</span>
+</pre></div>
+</div>
+<p>Clone GitHub repository and install via pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">xandratxan</span><span class="o">/</span><span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="operating-with-magnitudes">
+<h2>Operating with magnitudes<a class="headerlink" href="#operating-with-magnitudes" title="Permalink to this heading"></a></h2>
+<p>In this tutorial, we’ll show you step by step how to perform simple arithmetic operations with magnitudes,
+including their values, uncertainties and units.</p>
+<p>In a Python console, import the <code class="docutils literal notranslate"><span class="pre">Magnitude</span></code> class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">magnitude</span> <span class="kn">import</span> <span class="n">Magnitude</span>
+</pre></div>
+</div>
+<p>Now define two magnitudes to operate with, including their values, uncertainties and units.
+For example m1 = 10 ± 1 m (10%) and m2 = 20 ± 2 m (10%):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span>
+<span class="go">10.0 ± 1.0 m (10.0%)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span>
+<span class="go">20.0 ± 2.0 m (10.0%)</span>
+</pre></div>
+</div>
+<p>Lets add these two magnitudes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_sum</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_sum</span>
+<span class="go">30.0 ± 2.23606797749979 m (7.4535599249993%)</span>
+</pre></div>
+</div>
+<p>Lets subtract these two magnitudes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_dif</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_dif</span>
+<span class="go">10.0 ± 2.23606797749979 m (22.360679774997898%)</span>
+</pre></div>
+</div>
+<p>Lets multiply these two magnitudes:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
+<span class="go">200.0 ± 28.284271247461906 (m)·(m) (14.142135623730953%)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_prod</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)·(m)</span></code>, which is m².
+Lest modify the unit of <code class="docutils literal notranslate"><span class="pre">m_prod</span></code> accordingly:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m²&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
+<span class="go">200.0 ± 28.284271247461906 m² (14.142135623730953%)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Lets divide these two magnitudes:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">/</span> <span class="n">m1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>
+<span class="go">2.0 ± 0.28284271247461906 (m)/(m) (14.142135623730953%)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)/(m)</span></code>, which means that the magnitude <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is non-dimensional.
+Lest modify the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> accordingly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>
+<span class="go">2.0 ± 0.28284271247461906  (14.142135623730953%)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="info.html" class="btn btn-neutral float-left" title="About physical-magnitude" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="howto.html" class="btn btn-neutral float-right" title="How to guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Xandra Campo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

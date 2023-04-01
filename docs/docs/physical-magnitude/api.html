@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference &mdash; physical-magnitude 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to guides" href="howto.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            physical-magnitude
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="info.html">About <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="info.html#release-history">Release History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#authors-and-contributors">Authors and contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#operating-with-magnitudes">Operating with magnitudes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How to guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howto.html#how-to-define-a-magnitude">How to define a magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-magnitude-with-uncertainty">How to define a magnitude with uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-magnitude-without-uncertainty">How to define a magnitude without uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-define-a-non-dimensional-magnitude">How to define a non-dimensional magnitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-not-define-a-magnitude">How to not define a magnitude</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howto.html#how-to-operate-with-magnitudes">How to operate with magnitudes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-sum-and-subtract-magnitudes">How to sum and subtract magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-multiply-and-divide-magnitudes">How to multiply and divide magnitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto.html#how-to-operate-with-more-than-two-magnitudes">How to operate with more than two magnitudes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-magnitude.magnitude">magnitude.magnitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magnitude.magnitude.Magnitude"><code class="docutils literal notranslate"><span class="pre">Magnitude</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magnitude.magnitude.Magnitude.value"><code class="docutils literal notranslate"><span class="pre">Magnitude.value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnitude.magnitude.Magnitude.uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.uncertainty</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnitude.magnitude.Magnitude.unit"><code class="docutils literal notranslate"><span class="pre">Magnitude.unit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnitude.magnitude.Magnitude.percentage_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.percentage_uncertainty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#magnitude.magnitude.Magnitude.relative_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.relative_uncertainty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">physical-magnitude</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
+<p>This part of the documentation covers all the public interfaces of <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
+<section id="module-magnitude.magnitude">
+<span id="magnitude-magnitude"></span><h2>magnitude.magnitude<a class="headerlink" href="#module-magnitude.magnitude" title="Permalink to this heading"></a></h2>
+<p>Module to perform simple operations with magnitudes including units and uncertainties.</p>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>Magnitude :</dt><dd><p>Class to perform simple operations with magnitudes including units and uncertainties.</p>
+</dd>
+</dl>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magnitude.magnitude.</span></span><span class="sig-name descname"><span class="pre">Magnitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#magnitude.magnitude.Magnitude" title="Permalink to this definition"></a></dt>
+<dd><p>Class to perform simple operations with magnitudes including units and uncertainties.</p>
+<p>It allows to define magnitudes with value, uncertainty and unit.
+It allows to compute simple operations providing the result for the magnitude value, uncertainty and unit.
+Available operations include summation, subtraction, multiplication and division.</p>
+<p>Magnitudes must have value, uncertainty and unit.
+Uncertainty can be provided in the same units of the magnitude or as a relative uncertainty.
+Magnitudes with zero value cannot be defined.
+Magnitudes without uncertainties can be defined with zero uncertainty.
+Non-dimensional magnitudes can be defined with an empty string unit.</p>
+<p>Magnitudes can be summed or subtracted as long as they have the same units.
+Magnitudes can be multiplied or divided independently of their units.
+The unit of the product or division is the concatenation of the units of the individual magnitude.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#magnitude.magnitude.Magnitude.value" title="Permalink to this definition"></a></dt>
+<dd><p>Value of the magnitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude.uncertainty">
+<span class="sig-name descname"><span class="pre">uncertainty</span></span><a class="headerlink" href="#magnitude.magnitude.Magnitude.uncertainty" title="Permalink to this definition"></a></dt>
+<dd><p>Uncertainty of the magnitude in the units of the magnitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#magnitude.magnitude.Magnitude.unit" title="Permalink to this definition"></a></dt>
+<dd><p>Unit of the magnitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If uncertainty is negative.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude.percentage_uncertainty">
+<span class="sig-name descname"><span class="pre">percentage_uncertainty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#magnitude.magnitude.Magnitude.percentage_uncertainty" title="Permalink to this definition"></a></dt>
+<dd><p>Return the percentage uncertainty of the magnitude.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magnitude.magnitude.Magnitude.relative_uncertainty">
+<span class="sig-name descname"><span class="pre">relative_uncertainty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#magnitude.magnitude.Magnitude.relative_uncertainty" title="Permalink to this definition"></a></dt>
+<dd><p>Return the relative uncertainty of the magnitude.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="howto.html" class="btn btn-neutral float-left" title="How to guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Xandra Campo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
