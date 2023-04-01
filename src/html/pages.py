@@ -2,8 +2,8 @@
 
 import src.definitions as df
 import src.functions as fnc
-import src.templates.html.base as bs
-import src.templates.html.main_section as ms
+import src.html.templates.base as bs
+import src.html.templates.main_section as ms
 
 # Common sections
 footer = bs.base_footer_template(
@@ -26,7 +26,7 @@ index = bs.base_template(
         title='Metrology & Python',
         description=(f'MetPy is an ecosystem of Python projects for metrology. '
                      f'It includes a set of Python packages and a PyPI-like package server to provide those packages. '
-                     f'Here you can find the projects of the MetPy ecosystem, '
+                     f'Here you can find the packages of the MetPy ecosystem, '
                      f'the server of the MetPy packages and the documentation of the MetPy packages.'),
         cards=index_cards)),
     footer=footer,
@@ -40,8 +40,7 @@ projects = bs.base_template(
     main=bs.base_main_template(main=ms.main_section_template(
         title='MetPy Packages',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
-                     f'MetPy also includes a PyPI-like package server to provide those packages. '
-                     f'Here you can find the package server and the packages of the MetPy ecosystem.'),
+                     f'Here you can find the packages of the MetPy ecosystem.'),
         cards=package_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
@@ -52,7 +51,8 @@ server = bs.base_template(
     title='MetPy-Package Server',
     assets=fnc.html_assets(parent=False),
     header=bs.base_header_template(active='server'),
-    main=bs.base_main_template('Package Server page'),
+    main=bs.base_main_template((f'MetPy includes a PyPI-like package server to provide the MetPay packages. '
+                                f'Here you can find the package server.')),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
