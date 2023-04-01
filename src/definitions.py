@@ -1,6 +1,10 @@
 # Definitions to build and update documentation
 import src.functions as fnc
 
+# General
+
+non_stable_msg = 'This package is under active development. The current version is considered non-stable.'
+
 # Personal information
 xcb = {
     'name': 'Xandra Campo',
@@ -80,4 +84,26 @@ docs_magnitude = {  # TODO: refactor, update
     'html_path': html_pages['packages']['magnitude'],
     'image_path': fnc.html_images(parent=False),
     'image_name': 'scale.png'
+}
+# Packages
+server = {
+    'url_server': f"{xcb['github_pages']}python-package-server/",
+}
+magnitude = {
+    'name': 'physical-magnitude',
+    'brief_description': 'Simple operations with magnitudes including units and uncertainties',
+    'url_source_code': f"{xcb['github']}physical-magnitude/",
+    'url_issues': f"{xcb['github']}physical-magnitude/issues/",
+    'url_documentation': f"{xcb['github_pages']}physical-magnitude/",
+    'last_version': '0.1.0',
+    'last_release': 'March 2023',
+    'license': 'GNU GPL 3.0',
+    'import': 'from magnitude import Magnitude',
+    'description': (
+        f'This package allows to perform simple operations with magnitudes including units and uncertainties.\n'
+        f'It allows to define magnitudes with value, uncertainty and unit.\n'
+        f'It allows to compute simple operations providing the result not only for the magnitude value,'
+        f'but also its uncertainty and unit.\n'
+        f'Available operations include summation, subtraction, multiplication and division.\n'),
+    'image': 'scale.png'
 }
