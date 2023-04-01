@@ -1,12 +1,10 @@
 # Base HTML template for MetPy website
 import src.definitions as df
+import src.functions as fnc
 
 
-def base_template(title, parent, header, main, footer, scripts):
-    if parent:
-        path = '..'
-    else:
-        path = '.'
+def base_template(title, header, main, footer, scripts, parent=False, grandparent=False):
+    path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
         f'<!DOCTYPE HTML>\n'
         f'<html lang="en">\n'
@@ -34,12 +32,9 @@ def base_template(title, parent, header, main, footer, scripts):
     return text
 
 
-def base_header_template(parent, active):
+def base_header_template(active, parent=False, grandparent=False):
     i = 8
-    if parent:
-        path = '..'
-    else:
-        path = '.'
+    path = fnc.html_resources(parent=parent, grandparent=grandparent)
     html_index = df.html_pages['main']['index']
     html_packages = df.html_pages['main']['packages']
     html_server = df.html_pages['main']['server']
@@ -112,12 +107,9 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
     return text
 
 
-def base_scripts_template(parent):
+def base_scripts_template(parent=False, grandparent=False):
     i = 4
-    if parent:
-        path = '..'
-    else:
-        path = '.'
+    path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
         f'{" " * i}<!-- Scripts -->\n'
         f'{" " * i}<script src="{path}/assets/js/jquery.min.js"></script>\n'

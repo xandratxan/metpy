@@ -39,8 +39,7 @@ documentation = {
 # TODO: cards not showing side by side
 metpy_index = bs.base_template(
     title='MetPy',
-    parent=False,
-    header=bs.base_header_template(parent=False, active='index'),
+    header=bs.base_header_template(active='index'),
     main=bs.base_main_template(main=ms.main_section_template(
         title='Metrology & Python',
         description=(f'MetPy is an ecosystem of Python projects for metrology. '
@@ -49,4 +48,4 @@ metpy_index = bs.base_template(
                      f'the server of the MetPy packages and the documentation of the MetPy packages.'),
         cards=[packages, server, documentation])),
     footer=footer,
-    scripts=bs.base_scripts_template(parent=False))
+    scripts=bs.base_scripts_template())

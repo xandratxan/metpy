@@ -19,15 +19,14 @@ magnitude = {
 }
 metpy_packages = bs.base_template(
     title='MetPy-Packages',
-    parent=False,
-    header=bs.base_header_template(parent=False, active='packages'),
+    header=bs.base_header_template(active='packages'),
     main=bs.base_main_template(main=ms.main_section_template(
         title='MetPy Packages',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                      f'Here you can find the packages of the MetPy ecosystem.'),
         cards=[magnitude])),
     footer=footer,
-    scripts=bs.base_scripts_template(parent=False))
+    scripts=bs.base_scripts_template())
 
 
 # MetPy website packages, physical-magnitude package page
@@ -83,9 +82,9 @@ def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
 
 
 metpy_package_magnitude = bs.base_template(
-    title='MetPy-Packages-Physical-magnitude',
     parent=True,
-    header=bs.base_header_template(parent=True, active='packages'),
+    title='MetPy-Packages-Physical-magnitude',
+    header=bs.base_header_template(active='packages', parent=True),
     main=bs.base_main_template(
         main=ss.package_template(
             title=ss.title_template(

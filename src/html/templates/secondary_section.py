@@ -1,4 +1,7 @@
 # HTML templates for secondary sections at MetPy website
+import src.functions as fnc
+import src.definitions as df
+
 
 def package_template(title, information, warning, description, installation, code_snippet):
     # Template for package page at MetPy website
@@ -17,13 +20,26 @@ def package_template(title, information, warning, description, installation, cod
     return text
 
 
-def title_template(parent, title, brief_description, image):
+def server_template(title, warning, description, installation, packages_table):
+    # Template for package page at MetPy website
+    i = 12
+    text = (
+        f'{" " * i}<!-- Package -->\n'
+        f'{" " * i}<section class="post">\n'
+        f'{title}'
+        f'{warning}'
+        f'{description}'
+        f'{installation}'
+        f'{packages_table}'
+        f'{" " * i}</section>\n'
+    )
+    return text
+
+
+def title_template(title, brief_description, image, parent=False, grandparent=False):
     # Template for section pages at my website at GitHub Pages (package server page and package pages)
     i = 12
-    if parent:
-        path = '..'
-    else:
-        path = '.'
+    path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
         f'{" " * i}<!-- Title and subtitle -->\n'
         f'{" " * i}<header class="major">\n'
@@ -120,10 +136,30 @@ def code_snippet_template(name, code, output):
     return text
 
 
-def packages_table_template(package_server_link, columns, packages):
+def packages_table_template(columns, packages, versions=False, parent=False, grandparent=False):
     # Template for packages table in the section of package server page at my website at GitHub Pages
     i = 12
-    head = (
+    path = fnc.html_resources(parent=parent, grandparent=grandparent)
+    body = ''
+    if versions:
+        for version in packages['versions']:
+            body += packages_table_row_template(
+                path=path,
+                image='folder.png',
+                html_path=package_link(author_github=df.xcb['github'], name=packages['name'], version=version),
+                name=f"{packages['name']}-{version}",
+                description=version
+            )
+    else:
+        for package in packages:
+            body += packages_table_row_template(
+                path=path,
+                image=package['image'],
+                html_path=package['html_path'],
+                name=package['name'],
+                description=package['brief_description']
+            )
+    table = (
         f'{" " * i}<!-- Packages -->\n'
         f'{" " * i}<p>The following packages are available:</p>\n'
         f'{" " * i}<div class="table-wrapper">\n'
@@ -136,23 +172,23 @@ def packages_table_template(package_server_link, columns, packages):
         f'{" " * i}            </tr>\n'
         f'{" " * i}        </thead>\n'
         f'{" " * i}        <tbody>\n'
+        f'{body}'
+        f'{" " * i}        </tbody>\n'
+        f'{" " * i}    </table>\n'
+        f'{" " * i}</div>\n'
     )
-    body = ''
-    for name, description, html_path, image_path in packages:
-        body += f'<tr>\n'
-        body += f'    <td><img src="{image_path}" alt="" width="30" height="30"></td>\n'
-        if package_server_link:
-            body += f'    <td><a {html_path}>{name}</a></td>\n'
-        else:
-            body += f'    <td><a href="{html_path}">{name}</a></td>\n'
-        body += f'    <td>{description}</td>\n'
-        body += f'</tr>\n'
-    tail = (
-        f'        </tbody>\n'
-        f'    </table>\n'
-        f'</div>\n'
+    return table
+
+
+def packages_table_row_template(path, image, html_path, name, description):
+    row = (
+        f'<tr>\n'
+        f'    <td><img src="{path}/images/{image}" alt="" width="30" height="30"></td>\n'
+        f'    <td><a href="{html_path}">{name}</a></td>\n'
+        f'    <td>{description}</td>\n'
+        f'</tr>\n'
     )
-    return head + body + tail
+    return row
 
 
 def server_button(label, url):
@@ -167,3 +203,7 @@ def server_button(label, url):
         f'{" " * i}</div>\n'
     )
     return text
+
+
+def package_link(author_github, name, version):
+    return f'git+{author_github}{name}#egg={name}-{version}" data-requires-python="&gt;=3.6.0'

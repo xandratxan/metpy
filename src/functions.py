@@ -1,5 +1,14 @@
 # Functions to build and update documentation
 
+def html_resources(parent=False, grandparent=False):
+    if grandparent:
+        path = '../..'
+    elif parent:
+        path = '..'
+    else:
+        path = '.'
+    return path
+
 
 def write_files(texts, files):
     # Write documentation source files

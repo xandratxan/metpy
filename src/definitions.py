@@ -27,6 +27,9 @@ html_pages = {
     'packages': {
         'magnitude': 'packages/magnitude.html',
     },
+    'server': {
+        'magnitude': 'server/physical-magnitude/index.html',
+    },
     'documentation': {
         'magnitude': 'docs/physical-magnitude/index.html',
     },
@@ -42,6 +45,9 @@ html_paths = {
     },
     'packages': {
         'magnitude': './docs/packages/magnitude.html',
+    },
+    'server': {
+        'magnitude': './docs/server/physical-magnitude/index.html',
     },
 }
 readme_paths = {
@@ -59,7 +65,13 @@ external_urls = {
 }
 # Packages
 server = {
-    'url_server': f"{xcb['github_pages']}python-package-server/",
+    'name': 'python-package-server',
+    'brief_description': 'PyPi-like package server for the MetPy packages',
+    'description': (
+        f'This website server as a PyPi-like package server for the MetPy packages. '
+        f'It conforms to Pep 503. It is based on a blog post by freeCodeCamp.'),  # TODO: how to add links HTML, README
+    'image': 'folder.png',
+    'url_server': f"{xcb['github_pages']}python-package-server/",  # TODO: update
 }
 magnitude = {
     'name': 'physical-magnitude',
@@ -77,5 +89,6 @@ magnitude = {
         f'but also its uncertainty and unit.'
         f'Available operations include summation, subtraction, multiplication and division.'),
     'image': 'scale.png',
-    'import': 'from magnitude import Magnitude'
+    'import': 'from magnitude import Magnitude',
+    'versions': ['0.1.0']
 }

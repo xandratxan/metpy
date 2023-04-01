@@ -17,8 +17,7 @@ magnitude = {
 }
 metpy_documentation = bs.base_template(
     title='MetPy-Documentation',
-    parent=False,
-    header=bs.base_header_template(parent=False, active='docs'),
+    header=bs.base_header_template(active='docs'),
     main=bs.base_main_template(
         main=ms.main_section_template(
             title='MetPy Documentation',
@@ -28,5 +27,5 @@ metpy_documentation = bs.base_template(
         )
     ),
     footer=footer,
-    scripts=bs.base_scripts_template(parent=False)
+    scripts=bs.base_scripts_template()
 )

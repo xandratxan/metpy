@@ -29,7 +29,49 @@
         </nav>
         <!-- Main -->
         <div id="main">
-MetPy includes a PyPI-like package server to provide the MetPay packages. Here you can find the package server.        </div>
+            <!-- Package -->
+            <section class="post">
+            <!-- Title and subtitle -->
+            <header class="major">
+                <h1>Python package server</h1>
+                <p>PyPi-like package server for the MetPy packages</p>
+                <img src="./images/folder.png" alt="" width="100" height="100">
+            </header>
+            <!-- Warning -->
+            <div class="box">
+                <p><b>WARNING</b>: This package is under active development. The current version is considered non-stable.</p>
+            </div>
+            <!-- Description -->
+            <p>
+            This website server as a PyPi-like package server for the MetPy packages. It conforms to Pep 503. It is based on a blog post by freeCodeCamp.
+            </p>
+            <!-- Installation -->
+            <p>The packages available in this server can be used to specify dependencies in
+               <code>pyproject.toml</code> files including the entry <code>dependencies = ["package-name"]</code>
+               They can also be installed via <code>pip</code>:<br/>
+               <code>pip install package_name --extra-index-url https://xandratxan.github.io/python-package-server/</code></p>
+            <!-- Packages -->
+            <p>The following packages are available:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Package</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<tr>
+    <td><img src="./images/scale.png" alt="" width="30" height="30"></td>
+    <td><a href="server/physical-magnitude/index.html">physical-magnitude</a></td>
+    <td>Simple operations with magnitudes including units and uncertainties</td>
+</tr>
+                    </tbody>
+                </table>
+            </div>
+            </section>
+        </div>
         <!-- Footer -->
         <footer id="footer">
             <section class="split contact">

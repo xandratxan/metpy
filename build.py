@@ -5,7 +5,7 @@ import src.functions as fnc
 from src.html.pages.documentation import metpy_documentation
 from src.html.pages.index import metpy_index
 from src.html.pages.packages import metpy_packages, metpy_package_magnitude
-from src.html.pages.server import metpy_server
+from src.html.pages.server import metpy_server, metpy_server_magnitude
 from src.readme.magnitude import package_magnitude_readme
 
 
@@ -16,6 +16,7 @@ def metpy_pages():
         df.html_paths['main']['server'],
         df.html_paths['main']['docs'],
         df.html_paths['packages']['magnitude'],
+        df.html_paths['server']['magnitude'],
     ]
     texts = [
         metpy_index,
@@ -23,6 +24,7 @@ def metpy_pages():
         metpy_server,
         metpy_documentation,
         metpy_package_magnitude,
+        metpy_server_magnitude,
     ]
     fnc.write_files(texts, files)
 
@@ -31,11 +33,13 @@ def magnitude_package_docs():
     files = [
         df.readme_paths['origin']['magnitude'],
         df.html_paths['packages']['magnitude'],
+        df.html_paths['server']['magnitude'],
 
     ]
     texts = [
         package_magnitude_readme,
         metpy_package_magnitude,
+        metpy_server_magnitude,
     ]
     fnc.write_files(texts, files)
 
@@ -43,6 +47,6 @@ def magnitude_package_docs():
 # Build documentation
 if __name__ == '__main__':
     metpy_pages()
-    magnitude_package_docs()
+    # magnitude_package_docs()
 
 # TODO: update readme in destination repo
