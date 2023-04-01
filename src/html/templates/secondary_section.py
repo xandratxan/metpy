@@ -109,11 +109,11 @@ def code_snippet_template(name, code, output):
     text = (
         f'{" " * i}<!-- Code snippet -->\n'
         f'{" " * i}<p>Below you can find a code snippet to illustrate how to work with <code>{name}</code> package:</p>\n'
-        f'{" " * i}<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">\n'
+        f'{" " * i}<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">'
         f'{code}\n'
         f'{" " * i}</code></pre>\n'
         f'{" " * i}<p>Below you can find the snippet output:</p>\n'
-        f'{" " * i}<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">\n'
+        f'{" " * i}<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">'
         f'{output}\n'
         f'{" " * i}</code></pre>\n'
     )
