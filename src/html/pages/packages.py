@@ -31,7 +31,6 @@ metpy_packages = bs.base_template(
 
 
 # MetPy website packages, physical-magnitude package page
-# TODO: nav bar links don't work when clicked from magnitude package page
 def html_code_snippet(import_package, str_m1, str_m2):
     text = (
         f'{import_package}\n'

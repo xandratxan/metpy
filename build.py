@@ -44,3 +44,5 @@ def magnitude_package_docs():
 if __name__ == '__main__':
     metpy_pages()
     magnitude_package_docs()
+
+# TODO: update readme in destination repo

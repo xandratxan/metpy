@@ -1,9 +1,5 @@
 # Functions to build and update documentation
 
-def html_images(parent):
-    # HTML images paths
-    return '../images/' if parent else 'images/'
-
 
 def write_files(texts, files):
     # Write documentation source files

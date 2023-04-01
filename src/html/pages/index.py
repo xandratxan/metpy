@@ -1,7 +1,6 @@
 # HTML index pages of MetPy website
 
 import src.definitions as df
-import src.functions as fnc
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
 

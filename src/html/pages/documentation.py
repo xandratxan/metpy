@@ -2,8 +2,8 @@
 
 import src.definitions as df
 import src.html.templates.base as bs
-from src.html.pages.index import footer
 import src.html.templates.main_section as ms
+from src.html.pages.index import footer
 
 # MetPy website documentation page
 # TODO: cards not showing side by side

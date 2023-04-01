@@ -1,5 +1,4 @@
 # Definitions to build and update documentation
-import src.functions as fnc
 
 # General
 
@@ -80,7 +79,3 @@ magnitude = {
     'image': 'scale.png',
     'import': 'from magnitude import Magnitude'
 }
-
-
-
-
