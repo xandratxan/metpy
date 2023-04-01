@@ -1,8 +1,8 @@
 # README file for physical-magnitude package
 
+import src.code.magnitude as cd
 import src.definitions as df
 import src.functions as fnc
-import src.code.magnitude as cd
 from src.readme.template import readme, author_contributor
 
 
