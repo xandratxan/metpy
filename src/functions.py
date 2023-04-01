@@ -1,11 +1,5 @@
 # Functions to build and update documentation
 
-
-def html_assets(parent):
-    # HTML assets paths
-    return '../assets/' if parent else 'assets/'
-
-
 def html_images(parent):
     # HTML images paths
     return '../images/' if parent else 'images/'

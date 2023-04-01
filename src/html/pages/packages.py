@@ -15,24 +15,23 @@ magnitude = {
     'title': f"{df.magnitude['name']} package",
     'brief_description': df.magnitude['brief_description'],
     'html_path': df.html_pages['packages']['magnitude'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': df.magnitude['image']
+    'image': df.magnitude['image']
 }
 metpy_packages = bs.base_template(
     title='MetPy-Packages',
-    assets=fnc.html_assets(parent=False),
-    header=bs.base_header_template(active='projects'),
+    parent=False,
+    header=bs.base_header_template(parent=False, active='packages'),
     main=bs.base_main_template(main=ms.main_section_template(
         title='MetPy Packages',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                      f'Here you can find the packages of the MetPy ecosystem.'),
         cards=[magnitude])),
     footer=footer,
-    scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
+    scripts=bs.base_scripts_template(parent=False))
 
 
 # MetPy website packages, physical-magnitude package page
-# TODO: nav bar links dont work when clicked from magnitude package page
+# TODO: nav bar links don't work when clicked from magnitude package page
 def html_code_snippet(import_package, str_m1, str_m2):
     text = (
         f'{import_package}\n'
@@ -86,15 +85,15 @@ def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
 
 metpy_package_magnitude = bs.base_template(
     title='MetPy-Packages-Physical-magnitude',
-    assets=fnc.html_assets(parent=True),
-    header=bs.base_header_template(active='projects'),
+    parent=True,
+    header=bs.base_header_template(parent=True, active='packages'),
     main=bs.base_main_template(
         main=ss.package_template(
             title=ss.title_template(
+                parent=True,
                 title=f"{df.magnitude['name']} package",
                 brief_description=df.magnitude['brief_description'],
-                image_path=fnc.html_images(parent=True),
-                image_name=df.magnitude['image']
+                image=df.magnitude['image']
             ),
             information=ss.info_template(
                 last_version=df.magnitude['last_version'],
@@ -127,5 +126,5 @@ metpy_package_magnitude = bs.base_template(
         )
     ),
     footer=footer,
-    scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=True))
+    scripts=bs.base_scripts_template(parent=True)
 )

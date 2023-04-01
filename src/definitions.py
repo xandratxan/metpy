@@ -26,10 +26,10 @@ html_pages = {
         'docs': 'docs.html',
     },
     'packages': {
-        'magnitude': 'packages/physical-magnitude.html',
+        'magnitude': 'packages/magnitude.html',
     },
     'docs': {
-        'magnitude': 'docs/physical-magnitude/index.html',
+        'magnitude': 'docs/magnitude/index.html',
     },
 
 }
@@ -42,7 +42,7 @@ html_paths = {
         'docs': './docs/docs.html',
     },
     'packages': {
-        'magnitude': './docs/packages/physical-magnitude.html',
+        'magnitude': './docs/packages/magnitude.html',
     },
 }
 readme_paths = {

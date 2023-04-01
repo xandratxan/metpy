@@ -16,14 +16,18 @@ def package_template(title, information, warning, description, installation, cod
     return text
 
 
-def title_template(title, brief_description, image_path, image_name):
+def title_template(parent, title, brief_description, image):
     # Template for section pages at my website at GitHub Pages (package server page and package pages)
+    if parent:
+        path = '..'
+    else:
+        path = '.'
     text = (
         f'<!-- Title and subtitle -->\n'
         f'<header class="major">\n'
         f'    <h1>{title}</h1>\n'
         f'    <p>{brief_description}</p>\n'
-        f'    <img src="{image_path}{image_name}" alt="" width="100" height="100">\n'
+        f'    <img src="{path}/images/{image}" alt="" width="100" height="100">\n'
         f'</header>\n'
     )
     return text

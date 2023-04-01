@@ -2,7 +2,11 @@
 import src.definitions as df
 
 
-def base_template(title, assets, header, main, footer, scripts):
+def base_template(title, parent, header, main, footer, scripts):
+    if parent:
+        path = '..'
+    else:
+        path = '.'
     text = (
         f'<!DOCTYPE HTML>\n'
         f'<html lang="en">\n'
@@ -10,10 +14,10 @@ def base_template(title, assets, header, main, footer, scripts):
         f'    <title>{title}</title>\n'
         f'    <meta charset="utf-8"/>\n'
         f'    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>\n'
-        f'    <link rel="stylesheet" href="{assets}css/main.css"/>\n'
-        f'    <link rel="stylesheet" href="{assets}css/prism.css"/>\n'
+        f'    <link rel="stylesheet" href="{path}/assets/css/main.css"/>\n'
+        f'    <link rel="stylesheet" href="{path}/assets/css/prism.css"/>\n'
         f'    <noscript>\n'
-        f'        <link rel="stylesheet" href="{assets}css/noscript.css"/>\n'
+        f'        <link rel="stylesheet" href="{path}/assets/css/noscript.css"/>\n'
         f'    </noscript>\n'
         f'</head>\n'
         f'<body class="is-preload">\n'
@@ -30,7 +34,11 @@ def base_template(title, assets, header, main, footer, scripts):
     return text
 
 
-def base_header_template(active):
+def base_header_template(parent, active):
+    if parent:
+        path = '..'
+    else:
+        path = '.'
     html_index = df.html_pages['main']['index']
     html_packages = df.html_pages['main']['packages']
     html_server = df.html_pages['main']['server']
@@ -40,14 +48,14 @@ def base_header_template(active):
     inactive_tab = '<li>'
     text = (
         f'        <!-- Header-->\n'
-        f'        <header id="header"><a href="index.html" class="logo">MetPy</a></header>\n'
+        f'        <header id="header"><a href="{path}/index.html" class="logo">MetPy</a></header>\n'
         f'        <!-- Nav -->'
         f'        <nav id="nav">\n'
         f'            <ul class="links">\n'
-        f'                {active_tab if active == "index" else inactive_tab}<a href="{html_index}">MetPy</a></li>\n'
-        f'                {active_tab if active == "packages" else inactive_tab}<a href="{html_packages}">Packages</a></li>\n'
-        f'                {active_tab if active == "server" else inactive_tab}<a href="{html_server}">Package Server</a></li>\n'
-        f'                {active_tab if active == "docs" else inactive_tab}<a href="{html_docs}">Documentation</a></li>\n'
+        f'                {active_tab if active == "index" else inactive_tab}<a href="{path}/{html_index}">MetPy</a></li>\n'
+        f'                {active_tab if active == "packages" else inactive_tab}<a href="{path}/{html_packages}">Packages</a></li>\n'
+        f'                {active_tab if active == "server" else inactive_tab}<a href="{path}/{html_server}">Package Server</a></li>\n'
+        f'                {active_tab if active == "docs" else inactive_tab}<a href="{path}/{html_docs}">Documentation</a></li>\n'
         f'            </ul>'
         f'            <ul class="icons">\n'
         f'                <li><a href="{url_author_github}" class="icon brands fa-github"><span class="label">GitHub</span></a>\n'
@@ -101,16 +109,20 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
     return text
 
 
-def base_scripts_template(assets):
+def base_scripts_template(parent):
+    if parent:
+        path = '..'
+    else:
+        path = '.'
     text = (
         f'    <!-- Scripts -->\n'
-        f'    <script src="{assets}js/jquery.min.js"></script>\n'
-        f'    <script src="{assets}js/jquery.scrollex.min.js"></script>\n'
-        f'    <script src="{assets}js/jquery.scrolly.min.js"></script>\n'
-        f'    <script src="{assets}js/browser.min.js"></script>\n'
-        f'    <script src="{assets}js/breakpoints.min.js"></script>\n'
-        f'    <script src="{assets}js/util.js"></script>\n'
-        f'    <script src="{assets}js/main.js"></script>\n'
-        f'    <script src="{assets}js/prism.js"></script>\n'
+        f'    <script src="{path}/assets/js/jquery.min.js"></script>\n'
+        f'    <script src="{path}/assets/js/jquery.scrollex.min.js"></script>\n'
+        f'    <script src="{path}/assets/js/jquery.scrolly.min.js"></script>\n'
+        f'    <script src="{path}/assets/js/browser.min.js"></script>\n'
+        f'    <script src="{path}/assets/js/breakpoints.min.js"></script>\n'
+        f'    <script src="{path}/assets/js/util.js"></script>\n'
+        f'    <script src="{path}/assets/js/main.js"></script>\n'
+        f'    <script src="{path}/assets/js/prism.js"></script>\n'
     )
     return text

@@ -14,11 +14,11 @@ def main_section_template(title, description, cards):
     )
     for card in cards:
         text += card_template(card['name'], card['title'], card['brief_description'], card['html_path'],
-                              card['image_path'], card['image_name'])
+                              card['image'])
     return text
 
 
-def card_template(name, title, brief_description, href, images_path, image_name):
+def card_template(name, title, brief_description, href, image):
     # Card HTML template for main section of MetPy website
     text = (
         f'            <!-- Card {name} -->\n'
@@ -31,7 +31,7 @@ def card_template(name, title, brief_description, href, images_path, image_name)
         f'                    <div class="row">\n'
         f'                        <div class="col-4 col-12-small"></div>\n'
         f'                        <div class="col-4 col-12-small">\n'
-        f'                        <a href="{href}" class="image fit"><img src="{images_path}{image_name}" alt="{image_name}"/></a>\n'
+        f'                        <a href="{href}" class="image fit"><img src="./images/{image}" alt="{image}"/></a>\n'
         f'                        </div>\n'
         f'                        <div class="col-4 col-12-small"></div>\n'
         f'                    </div>\n'
