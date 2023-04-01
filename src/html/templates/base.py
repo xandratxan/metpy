@@ -23,11 +23,11 @@ def base_template(title, parent, header, main, footer, scripts):
         f'<body class="is-preload">\n'
         f'    <!-- Wrapper -->\n'
         f'    <div id="wrapper">\n'
-        f'        {header}'
-        f'        {main}'
-        f'        {footer}'
+        f'{header}'
+        f'{main}'
+        f'{footer}'
         f'    </div>\n'
-        f'{scripts}\n'
+        f'{scripts}'
         f'</body>\n'
         f'</html>\n'
     )
@@ -35,6 +35,7 @@ def base_template(title, parent, header, main, footer, scripts):
 
 
 def base_header_template(parent, active):
+    i = 8
     if parent:
         path = '..'
     else:
@@ -47,82 +48,85 @@ def base_header_template(parent, active):
     active_tab = '<li class="active">'
     inactive_tab = '<li>'
     text = (
-        f'        <!-- Header-->\n'
-        f'        <header id="header"><a href="{path}/index.html" class="logo">MetPy</a></header>\n'
-        f'        <!-- Nav -->'
-        f'        <nav id="nav">\n'
-        f'            <ul class="links">\n'
-        f'                {active_tab if active == "index" else inactive_tab}<a href="{path}/{html_index}">MetPy</a></li>\n'
-        f'                {active_tab if active == "packages" else inactive_tab}<a href="{path}/{html_packages}">Packages</a></li>\n'
-        f'                {active_tab if active == "server" else inactive_tab}<a href="{path}/{html_server}">Package Server</a></li>\n'
-        f'                {active_tab if active == "docs" else inactive_tab}<a href="{path}/{html_docs}">Documentation</a></li>\n'
-        f'            </ul>'
-        f'            <ul class="icons">\n'
-        f'                <li><a href="{url_author_github}" class="icon brands fa-github"><span class="label">GitHub</span></a>\n'
-        f'                </li>\n'
-        f'            </ul>\n'
-        f'        </nav>\n'
+        f'{" " * i}<!-- Header-->\n'
+        f'{" " * i}<header id="header"><a href="{path}/index.html" class="logo">MetPy</a></header>\n'
+        f'{" " * i}<!-- Nav -->\n'
+        f'{" " * i}<nav id="nav">\n'
+        f'{" " * i}    <ul class="links">\n'
+        f'{" " * i}        {active_tab if active == "index" else inactive_tab}<a href="{path}/{html_index}">MetPy</a></li>\n'
+        f'{" " * i}        {active_tab if active == "packages" else inactive_tab}<a href="{path}/{html_packages}">Packages</a></li>\n'
+        f'{" " * i}        {active_tab if active == "server" else inactive_tab}<a href="{path}/{html_server}">Package Server</a></li>\n'
+        f'{" " * i}        {active_tab if active == "docs" else inactive_tab}<a href="{path}/{html_docs}">Documentation</a></li>\n'
+        f'{" " * i}    </ul>'
+        f'{" " * i}    <ul class="icons">\n'
+        f'{" " * i}        <li><a href="{url_author_github}" class="icon brands fa-github"><span class="label">GitHub</span></a>\n'
+        f'{" " * i}        </li>\n'
+        f'{" " * i}    </ul>\n'
+        f'{" " * i}</nav>\n'
     )
     return text
 
 
 def base_main_template(main):
+    i = 8
     text = (
-        f'        <!-- Main -->\n'
-        f'        <div id="main">\n'
-        f'            {main}\n'
-        f'        </div>\n'
+        f'{" " * i}<!-- Main -->\n'
+        f'{" " * i}<div id="main">\n'
+        f'{main}'
+        f'{" " * i}</div>\n'
     )
     return text
 
 
 def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciemat):
+    i = 8
     text = (
-        f'        <!-- Footer -->\n'
-        f'        <footer id="footer">\n'
-        f'            <section class="split contact">\n'
-        f'                <section>\n'
-        f'                    <h3>ABOUT ME</h3>\n'
-        f'                    <p>Xandra Campo<br/>\n'
-        f'                       Researcher at the Neutron Standards Laboratory (LPN)<br/>\n'
-        f'                       Ionizing Radiation Metrology Laboratory (<a href="{url_lmri}">LMRI</a>)<br/>\n'
-        f'                       Research Centre for Energy, Environment and Technology (<a href="{url_ciemat}">CIEMAT</a>)<br/>\n'
-        f'                       {url_author_email}</p>\n'
-        f'                </section>\n'
-        f'                <section>\n'
-        f'                    <h3>SOCIAL</h3>\n'
-        f'                    <ul class="icons alt">\n'
-        f'                        <li><a href="{url_author_github}" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>\n'
-        f'                    </ul>\n'
-        f'                </section>\n'
-        f'            </section>\n'
-        f'        </footer>\n'
-        f'        <!-- Copyright -->\n'
-        f'        <div id="copyright">\n'
-        f'            <ul>\n'
-        f'                <li>@ 2023, Xandra Campo</li>\n'
-        f'                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>\n'
-        f'                <li><a href="https://www.flaticon.com/" title="python icons">Icons: Freepik</a></li>\n'
-        f'            </ul>\n'
-        f'        </div>\n'
+        f'{" " * i}<!-- Footer -->\n'
+        f'{" " * i}<footer id="footer">\n'
+        f'{" " * i}    <section class="split contact">\n'
+        f'{" " * i}        <section>\n'
+        f'{" " * i}            <h3>ABOUT ME</h3>\n'
+        f'{" " * i}            <p>Xandra Campo<br/>\n'
+        f'{" " * i}               Researcher at the Neutron Standards Laboratory (LPN)<br/>\n'
+        f'{" " * i}               Ionizing Radiation Metrology Laboratory (<a href="{url_lmri}">LMRI</a>)<br/>\n'
+        f'{" " * i}               Research Centre for Energy, Environment and Technology (<a href="{url_ciemat}">CIEMAT</a>)<br/>\n'
+        f'{" " * i}               {url_author_email}</p>\n'
+        f'{" " * i}        </section>\n'
+        f'{" " * i}        <section>\n'
+        f'{" " * i}            <h3>SOCIAL</h3>\n'
+        f'{" " * i}            <ul class="icons alt">\n'
+        f'{" " * i}                <li><a href="{url_author_github}" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>\n'
+        f'{" " * i}            </ul>\n'
+        f'{" " * i}        </section>\n'
+        f'{" " * i}    </section>\n'
+        f'{" " * i}</footer>\n'
+        f'{" " * i}<!-- Copyright -->\n'
+        f'{" " * i}<div id="copyright">\n'
+        f'{" " * i}    <ul>\n'
+        f'{" " * i}        <li>@ 2023, Xandra Campo</li>\n'
+        f'{" " * i}        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>\n'
+        f'{" " * i}        <li><a href="https://www.flaticon.com/" title="python icons">Icons: Freepik</a></li>\n'
+        f'{" " * i}    </ul>\n'
+        f'{" " * i}</div>\n'
     )
     return text
 
 
 def base_scripts_template(parent):
+    i = 4
     if parent:
         path = '..'
     else:
         path = '.'
     text = (
-        f'    <!-- Scripts -->\n'
-        f'    <script src="{path}/assets/js/jquery.min.js"></script>\n'
-        f'    <script src="{path}/assets/js/jquery.scrollex.min.js"></script>\n'
-        f'    <script src="{path}/assets/js/jquery.scrolly.min.js"></script>\n'
-        f'    <script src="{path}/assets/js/browser.min.js"></script>\n'
-        f'    <script src="{path}/assets/js/breakpoints.min.js"></script>\n'
-        f'    <script src="{path}/assets/js/util.js"></script>\n'
-        f'    <script src="{path}/assets/js/main.js"></script>\n'
-        f'    <script src="{path}/assets/js/prism.js"></script>\n'
+        f'{" " * i}<!-- Scripts -->\n'
+        f'{" " * i}<script src="{path}/assets/js/jquery.min.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/jquery.scrollex.min.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/jquery.scrolly.min.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/browser.min.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/breakpoints.min.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/util.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/main.js"></script>\n'
+        f'{" " * i}<script src="{path}/assets/js/prism.js"></script>\n'
     )
     return text

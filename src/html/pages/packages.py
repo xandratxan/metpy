@@ -60,7 +60,7 @@ def html_code_snippet(import_package, str_m1, str_m2):
         f'm_div = m2 / m1\n'
         f'print(f"Divide: {{m_div}}")\n'
         f'm_div.unit = ''\n'
-        f'print(f"Divide: {{m_div}}")\n'
+        f'print(f"Divide: {{m_div}}")'
     )
     return text
 
@@ -78,7 +78,7 @@ def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
         f"Multiply: {m_prod2}\n"
         f"\n"
         f"Divide: {m_div1}\n"
-        f"Divide: {m_div2}\n"
+        f"Divide: {m_div2}"
     )
     return text
 

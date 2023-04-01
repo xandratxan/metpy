@@ -13,9 +13,10 @@
 <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
-                <!-- Header-->
+        <!-- Header-->
         <header id="header"><a href="../index.html" class="logo">MetPy</a></header>
-        <!-- Nav -->        <nav id="nav">
+        <!-- Nav -->
+        <nav id="nav">
             <ul class="links">
                 <li><a href="../index.html">MetPy</a></li>
                 <li class="active"><a href="../packages.html">Packages</a></li>
@@ -26,54 +27,48 @@
                 </li>
             </ul>
         </nav>
-                <!-- Main -->
+        <!-- Main -->
         <div id="main">
             <!-- Package -->
-<section class="post">
-    <!-- Title and subtitle -->
-<header class="major">
-    <h1>physical-magnitude package</h1>
-    <p>Simple operations with magnitudes including units and uncertainties</p>
-    <img src="../images/scale.png" alt="" width="100" height="100">
-</header>
-
-    <!-- Useful information -->
-<div class="box">
-    <div class="row">
-        <div class="col-4 col-12-small">
-            <b>Last version</b>: 0.1.0<br/>
-            <b>Last release</b>: March 2023
-        </div>
-        <div class="col-4 col-12-small">
-            <b>Source code</b>: <a href="https://github.com/xandratxan/physical-magnitude/">GitHub</a><br/>
-            <b>Documentation</b>: <a href="https://xandratxan.github.io/physical-magnitude/">GitHub</a>
-        </div>
-        <div class="col-3 col-12-small">
-            <b>Issues</b>: <a href="https://github.com/xandratxan/physical-magnitude/issues/">GitHub</a><br/>
-            <b>License</b>: GNU GPL 3.0
-        </div>
-    </div>
-</div>
-
-    <!-- Warning -->
-<div class="box">
-    <p><b>WARNING</b>: This package is under active development. The current version is considered non-stable.</p>
-</div>
-
-        <!-- Description -->
-    <p>This package allows to perform simple operations with magnitudes including units and uncertainties.
-It allows to define magnitudes with value, uncertainty and unit.
-It allows to compute simple operations providing the result not only for the magnitude value,but also its uncertainty and unit.
-Available operations include summation, subtraction, multiplication and division.
-</p>
-
-    <!-- Installation -->
-<p>This package can be installed via <code>pip</code>:<br/>
-   <code>pip install physical-magnitude --extra-index-url https://xandratxan.github.io/python-package-server/</code></p>
-
-    <!-- Code snippet -->
-<p>Below you can find a code snippet to illustrate how to work with <code>physical-magnitude</code> package:</p>
-<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">from magnitude import Magnitude
+            <section class="post">
+            <!-- Title and subtitle -->
+            <header class="major">
+                <h1>physical-magnitude package</h1>
+                <p>Simple operations with magnitudes including units and uncertainties</p>
+                <img src="../images/scale.png" alt="" width="100" height="100">
+            </header>
+            <!-- Useful information -->
+            <div class="box">
+                <div class="row">
+                    <div class="col-4 col-12-small">
+                        <b>Last version</b>: 0.1.0<br/>
+                        <b>Last release</b>: March 2023
+                    </div>
+                    <div class="col-4 col-12-small">
+                        <b>Source code</b>: <a href="https://github.com/xandratxan/physical-magnitude/">GitHub</a><br/>
+                        <b>Documentation</b>: <a href="https://xandratxan.github.io/physical-magnitude/">GitHub</a>
+                    </div>
+                    <div class="col-3 col-12-small">
+                        <b>Issues</b>: <a href="https://github.com/xandratxan/physical-magnitude/issues/">GitHub</a><br/>
+                        <b>License</b>: GNU GPL 3.0
+                    </div>
+                </div>
+            </div>
+            <!-- Warning -->
+            <div class="box">
+                <p><b>WARNING</b>: This package is under active development. The current version is considered non-stable.</p>
+            </div>
+            <!-- Description -->
+            <p>
+            This package allows to perform simple operations with magnitudes including units and uncertainties. It allows to define magnitudes with value, uncertainty and unit. It allows to compute simple operations providing the result not only for the magnitude value, but also its uncertainty and unit.Available operations include summation, subtraction, multiplication and division.
+            </p>
+            <!-- Installation -->
+            <p>This package can be installed via <code>pip</code>:<br/>
+               <code>pip install physical-magnitude --extra-index-url https://xandratxan.github.io/python-package-server/</code></p>
+            <!-- Code snippet -->
+            <p>Below you can find a code snippet to illustrate how to work with <code>physical-magnitude</code> package:</p>
+            <pre><code class="language-python line-numbers" data-prismjs-copy="Copy">
+from magnitude import Magnitude
 
 # Define magnitudes
 m1 = m1 = Magnitude(value=100, unit='m', uncertainty=1)
@@ -100,9 +95,10 @@ m_div = m2 / m1
 print(f"Divide: {m_div}")
 m_div.unit = 
 print(f"Divide: {m_div}")
-</code></pre>
-<p>Below you can find the snippet output:</p>
-<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">m1: 100.0 ± 1.0 m (1.0%)
+            </code></pre>
+            <p>Below you can find the snippet output:</p>
+            <pre><code class="language-python line-numbers" data-prismjs-copy="Copy">
+m1: 100.0 ± 1.0 m (1.0%)
 m2: 200.0 ± 2.0 m (1.0%)
 
 Sum: 300.0 ± 2.23606797749979 m (0.74535599249993%)
@@ -114,12 +110,10 @@ Multiply: 20000.0 ± 282.842712474619 m² (1.4142135623730951%)
 
 Divide: 2.0 ± 0.0282842712474619 (m)/(m) (1.4142135623730951%)
 Divide: 2.0 ± 0.0282842712474619  (1.4142135623730951%)
-</code></pre>
-
-</section>
-
+            </code></pre>
+            </section>
         </div>
-                <!-- Footer -->
+        <!-- Footer -->
         <footer id="footer">
             <section class="split contact">
                 <section>
@@ -156,6 +150,5 @@ Divide: 2.0 ± 0.0282842712474619  (1.4142135623730951%)
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/prism.js"></script>
-
 </body>
 </html>
