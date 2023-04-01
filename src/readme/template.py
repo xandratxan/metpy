@@ -20,7 +20,7 @@ def readme(name, brief_description, description,
         f"| **Documentation : [GitHub Pages]({url_documentation})** "
         f"| **License: {license_info}**|\n"
         f"\n"
-        f"> {non_stable_msg}.\n"
+        f"> **WARNING**: {non_stable_msg}.\n"
         f"\n"
         f"{description}\n"
         f"\n"

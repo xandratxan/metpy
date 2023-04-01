@@ -15,7 +15,7 @@ def code_snippet(import_package, str_m1, str_m2):
         f"m1 = {str_m1}\n"
         f"m2 = {str_m2}\n"
         f"print(f'm1: {{m1}}')\n"
-        f"print(f'm2: {{m2}}\n')\n"
+        f"print(f'm2: {{m2}}')\n"
         f"\n"
         f"# Sum magnitudes\n"
         f"m_sum = m1 + m2\n"
@@ -84,7 +84,7 @@ readme_text = readme(
     install_from_github=fnc.install_from_github(df.magnitude['name'], df.xcb['github']),
     install_from_clone=fnc.install_from_clone(df.magnitude['name'], df.xcb['github_username']),
     code_snippet=code_snippet(
-        import_package=df.magnitude['name'],
+        import_package=df.magnitude['import'],
         str_m1=cd.str_m8, str_m2=cd.str_m9),
     snippet_output=snippet_output(
         m1=cd.m8, m2=cd.m9, m_sum=cd.m_sum, m_dif=cd.m_dif,
