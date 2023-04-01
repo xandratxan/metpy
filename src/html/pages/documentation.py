@@ -12,17 +12,21 @@ magnitude = {
     'name': 'magnitude',
     'title': f"{df.magnitude['name']} package",
     'brief_description': df.magnitude['brief_description'],
-    'html_path': df.html_pages['docs']['magnitude'],
+    'html_path': df.html_pages['documentation']['magnitude'],
     'image': df.magnitude['image']
 }
 metpy_documentation = bs.base_template(
     title='MetPy-Documentation',
     parent=False,
     header=bs.base_header_template(parent=False, active='docs'),
-    main=bs.base_main_template(main=ms.main_section_template(
-        title='MetPy Documentation',
-        description=(f'MetPy includes a set of Python packages useful for metrology applications. '
-                     f'Here you can find the documentation of the MetPy packages.'),
-        cards=[magnitude])),
+    main=bs.base_main_template(
+        main=ms.main_section_template(
+            title='MetPy Documentation',
+            description=(f'MetPy includes a set of Python packages useful for metrology applications. '
+                         f'Here you can find the documentation of the MetPy packages.'),
+            cards=[magnitude]
+        )
+    ),
     footer=footer,
-    scripts=bs.base_scripts_template(parent=False))
+    scripts=bs.base_scripts_template(parent=False)
+)

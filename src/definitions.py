@@ -28,8 +28,8 @@ html_pages = {
     'packages': {
         'magnitude': 'packages/magnitude.html',
     },
-    'docs': {
-        'magnitude': 'docs/magnitude/index.html',
+    'documentation': {
+        'magnitude': 'docs/physical-magnitude/index.html',
     },
 
 }
