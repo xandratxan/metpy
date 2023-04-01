@@ -32,7 +32,7 @@ documentation = {
     'title': 'Documentation',
     'brief_description': 'Documentation of the MetPy packages',
     'html_path': df.html_pages['main']['docs'],
-    'image': 'python.png'  # TODO: new icon
+    'image': 'documents.png'
 }
 
 # MetPy website index page
