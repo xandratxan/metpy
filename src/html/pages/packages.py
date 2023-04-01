@@ -1,12 +1,12 @@
 # HTML package pages of MetPy website
 
+import src.code.magnitude as cd
 import src.definitions as df
 import src.functions as fnc
 import src.html.templates.base as bs
+import src.html.templates.main_section as ms
 import src.html.templates.secondary_section as ss
 from src.html.pages.index import footer
-import src.code.magnitude as cd
-import src.html.templates.main_section as ms
 
 # MetPy website packages page
 # TODO: cards not showing side by side
@@ -20,13 +20,18 @@ magnitude = {
 metpy_packages = bs.base_template(
     title='MetPy-Packages',
     header=bs.base_header_template(active='packages'),
-    main=bs.base_main_template(main=ms.main_section_template(
-        title='MetPy Packages',
-        description=(f'MetPy includes a set of Python packages useful for metrology applications. '
-                     f'Here you can find the packages of the MetPy ecosystem.'),
-        cards=[magnitude])),
+    main=bs.base_main_template(
+        main=ms.main_section_template(
+            title='MetPy Packages',
+            description=(f'MetPy includes a set of Python packages useful for metrology applications. '
+                         f'Here you can find the packages of the MetPy ecosystem.'),
+            image='python.png',
+            cards=[magnitude]
+        )
+    ),
     footer=footer,
-    scripts=bs.base_scripts_template())
+    scripts=bs.base_scripts_template()
+)
 
 
 # MetPy website packages, physical-magnitude package page

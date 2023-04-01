@@ -23,6 +23,7 @@ metpy_documentation = bs.base_template(
             title='MetPy Documentation',
             description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                          f'Here you can find the documentation of the MetPy packages.'),
+            image='documents.png',
             cards=[magnitude]
         )
     ),

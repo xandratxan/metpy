@@ -11,7 +11,6 @@ footer = bs.base_footer_template(
     url_lmri=df.external_urls['lmri'],
     url_ciemat=df.external_urls['ciemat']
 )
-
 # Project cards
 packages = {
     'name': 'packages',
@@ -34,18 +33,22 @@ documentation = {
     'html_path': df.html_pages['main']['docs'],
     'image': 'documents.png'
 }
-
 # MetPy website index page
 # TODO: cards not showing side by side
 metpy_index = bs.base_template(
     title='MetPy',
     header=bs.base_header_template(active='index'),
-    main=bs.base_main_template(main=ms.main_section_template(
-        title='Metrology & Python',
-        description=(f'MetPy is an ecosystem of Python projects for metrology. '
-                     f'It includes a set of Python packages and a PyPI-like package server to provide those packages. '
-                     f'Here you can find the packages of the MetPy ecosystem, '
-                     f'the server of the MetPy packages and the documentation of the MetPy packages.'),
-        cards=[packages, server, documentation])),
+    main=bs.base_main_template(
+        main=ms.main_section_template(
+            title='Metrology & Python',
+            description=(f'MetPy is an ecosystem of Python projects for metrology. '
+                         f'It includes a set of Python packages and a PyPI-like package server to provide those packages. '
+                         f'Here you can find the packages of the MetPy ecosystem, '
+                         f'the server of the MetPy packages and the documentation of the MetPy packages.'),
+            image='',
+            cards=[packages, server, documentation]
+        )
+    ),
     footer=footer,
-    scripts=bs.base_scripts_template())
+    scripts=bs.base_scripts_template()
+)

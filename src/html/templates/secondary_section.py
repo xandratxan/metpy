@@ -1,6 +1,6 @@
 # HTML templates for secondary sections at MetPy website
-import src.functions as fnc
 import src.definitions as df
+import src.functions as fnc
 
 
 def package_template(title, information, warning, description, installation, code_snippet):
@@ -45,7 +45,11 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
         f'{" " * i}<header class="major">\n'
         f'{" " * i}    <h1>{title}</h1>\n'
         f'{" " * i}    <p>{brief_description}</p>\n'
-        f'{" " * i}    <img src="{path}/images/{image}" alt="" width="100" height="100">\n'
+        f'{" " * i}    <div class="row">\n'
+        f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
+        f'{" " * i}        <div class="col-2 col-12-small"><span class="image fit"><img src="{path}/images/{image}" alt="{image}" /></span></div>\n'
+        f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
+        f'{" " * i}    </div>\n'
         f'{" " * i}</header>\n'
     )
     return text
@@ -183,7 +187,7 @@ def packages_table_template(columns, packages, versions=False, parent=False, gra
 def packages_table_row_template(path, image, html_path, name, description):
     row = (
         f'<tr>\n'
-        f'    <td><img src="{path}/images/{image}" alt="" width="30" height="30"></td>\n'
+        f'    <td style="text-align: center; vertical-align: middle;"><img src="{path}/images/{image}" alt="{image}" width="40" height="40"></td>\n'
         f'    <td><a href="{html_path}">{name}</a></td>\n'
         f'    <td>{description}</td>\n'
         f'</tr>\n'

@@ -1,6 +1,6 @@
 # Main section HTML template for MetPy website
 
-def main_section_template(title, description, cards):
+def main_section_template(title, description, image, cards):
     # Main section HTML template for MetPy website
     i = 12
     text = (
@@ -10,6 +10,11 @@ def main_section_template(title, description, cards):
         f'{" " * i}        <h2>{title}</h2>\n'
         f'{" " * i}        <p>{description}</p>\n'
         f'{" " * i}    </header>\n'
+        f'{" " * i}    <div class="row">\n'
+        f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
+        f'{" " * i}        <div class="col-2 col-12-small"><span class="image fit"><img src="./images/{image}" alt="{image}" /></span></div>\n'
+        f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
+        f'{" " * i}    </div>\n'
         f'{" " * i}</article>\n'
         f'{" " * i}<!-- Cards -->\n'
     )
@@ -32,9 +37,7 @@ def card_template(name, title, brief_description, href, image):
         f'{" " * i}        </header>\n'
         f'{" " * i}        <div class="row">\n'
         f'{" " * i}            <div class="col-4 col-12-small"></div>\n'
-        f'{" " * i}            <div class="col-4 col-12-small">\n'
-        f'{" " * i}            <a href="{href}" class="image fit"><img src="./images/{image}" alt="{image}"/></a>\n'
-        f'{" " * i}            </div>\n'
+        f'{" " * i}            <div class="col-4 col-12-small"><a href="{href}" class="image fit"><img src="./images/{image}" alt="{image}"/></a></div>\n'
         f'{" " * i}            <div class="col-4 col-12-small"></div>\n'
         f'{" " * i}        </div>\n'
         f'{" " * i}        {brief_description}\n'

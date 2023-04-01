@@ -1,10 +1,10 @@
 # HTML server pages of MetPy website
 
-import src.html.templates.base as bs
-from src.html.pages.index import footer
-import src.html.templates.secondary_section as ss
 import src.definitions as df
 import src.functions as fnc
+import src.html.templates.base as bs
+import src.html.templates.secondary_section as ss
+from src.html.pages.index import footer
 
 # Packages
 magnitude = {
@@ -14,7 +14,6 @@ magnitude = {
     'image': df.magnitude['image'],
     'versions': df.magnitude['versions'],
 }
-
 # MetPy website server page
 # TODO: test server functionality
 metpy_server = bs.base_template(
