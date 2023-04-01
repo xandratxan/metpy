@@ -62,7 +62,6 @@ server = bs.base_template(
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website documentation page
-# TODO: add link to physical-magnitude documentation pages
 # TODO: add physical-magnitude documentation pages
 doc_cards = [df.docs_magnitude]
 documentation = bs.base_template(

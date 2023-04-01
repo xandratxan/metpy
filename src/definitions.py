@@ -24,6 +24,9 @@ html_pages = {
     'packages': {
         'magnitude': 'packages/physical-magnitude.html',
     },
+    'docs': {
+        'magnitude': 'docs/physical-magnitude/index.html',
+    },
 
 }
 # HTML files paths
@@ -103,7 +106,7 @@ docs_magnitude = {
     'name': 'magnitude',
     'title': f"{magnitude['name']} package",
     'brief_description': magnitude['brief_description'],
-    'html_path': html_pages['packages']['magnitude'],  # TODO: update link
+    'html_path': html_pages['docs']['magnitude'],
     'image_path': fnc.html_images(parent=False),
     'image_name': magnitude['image']
 }
