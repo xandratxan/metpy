@@ -5,6 +5,8 @@ import src.functions as fnc
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
 
+# TODO: cards not showing side by side
+
 # Common sections
 footer = bs.base_footer_template(
     url_author_github=df.xcb['github'],
@@ -32,7 +34,9 @@ index = bs.base_template(
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
-# MetPy website projects page
+# MetPy website packages page
+# TODO: add link to physical-magnitude package page
+# TODO: add physical-magnitude package page
 projects = bs.base_template(
     title='MetPy-Packages',
     assets=fnc.html_assets(parent=False),
@@ -46,6 +50,9 @@ projects = bs.base_template(
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website server page
+# TODO: add server main page
+# TODO: add server physical-magnitude page
+# TODO: test server functionality
 server_cards = [df.magnitude]
 server = bs.base_template(
     title='MetPy-Package Server',
@@ -57,6 +64,8 @@ server = bs.base_template(
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website documentation page
+# TODO: add link to physical-magnitude documentation pages
+# TODO: add physical-magnitude documentation pages
 docs_cards = [df.magnitude]
 documentation = bs.base_template(
     title='MetPy-Documentation',

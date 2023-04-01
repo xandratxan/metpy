@@ -1,7 +1,7 @@
 # Script to build and update documentation
 import src.definitions as df
 import src.functions as fnc
-import src.html.pages as pages
+import src.html.main_pages as pages
 
 
 def metpy_page():
