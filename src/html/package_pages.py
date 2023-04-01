@@ -32,6 +32,6 @@ magnitude = bs.base_template(
                 install_from_server=fnc.install_from_server(
                     package_name=df.magnitude['name'],
                     server_url=df.server['url_server'])),
-            code_snippet='Code snippet')),
+            code_snippet='Code snippet')),  # TODO: add code snippet
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=True)))
