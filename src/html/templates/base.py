@@ -31,10 +31,10 @@ def base_template(title, assets, header, main, footer, scripts):
 
 
 def base_header_template(active):
-    html_index = df.html_pages['index']
-    html_packages = df.html_pages['projects']
-    html_server = df.html_pages['server']
-    html_docs = df.html_pages['docs']
+    html_index = df.html_pages['main']['index']
+    html_packages = df.html_pages['main']['packages']
+    html_server = df.html_pages['main']['server']
+    html_docs = df.html_pages['main']['docs']
     url_author_github = df.xcb['github']
     active_tab = '<li class="active">'
     inactive_tab = '<li>'

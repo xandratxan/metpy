@@ -1,4 +1,4 @@
-# HTML pages of MetPy website
+# HTML main pages of MetPy website
 
 import src.definitions as df
 import src.functions as fnc
@@ -16,8 +16,7 @@ footer = bs.base_footer_template(
 )
 
 # Project cards
-index_cards = [df.packages, df.server, df.documentation]
-package_cards = [df.magnitude]
+index_cards = [df.main_packages, df.main_server, df.main_documentation]
 
 # MetPy website index page
 index = bs.base_template(
@@ -35,8 +34,8 @@ index = bs.base_template(
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 # MetPy website packages page
-# TODO: add link to physical-magnitude package page
 # TODO: add physical-magnitude package page
+package_cards = [df.package_magnitude]
 projects = bs.base_template(
     title='MetPy-Packages',
     assets=fnc.html_assets(parent=False),
@@ -53,7 +52,6 @@ projects = bs.base_template(
 # TODO: add server main page
 # TODO: add server physical-magnitude page
 # TODO: test server functionality
-server_cards = [df.magnitude]
 server = bs.base_template(
     title='MetPy-Package Server',
     assets=fnc.html_assets(parent=False),
@@ -66,7 +64,7 @@ server = bs.base_template(
 # MetPy website documentation page
 # TODO: add link to physical-magnitude documentation pages
 # TODO: add physical-magnitude documentation pages
-docs_cards = [df.magnitude]
+doc_cards = [df.docs_magnitude]
 documentation = bs.base_template(
     title='MetPy-Documentation',
     assets=fnc.html_assets(parent=False),
@@ -75,6 +73,6 @@ documentation = bs.base_template(
         title='MetPy Documentation',
         description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                      f'Here you can find the documentation of the MetPy packages.'),
-        cards=package_cards)),
+        cards=doc_cards)),
     footer=footer,
     scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
