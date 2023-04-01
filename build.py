@@ -1,50 +1,46 @@
 # Script to build and update documentation
+
 import src.definitions as df
 import src.functions as fnc
-import src.html.main_pages as main_pages
-import src.html.package_pages as package_pages
-import src.readme.magnitude as readme_magnitude
+from src.html.pages.documentation import metpy_documentation
+from src.html.pages.index import metpy_index
+from src.html.pages.packages import metpy_packages, metpy_package_magnitude
+from src.html.pages.server import metpy_server
+from src.readme.magnitude import package_magnitude_readme
 
 
-def metpy_main_pages():
+def metpy_pages():
     files = [
         df.html_paths['main']['index'],
         df.html_paths['main']['packages'],
         df.html_paths['main']['server'],
         df.html_paths['main']['docs'],
-    ]
-    texts = [
-        main_pages.index,
-        main_pages.projects,
-        main_pages.server,
-        main_pages.documentation,
-    ]
-    fnc.write_files(texts, files)
-
-
-def metpy_package_pages():
-    files = [
         df.html_paths['packages']['magnitude'],
     ]
     texts = [
-        package_pages.magnitude,
+        metpy_index,
+        metpy_packages,
+        metpy_server,
+        metpy_documentation,
+        metpy_package_magnitude,
     ]
     fnc.write_files(texts, files)
 
 
 def magnitude_package_docs():
     files = [
+        df.readme_paths['origin']['magnitude'],
         df.html_paths['packages']['magnitude'],
-        './build/readme_magnitude.md',
+
     ]
     texts = [
-        package_pages.magnitude,
-        readme_magnitude.readme_text,
+        package_magnitude_readme,
+        metpy_package_magnitude,
     ]
     fnc.write_files(texts, files)
 
 
 # Build documentation
 if __name__ == '__main__':
-    metpy_main_pages()
+    metpy_pages()
     magnitude_package_docs()

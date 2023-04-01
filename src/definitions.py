@@ -44,7 +44,14 @@ html_paths = {
     'packages': {
         'magnitude': './docs/packages/physical-magnitude.html',
     },
-
+}
+readme_paths = {
+    'origin': {
+        'magnitude': './build/readme_magnitude.md'
+    },
+    'destination': {
+        'magnitude': ''
+    },
 }
 # External URLs
 external_urls = {
@@ -73,45 +80,7 @@ magnitude = {
     'image': 'scale.png',
     'import': 'from magnitude import Magnitude'
 }
-# HTML cards
-main_packages = {
-    'name': 'packages',
-    'title': 'Packages',
-    'brief_description': 'Packages of the MetPy ecosystem',
-    'html_path': html_pages['main']['packages'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': 'python.png'
-}
-main_server = {
-    'name': 'server',
-    'title': 'Python package server',
-    'brief_description': 'Python package server for the MetPy packages',
-    'html_path': html_pages['main']['server'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': 'folder.png'
-}
-main_documentation = {
-    'name': 'documentation',
-    'title': 'Documentation',
-    'brief_description': 'Documentation of the MetPy packages',
-    'html_path': html_pages['main']['docs'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': 'python.png'  # TODO: new icon
-}
-package_magnitude = {
-    'name': 'magnitude',
-    'title': f"{magnitude['name']} package",
-    'brief_description': magnitude['brief_description'],
-    'html_path': html_pages['packages']['magnitude'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': magnitude['image']
-}
-docs_magnitude = {
-    'name': 'magnitude',
-    'title': f"{magnitude['name']} package",
-    'brief_description': magnitude['brief_description'],
-    'html_path': html_pages['docs']['magnitude'],
-    'image_path': fnc.html_images(parent=False),
-    'image_name': magnitude['image']
-}
+
+
+
 

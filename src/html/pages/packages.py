@@ -4,11 +4,35 @@ import src.definitions as df
 import src.functions as fnc
 import src.html.templates.base as bs
 import src.html.templates.secondary_section as ss
-from src.html.main_pages import footer
+from src.html.pages.index import footer
 import src.code.magnitude as cd
+import src.html.templates.main_section as ms
+
+# MetPy website packages page
+# TODO: cards not showing side by side
+magnitude = {
+    'name': 'magnitude',
+    'title': f"{df.magnitude['name']} package",
+    'brief_description': df.magnitude['brief_description'],
+    'html_path': df.html_pages['packages']['magnitude'],
+    'image_path': fnc.html_images(parent=False),
+    'image_name': df.magnitude['image']
+}
+metpy_packages = bs.base_template(
+    title='MetPy-Packages',
+    assets=fnc.html_assets(parent=False),
+    header=bs.base_header_template(active='projects'),
+    main=bs.base_main_template(main=ms.main_section_template(
+        title='MetPy Packages',
+        description=(f'MetPy includes a set of Python packages useful for metrology applications. '
+                     f'Here you can find the packages of the MetPy ecosystem.'),
+        cards=[magnitude])),
+    footer=footer,
+    scripts=bs.base_scripts_template(assets=fnc.html_assets(parent=False)))
 
 
-# HTML physical-magnitude package page
+# MetPy website packages, physical-magnitude package page
+# TODO: nav bar links dont work when clicked from magnitude package page
 def html_code_snippet(import_package, str_m1, str_m2):
     text = (
         f'{import_package}\n'
@@ -60,7 +84,7 @@ def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
     return text
 
 
-magnitude = bs.base_template(
+metpy_package_magnitude = bs.base_template(
     title='MetPy-Packages-Physical-magnitude',
     assets=fnc.html_assets(parent=True),
     header=bs.base_header_template(active='projects'),

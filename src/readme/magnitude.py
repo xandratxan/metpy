@@ -69,7 +69,7 @@ def release_history():
     return text
 
 
-readme_text = readme(
+package_magnitude_readme = readme(
     name=df.magnitude['name'],
     brief_description=df.magnitude['brief_description'],
     description=df.magnitude['description'],
