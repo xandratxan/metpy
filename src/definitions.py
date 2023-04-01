@@ -13,6 +13,10 @@ xcb = {
     'email': 'xkmpera@gmail.com',
     'github_username': 'xandratxan'
 }
+rge = {
+    'name': 'Ricardo Gomez',
+    'github': 'https://github.com/ricargoes/'
+}
 # HTML pages paths
 html_pages = {
     'main': {
@@ -60,14 +64,14 @@ magnitude = {
     'last_version': '0.1.0',
     'last_release': 'March 2023',
     'license': 'GNU GPL 3.0',
-    'import': 'from magnitude import Magnitude',
     'description': (
         f'This package allows to perform simple operations with magnitudes including units and uncertainties.\n'
         f'It allows to define magnitudes with value, uncertainty and unit.\n'
         f'It allows to compute simple operations providing the result not only for the magnitude value,'
         f'but also its uncertainty and unit.\n'
         f'Available operations include summation, subtraction, multiplication and division.\n'),
-    'image': 'scale.png'
+    'image': 'scale.png',
+    'import': 'from magnitude import Magnitude'
 }
 # HTML cards
 main_packages = {
