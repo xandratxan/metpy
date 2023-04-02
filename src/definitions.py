@@ -28,7 +28,7 @@ html_pages = {
     },
 
 }
-# HTML file paths for documentation building
+# HTML file paths for MetPy website
 html_paths = {
     'public': {
         'index': './docs/index.html',
@@ -67,9 +67,27 @@ readme_paths = {
 }
 # RST file paths for documentation building
 rst_paths = {
+    'origin': {
+        'magnitude': {
+            'index': './build/rst/physical-magnitude/index.rst',
+            'tutorial': './build/rst/physical-magnitude/tutorial.rst',
+            'howto': './build/rst/physical-magnitude/howto.rst',
+            'api': './build/rst/physical-magnitude/api.rst',
+        },
+    },
+}
+# HTML file paths for documentation building
+sphinx_paths = {
     'magnitude': {
-        'index': './build/rst/physical-magnitude/index.rst'
-    }
+        'local': {
+            'rst': './build/rst/physical-magnitude',
+            'html': './docs/docs/physical-magnitude',
+        },
+        'remote': {
+            'rst': '/home/txan/PycharmProjects/physical-magnitude/docs/source',
+            'html': '/home/txan/PycharmProjects/physical-magnitude/docs/build/html',
+        },
+    },
 }
 # External URLs
 external_urls = {

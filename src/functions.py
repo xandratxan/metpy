@@ -12,14 +12,6 @@ def html_resources(parent=False, grandparent=False):
     return path
 
 
-def write_files(texts, files):
-    """Write documentation source files."""
-    for text, file in zip(texts, files):
-        f = open(file, "w")
-        f.write(text)
-        f.close()
-
-
 def install_from_server(package_name, server_url):
     """Command for package installation from server."""
     return f'pip install {package_name} --extra-index-url {server_url}'
@@ -41,8 +33,3 @@ def install_from_clone(package_name, author_github_username):
 def package_link(author_github, name, version):
     """Template of installation link from server."""
     return f'git+{author_github}{name}#egg={name}-{version}" data-requires-python="&gt;=3.6.0'
-
-
-def get_destination(update):
-    """Get the destination for built documentation files."""
-    return 'public' if update else 'private'
