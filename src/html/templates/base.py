@@ -82,9 +82,9 @@ def base_main_template(main):
 
 def base_footer_template():
     """Template for footer section of base HTML templates for MetPy website."""
-    url_author_github = df.xcb['github'],
-    url_author_email = df.xcb['email'],
-    url_lmri = df.external_urls['lmri'],
+    url_author_github = df.xcb['github']
+    url_author_email = df.xcb['email']
+    url_lmri = df.external_urls['lmri']
     url_ciemat = df.external_urls['ciemat']
     url_design = df.external_urls['design']
     url_icons = df.external_urls['icons']
