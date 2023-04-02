@@ -1,5 +1,4 @@
-# Script to build and update documentation
-
+"""Script to build and update documentation."""
 import src.definitions as df
 import src.functions as fnc
 from src.html.pages.documentation import metpy_documentation
@@ -9,7 +8,11 @@ from src.html.pages.server import metpy_server, metpy_server_magnitude
 from src.readme.magnitude import package_magnitude_readme
 
 
+# TODO: update readme in destination repo
+
+
 def metpy_pages():
+    """Build the HTML pages of the MetPy site."""
     files = [
         df.html_paths['main']['index'],
         df.html_paths['main']['packages'],
@@ -30,6 +33,7 @@ def metpy_pages():
 
 
 def magnitude_package_docs():
+    """Build the documentation of the physical-magnitude package."""
     files = [
         df.readme_paths['origin']['magnitude'],
         df.html_paths['packages']['magnitude'],
@@ -48,5 +52,3 @@ def magnitude_package_docs():
 if __name__ == '__main__':
     metpy_pages()
     # magnitude_package_docs()
-
-# TODO: update readme in destination repo

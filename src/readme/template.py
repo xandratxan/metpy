@@ -1,5 +1,4 @@
-# Template for package README file
-
+"""Template for package README file."""
 import src.definitions as df
 
 
@@ -7,6 +6,7 @@ def readme(name, brief_description, description,
            last_version, last_release, license_info, url_source_code, url_issues, url_documentation,
            non_stable_msg, install_from_server, install_from_github, install_from_clone,
            code_snippet, snippet_output, release_history, authors):
+    """Template for package README file."""
     text = (
         f"# Package {name}\n"
         f"\n"
@@ -65,7 +65,8 @@ def readme(name, brief_description, description,
     return text
 
 
-def author_contributor():
+def author_contributor(contributor=False):
+    """Template for package Authors and contribution section of README file."""
     author_name = df.xcb['name']
     author_email = df.xcb['email']
     author_github = df.xcb['github']
@@ -78,24 +79,12 @@ def author_contributor():
         f"[@GitHub]({author_github})\n"
         f"[@GitHub Pages]({author_github_pages}),\n"
         f"{author_email}\n"
-        f"\n"
-        f"Contributors:\n"
-        f": {contributor_name},\n"
-        f"[@GitHub]({contributor_github})"
     )
-    return text
-
-
-def single_author():
-    author_name = df.xcb['name']
-    author_email = df.xcb['email']
-    author_github = df.xcb['github']
-    author_github_pages = df.xcb['github_pages']
-    text = (
-        f"Author:\n"
-        f": {author_name},\n"
-        f"[@GitHub]({author_github})\n"
-        f"[@GitHub Pages]({author_github_pages}),\n"
-        f"{author_email}\n"
-    )
+    if contributor:
+        text += (
+            f"\n"
+            f"Contributors:\n"
+            f": {contributor_name},\n"
+            f"[@GitHub]({contributor_github})"
+        )
     return text

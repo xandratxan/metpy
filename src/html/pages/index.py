@@ -1,5 +1,4 @@
-# HTML index pages of MetPy website
-
+"""HTML index pages of MetPy website."""
 import src.definitions as df
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
@@ -42,7 +41,8 @@ metpy_index = bs.base_template(
         main=ms.main_section_template(
             title='Metrology & Python',
             description=(f'MetPy is an ecosystem of Python projects for metrology. '
-                         f'It includes a set of Python packages and a PyPI-like package server to provide those packages. '
+                         f'It includes a set of Python packages and a '
+                         f'PyPI-like package server to provide those packages. '
                          f'Here you can find the packages of the MetPy ecosystem, '
                          f'the server of the MetPy packages and the documentation of the MetPy packages.'),
             image='',

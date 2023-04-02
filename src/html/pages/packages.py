@@ -1,6 +1,5 @@
-# HTML package pages of MetPy website
-
-import src.code.magnitude as cd
+"""HTML package pages of MetPy website."""
+import src.code.physical_magnitude as cd
 import src.definitions as df
 import src.functions as fnc
 import src.html.templates.base as bs

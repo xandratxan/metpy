@@ -1,3 +1,4 @@
+"""Script for the numerical validation of physical-magnitude package."""
 from math import sqrt
 
 from magnitude import Magnitude

@@ -1,12 +1,12 @@
-# README file for physical-magnitude package
-
-import src.code.magnitude as cd
+"""README file for physical-magnitude package."""
+import src.code.physical_magnitude as cd
 import src.definitions as df
 import src.functions as fnc
 from src.readme.template import readme, author_contributor
 
 
 def code_snippet(import_package, str_m1, str_m2):
+    """Template for code snippet section of README file for physical-magnitude package."""
     text = (
         f"```python\n"
         f"{import_package}\n"
@@ -42,6 +42,7 @@ def code_snippet(import_package, str_m1, str_m2):
 
 
 def snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
+    """Template for code snippet output section of README file for physical-magnitude package."""
     text = (
         f"```\n"
         f"m1: {m1}\n"
@@ -62,6 +63,7 @@ def snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
 
 
 def release_history():
+    """Template for release history section of README file for physical-magnitude package."""
     text = (
         f"* 0.1.0\n"
         f"    * First release\n"
@@ -69,6 +71,7 @@ def release_history():
     return text
 
 
+# README file for physical-magnitude package.
 package_magnitude_readme = readme(
     name=df.magnitude['name'],
     brief_description=df.magnitude['brief_description'],

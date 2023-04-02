@@ -1,5 +1,4 @@
-# Code for physical-magnitude package documentation
-
+"""Code for physical-magnitude package documentation."""
 from magnitude import Magnitude
 
 # How to define magnitudes

@@ -1,5 +1,4 @@
-# HTML server pages of MetPy website
-
+"""HTML server pages of MetPy website."""
 import src.definitions as df
 import src.functions as fnc
 import src.html.templates.base as bs
@@ -44,7 +43,6 @@ metpy_server = bs.base_template(
     footer=footer,
     scripts=bs.base_scripts_template()
 )
-
 # MetPy server packages, physical-magnitude package page
 metpy_server_magnitude = bs.base_template(
     grandparent=True,

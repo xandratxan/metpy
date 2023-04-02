@@ -1,10 +1,5 @@
-# Definitions to build and update documentation
-
-# General
-
-non_stable_msg = 'This package is under active development. The current version is considered non-stable.'
-
-# Personal information
+"""Definitions to build and update documentation."""
+# Personal information of authors and contributors
 xcb = {
     'name': 'Xandra Campo',
     'github': 'https://github.com/xandratxan/',
@@ -16,7 +11,7 @@ rge = {
     'name': 'Ricardo Gomez',
     'github': 'https://github.com/ricargoes/'
 }
-# HTML pages paths
+# HTML pages paths of MetPy website
 html_pages = {
     'main': {
         'index': 'index.html',
@@ -35,7 +30,7 @@ html_pages = {
     },
 
 }
-# HTML files paths
+# HTML file paths for documentation building
 html_paths = {
     'main': {
         'index': './docs/index.html',
@@ -50,6 +45,7 @@ html_paths = {
         'magnitude': './docs/server/physical-magnitude/index.html',
     },
 }
+# README file paths for documentation building
 readme_paths = {
     'origin': {
         'magnitude': './build/readme_magnitude.md'
@@ -63,7 +59,7 @@ external_urls = {
     'ciemat': 'https://www.ciemat.es/portal.do',
     'lmri': 'http://rdgroups.ciemat.es/web/lmri/inicio?p_p_id=2_WAR_kaleodesignerportlet&p_p_lifecycle=0',
 }
-# Packages
+# Packages information
 server = {
     'name': 'python-package-server',
     'brief_description': 'PyPi-like package server for the MetPy packages',
@@ -92,3 +88,5 @@ magnitude = {
     'import': 'from magnitude import Magnitude',
     'versions': ['0.1.0']
 }
+# Miscellanea
+non_stable_msg = 'This package is under active development. The current version is considered non-stable.'

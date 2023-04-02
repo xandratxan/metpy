@@ -1,9 +1,10 @@
-# Base HTML template for MetPy website
+"""Base HTML templates for MetPy website."""
 import src.definitions as df
 import src.functions as fnc
 
 
 def base_template(title, header, main, footer, scripts, parent=False, grandparent=False):
+    """Base HTML template for MetPy website."""
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
         f'<!DOCTYPE HTML>\n'
@@ -33,6 +34,7 @@ def base_template(title, header, main, footer, scripts, parent=False, grandparen
 
 
 def base_header_template(active, parent=False, grandparent=False):
+    """Template for header section of base HTML templates for MetPy website."""
     i = 8
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     html_index = df.html_pages['main']['index']
@@ -48,13 +50,19 @@ def base_header_template(active, parent=False, grandparent=False):
         f'{" " * i}<!-- Nav -->\n'
         f'{" " * i}<nav id="nav">\n'
         f'{" " * i}    <ul class="links">\n'
-        f'{" " * i}        {active_tab if active == "index" else inactive_tab}<a href="{path}/{html_index}">MetPy</a></li>\n'
-        f'{" " * i}        {active_tab if active == "packages" else inactive_tab}<a href="{path}/{html_packages}">Packages</a></li>\n'
-        f'{" " * i}        {active_tab if active == "server" else inactive_tab}<a href="{path}/{html_server}">Package Server</a></li>\n'
-        f'{" " * i}        {active_tab if active == "docs" else inactive_tab}<a href="{path}/{html_docs}">Documentation</a></li>\n'
+        f'{" " * i}        {active_tab if active == "index" else inactive_tab}'
+        f'{" " * i}        <a href="{path}/{html_index}">MetPy</a></li>\n'
+        f'{" " * i}        {active_tab if active == "packages" else inactive_tab}'
+        f'{" " * i}        <a href="{path}/{html_packages}">Packages</a></li>\n'
+        f'{" " * i}        {active_tab if active == "server" else inactive_tab}'
+        f'{" " * i}        <a href="{path}/{html_server}">Package Server</a></li>\n'
+        f'{" " * i}        {active_tab if active == "docs" else inactive_tab}'
+        f'{" " * i}        <a href="{path}/{html_docs}">Documentation</a></li>\n'
         f'{" " * i}    </ul>'
         f'{" " * i}    <ul class="icons">\n'
-        f'{" " * i}        <li><a href="{url_author_github}" class="icon brands fa-github"><span class="label">GitHub</span></a>\n'
+        f'{" " * i}        <li>'
+        f'{" " * i}            <a href="{url_author_github}" class="icon brands fa-github">'
+        f'{" " * i}            <span class="label">GitHub</span></a>\n'
         f'{" " * i}        </li>\n'
         f'{" " * i}    </ul>\n'
         f'{" " * i}</nav>\n'
@@ -63,6 +71,7 @@ def base_header_template(active, parent=False, grandparent=False):
 
 
 def base_main_template(main):
+    """Template for main section of base HTML templates for MetPy website."""
     i = 8
     text = (
         f'{" " * i}<!-- Main -->\n'
@@ -74,6 +83,7 @@ def base_main_template(main):
 
 
 def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciemat):
+    """Template for footer section of base HTML templates for MetPy website."""
     i = 8
     text = (
         f'{" " * i}<!-- Footer -->\n'
@@ -84,13 +94,15 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
         f'{" " * i}            <p>Xandra Campo<br/>\n'
         f'{" " * i}               Researcher at the Neutron Standards Laboratory (LPN)<br/>\n'
         f'{" " * i}               Ionizing Radiation Metrology Laboratory (<a href="{url_lmri}">LMRI</a>)<br/>\n'
-        f'{" " * i}               Research Centre for Energy, Environment and Technology (<a href="{url_ciemat}">CIEMAT</a>)<br/>\n'
+        f'{" " * i}               Research Centre for Energy, Environment and Technology '
+        f'{" " * i}               (<a href="{url_ciemat}">CIEMAT</a>)<br/>\n'
         f'{" " * i}               {url_author_email}</p>\n'
         f'{" " * i}        </section>\n'
         f'{" " * i}        <section>\n'
         f'{" " * i}            <h3>SOCIAL</h3>\n'
         f'{" " * i}            <ul class="icons alt">\n'
-        f'{" " * i}                <li><a href="{url_author_github}" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>\n'
+        f'{" " * i}                <li><a href="{url_author_github}" class="icon brands alt fa-github">'
+        f'{" " * i}                <span class="label">GitHub</span></a></li>\n'
         f'{" " * i}            </ul>\n'
         f'{" " * i}        </section>\n'
         f'{" " * i}    </section>\n'
@@ -108,6 +120,7 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
 
 
 def base_scripts_template(parent=False, grandparent=False):
+    """Template for scripts section of base HTML templates for MetPy website."""
     i = 4
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (

@@ -1,4 +1,4 @@
-# HTML documentation pages of MetPy website
+"""HTML documentation pages of MetPy website."""
 
 import src.definitions as df
 import src.html.templates.base as bs

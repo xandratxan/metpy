@@ -1,10 +1,10 @@
-# HTML templates for secondary sections at MetPy website
+"""Secondary section HTML templates for MetPy website."""
 import src.definitions as df
 import src.functions as fnc
 
 
 def package_template(title, information, warning, description, installation, code_snippet):
-    # Template for package page at MetPy website
+    """Package section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Package -->\n'
@@ -21,7 +21,7 @@ def package_template(title, information, warning, description, installation, cod
 
 
 def server_template(title, warning, description, installation, packages_table):
-    # Template for package page at MetPy website
+    """Server section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Package -->\n'
@@ -37,7 +37,7 @@ def server_template(title, warning, description, installation, packages_table):
 
 
 def title_template(title, brief_description, image, parent=False, grandparent=False):
-    # Template for section pages at my website at GitHub Pages (package server page and package pages)
+    """Template of title section of secondary section HTML templates for MetPy website."""
     i = 12
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
@@ -47,7 +47,9 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
         f'{" " * i}    <p>{brief_description}</p>\n'
         f'{" " * i}    <div class="row">\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
-        f'{" " * i}        <div class="col-2 col-12-small"><span class="image fit"><img src="{path}/images/{image}" alt="{image}" /></span></div>\n'
+        f'{" " * i}        <div class="col-2 col-12-small">'
+        f'{" " * i}            <span class="image fit"><img src="{path}/images/{image}" alt="{image}" /></span>'
+        f'{" " * i}        </div>\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
         f'{" " * i}    </div>\n'
         f'{" " * i}</header>\n'
@@ -56,7 +58,7 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
 
 
 def info_template(last_version, last_release, license_info, url_source_code, url_issues, url_documentation):
-    # Template for section pages at my website at GitHub Pages (package server page and package pages)
+    """Template of information section of secondary section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Useful information -->\n'
@@ -81,7 +83,7 @@ def info_template(last_version, last_release, license_info, url_source_code, url
 
 
 def warning_template(message):
-    # Template for section pages at my website at GitHub Pages (package server page and package pages)
+    """Template of warning section of secondary section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Warning -->\n'
@@ -93,6 +95,7 @@ def warning_template(message):
 
 
 def description_template(description):
+    """Template of description section of secondary section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Description -->\n'
@@ -104,13 +107,15 @@ def description_template(description):
 
 
 def installation_template(is_server, install_from_server):
+    """Template of installation section of secondary section HTML templates for MetPy website."""
     i = 12
     # Template for section of package pages at my website at GitHub Pages
     if is_server:
         text = (
             f'{" " * i}<!-- Installation -->\n'
-            f'{" " * i}<p>The packages available in this server can be used to specify dependencies in\n'
-            f'{" " * i}   <code>pyproject.toml</code> files including the entry <code>dependencies = ["package-name"]</code>\n'
+            f'{" " * i}<p>The packages available in this server can be used to specify dependencies in'
+            f'{" " * i}   <code>pyproject.toml</code> files including the entry '
+            f'{" " * i}   <code>dependencies = ["package-name"]</code>\n'
             f'{" " * i}   They can also be installed via <code>pip</code>:<br/>\n'
             f'{" " * i}   <code>{install_from_server}</code></p>\n'
         )
@@ -124,11 +129,13 @@ def installation_template(is_server, install_from_server):
 
 
 def code_snippet_template(name, code, output):
+    """Template of code snippet section of secondary section HTML templates for MetPy website."""
     i = 12
     # Template for section of package pages at my website at GitHub Pages
     text = (
         f'{" " * i}<!-- Code snippet -->\n'
-        f'{" " * i}<p>Below you can find a code snippet to illustrate how to work with <code>{name}</code> package:</p>\n'
+        f'{" " * i}<p>Below you can find a code snippet to illustrate how to work with '
+        f'{" " * i}   <code>{name}</code> package:</p>\n'
         f'{" " * i}<pre><code class="language-python line-numbers" data-prismjs-copy="Copy">'
         f'{code}\n'
         f'{" " * i}</code></pre>\n'
@@ -141,7 +148,7 @@ def code_snippet_template(name, code, output):
 
 
 def packages_table_template(columns, packages, versions=False, parent=False, grandparent=False):
-    # Template for packages table in the section of package server page at my website at GitHub Pages
+    """Template of table of packages of secondary section HTML templates for MetPy website."""
     i = 12
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     body = ''
@@ -185,9 +192,12 @@ def packages_table_template(columns, packages, versions=False, parent=False, gra
 
 
 def packages_table_row_template(path, image, html_path, name, description):
+    """Template of table of packages row of secondary section HTML templates for MetPy website."""
     row = (
         f'<tr>\n'
-        f'    <td style="text-align: center; vertical-align: middle;"><img src="{path}/images/{image}" alt="{image}" width="40" height="40"></td>\n'
+        f'    <td style="text-align: center; vertical-align: middle;">'
+        f'        <img src="{path}/images/{image}" alt="{image}" width="40" height="40">'
+        f'    </td>\n'
         f'    <td><a href="{html_path}">{name}</a></td>\n'
         f'    <td>{description}</td>\n'
         f'</tr>\n'
@@ -195,19 +205,6 @@ def packages_table_row_template(path, image, html_path, name, description):
     return row
 
 
-def server_button(label, url):
-    i = 12
-    text = (
-        f'{" " * i}<div class="row">\n'
-        f'{" " * i}    <div class="col-4 col-12-small"></div>\n'
-        f'{" " * i}    <div class="col-4 col-12-small">\n'
-        f'{" " * i}        <a href="{url}" class="button fit">{label}</a>'
-        f'{" " * i}    </div>\n'
-        f'{" " * i}    <div class="col-4 col-12-small"></div>\n'
-        f'{" " * i}</div>\n'
-    )
-    return text
-
-
 def package_link(author_github, name, version):
+    """Template of installation link from server."""
     return f'git+{author_github}{name}#egg={name}-{version}" data-requires-python="&gt;=3.6.0'
