@@ -33,7 +33,6 @@ documentation = {
     'image': 'documents.png'
 }
 # MetPy website index page
-# TODO: cards not showing side by side
 metpy_index = bs.base_template(
     title='MetPy',
     header=bs.base_header_template(active='index'),

@@ -8,7 +8,6 @@ import src.html.templates.secondary_section as ss
 from src.html.pages.index import footer
 
 # MetPy website packages page
-# TODO: cards not showing side by side
 magnitude = {
     'name': 'magnitude',
     'title': f"{df.magnitude['name']} package",

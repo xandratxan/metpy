@@ -21,7 +21,7 @@ def base_template(title, header, main, footer, scripts, parent=False, grandparen
         f'</head>\n'
         f'<body class="is-preload">\n'
         f'    <!-- Wrapper -->\n'
-        f'    <div id="wrapper">\n'
+        f'    <div id="wrapper" class="fade-in">\n'
         f'{header}'
         f'{main}'
         f'{footer}'

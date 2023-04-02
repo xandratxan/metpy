@@ -6,7 +6,6 @@ import src.html.templates.main_section as ms
 from src.html.pages.index import footer
 
 # MetPy website documentation page
-# TODO: cards not showing side by side
 # TODO: add physical-magnitude documentation pages
 magnitude = {
     'name': 'magnitude',
