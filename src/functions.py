@@ -36,3 +36,8 @@ def install_from_clone(package_name, author_github_username):
                f" cd {package_name}\n"
                f" pip install .")
     return command
+
+
+def get_destination(update):
+    """Get the destination for built documentation files."""
+    return 'public' if update else 'private'

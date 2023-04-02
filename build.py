@@ -6,17 +6,11 @@ from src.html.pages.index import metpy_index
 from src.html.pages.packages import metpy_packages, metpy_package_magnitude
 from src.html.pages.server import metpy_server, metpy_server_magnitude
 from src.readme.magnitude import package_magnitude_readme
-# TODO: update readme in destination repo
-# TODO: add folder to build and test before update
-
-
-def get_destination(update):
-    return 'public' if update else 'private'
 
 
 def metpy_pages(update):
     """Build the HTML pages of the MetPy site."""
-    destination = get_destination(update=update)
+    destination = fnc.get_destination(update=update)
     files = [
         df.html_paths[destination]['index'],
         df.html_paths[destination]['packages']['index'],
@@ -37,8 +31,9 @@ def metpy_pages(update):
 
 
 def magnitude_package_docs(update):
+    # TODO: update readme in destination repo
     """Build the documentation of the physical-magnitude package."""
-    destination = get_destination(update=update)
+    destination = fnc.get_destination(update=update)
     files = [
         df.readme_paths[destination]['magnitude'],
         df.html_paths[destination]['packages']['magnitude'],
