@@ -74,7 +74,7 @@ def import_html_files(package):
 
 
 def build_package_docs(package, rst_texts, update_readme, export_rst, import_html):
-    """Build the documentation of the physical-magnitude package."""
+    """Build the documentation of a package."""
     build_readme(package=package, text=package_magnitude_readme, update=update_readme)
     build_rst_files(package=package, rst_texts=rst_texts)
     if export_rst:
@@ -84,6 +84,7 @@ def build_package_docs(package, rst_texts, update_readme, export_rst, import_htm
 
 
 def build_magnitude_docs(update_readme, export_rst, import_html):
+    """Build the documentation of the physical-magnitude package."""
     package = 'magnitude'
     rst_texts = [
         package_magnitude_index,
