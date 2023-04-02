@@ -77,3 +77,8 @@ m_multi_comb1 = m8 * m9
 m_multi_comb2 = m8 * m9
 m_multi_comb2.unit = 'm²'
 m_multi_comb3 = m_multi_comb2 + m11
+
+tutorial = (str_m8, str_m9, m8, m9, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2)
+howto = (m1, str_m1, m2, str_m2, m3, str_m3, m4, str_m4, m5, str_m5, m6, str_m6, m7, str_m7, str_m8, str_m9, str_m10,
+         str_m11, m_sum, m_dif, m_sum_exc, m_dif_exc, m_prod1, m_div1, m_multi_sum, m_multi_prod,
+         m_multi_comb, m_multi_comb1, m_multi_comb2)

@@ -120,7 +120,7 @@ def tutorial_template(name, install_from_server, install_from_github, install_fr
     return text
 
 
-def documentation_howto(name):
+def howto_template(name, howto):
     """RST template for package documentation how-to."""
     text = (
         f"How to guides\n"
@@ -130,6 +130,7 @@ def documentation_howto(name):
         f"\n"
         f".. contents:: Table of Contents\n"
         f"\n"
+        f"{howto}"
     )
     return text
 
