@@ -62,7 +62,7 @@ readme_paths = {
         'magnitude': './build/readme/magnitude.md'
     },
     'public': {
-        'magnitude': ''
+        'magnitude': '/home/txan/PycharmProjects/physical-magnitude/README.md'
     },
 }
 # External URLs
