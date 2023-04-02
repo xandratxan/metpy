@@ -20,7 +20,7 @@ html_pages = {
     },
     'server': {
         'index': 'server/index.html',
-        'magnitude': 'server/physical-magnitude/index.html',
+        'magnitude': 'physical-magnitude/index.html',
     },
     'documentation': {
         'index': 'docs.html',

@@ -16,11 +16,13 @@ magnitude = {
 # MetPy website server page
 # TODO: test server functionality
 metpy_server = bs.base_template(
+    parent=True,
     title='MetPy-Package Server',
-    header=bs.base_header_template(active='server'),
+    header=bs.base_header_template(active='server', parent=True),
     main=bs.base_main_template(
         main=ss.server_template(
             title=ss.title_template(
+                parent=True,
                 title='Python package server',
                 brief_description=df.server['brief_description'],
                 image=df.server['image']
@@ -35,13 +37,14 @@ metpy_server = bs.base_template(
                 )
             ),
             packages_table=ss.packages_table_template(
+                parent=True,
                 columns=['Package', 'Description'],
                 packages=[magnitude]
             ),
         )
     ),
     footer=footer,
-    scripts=bs.base_scripts_template()
+    scripts=bs.base_scripts_template(parent=True)
 )
 # MetPy server packages, physical-magnitude package page
 metpy_server_magnitude = bs.base_template(
