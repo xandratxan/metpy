@@ -38,6 +38,11 @@ def install_from_clone(package_name, author_github_username):
     return command
 
 
+def package_link(author_github, name, version):
+    """Template of installation link from server."""
+    return f'git+{author_github}{name}#egg={name}-{version}" data-requires-python="&gt;=3.6.0'
+
+
 def get_destination(update):
     """Get the destination for built documentation files."""
     return 'public' if update else 'private'

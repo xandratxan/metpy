@@ -155,7 +155,7 @@ def packages_table_template(columns, packages, versions=False, parent=False, gra
             body += packages_table_row_template(
                 path=path,
                 image='folder.png',
-                html_path=package_link(author_github=df.xcb['github'], name=packages['name'], version=version),
+                html_path=fnc.package_link(author_github=df.xcb['github'], name=packages['name'], version=version),
                 name=f"{packages['name']}-{version}",
                 description=version
             )
@@ -202,8 +202,3 @@ def packages_table_row_template(path, image, html_path, name, description):
         f'{" " * i}</tr>\n'
     )
     return row
-
-
-def package_link(author_github, name, version):
-    """Template of installation link from server."""
-    return f'git+{author_github}{name}#egg={name}-{version}" data-requires-python="&gt;=3.6.0'
