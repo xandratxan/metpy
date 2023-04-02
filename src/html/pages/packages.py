@@ -7,7 +7,6 @@ import src.html.templates.main_section as ms
 import src.html.templates.secondary_section as ss
 
 # MetPy website packages page
-# TODO: add subtitle and description as server
 magnitude = {
     'name': 'magnitude',
     'title': f"{df.magnitude['name']} package",
@@ -21,6 +20,7 @@ metpy_packages = bs.base_template(
     main=bs.base_main_template(
         main=ms.main_section_template(
             title='MetPy Packages',
+            brief_description='Python packages of the MetPy ecosystem',
             description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                          f'Here you can find the packages of the MetPy ecosystem.'),
             image='python.png',

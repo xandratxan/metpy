@@ -13,7 +13,6 @@ magnitude = {
     'versions': df.magnitude['versions'],
 }
 # MetPy website server page
-# TODO: test server functionality
 metpy_server = bs.base_template(
     parent=True,
     title='MetPy-Package Server',
@@ -26,7 +25,7 @@ metpy_server = bs.base_template(
                 brief_description=df.server['brief_description'],
                 image=df.server['image']
             ),
-            warning=ss.warning_template(message=df.non_stable_msg),
+            warning='',
             description=ss.description_template(description=df.server['description']),
             installation=ss.installation_template(
                 is_server=True,

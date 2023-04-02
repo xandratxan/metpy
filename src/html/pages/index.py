@@ -32,6 +32,7 @@ metpy_index = bs.base_template(
     main=bs.base_main_template(
         main=ms.main_section_template(
             title='Metrology & Python',
+            brief_description=f'An ecosystem of Python projects for metrology.',
             description=(f'MetPy is an ecosystem of Python projects for metrology. '
                          f'It includes a set of Python packages and a '
                          f'PyPI-like package server to provide those packages. '

@@ -6,7 +6,6 @@ import src.html.templates.main_section as ms
 
 # MetPy website documentation page
 # TODO: add physical-magnitude documentation pages
-# TODO: add subtitle and description as server
 magnitude = {
     'name': 'magnitude',
     'title': f"{df.magnitude['name']} package",
@@ -20,6 +19,7 @@ metpy_documentation = bs.base_template(
     main=bs.base_main_template(
         main=ms.main_section_template(
             title='MetPy Documentation',
+            brief_description='Documentation of the MetPy packages',
             description=(f'MetPy includes a set of Python packages useful for metrology applications. '
                          f'Here you can find the documentation of the MetPy packages.'),
             image='documents.png',

@@ -1,7 +1,7 @@
 """Main section HTML templates for MetPy website."""
 
 
-def main_section_template(title, description, image, cards):
+def main_section_template(title, brief_description, description, image, cards):
     """Main section HTML template for MetPy website."""
     i = 12
     cards_text = ''
@@ -12,7 +12,7 @@ def main_section_template(title, description, image, cards):
         f'{" " * i}<article class="post featured">\n'
         f'{" " * i}    <header class="major">\n'
         f'{" " * i}        <h2>{title}</h2>\n'
-        f'{" " * i}        <p>{description}</p>\n'
+        f'{" " * i}        <p>{brief_description}</p>\n'
         f'{" " * i}    </header>\n'
         f'{" " * i}    <div class="row">\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
@@ -21,6 +21,7 @@ def main_section_template(title, description, image, cards):
         f'{" " * i}        </div>\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
         f'{" " * i}    </div>\n'
+        f'{" " * i}    <p>{description}</p>'
         f'{" " * i}</article>\n'
         f'{" " * i}<!-- Cards -->\n'
         f'{" " * i}<section class="posts">\n'
