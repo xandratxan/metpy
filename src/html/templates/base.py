@@ -37,10 +37,10 @@ def base_header_template(active, parent=False, grandparent=False):
     """Template for header section of base HTML templates for MetPy website."""
     i = 8
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
-    html_index = df.html_pages['main']['index']
-    html_packages = df.html_pages['main']['packages']
-    html_server = df.html_pages['main']['server']
-    html_docs = df.html_pages['main']['docs']
+    html_index = df.html_pages['index']
+    html_packages = df.html_pages['packages']['index']
+    html_server = df.html_pages['server']['index']
+    html_docs = df.html_pages['documentation']['index']
     url_author_github = df.xcb['github']
     text = (
         f'{" " * i}<!-- Header-->\n'

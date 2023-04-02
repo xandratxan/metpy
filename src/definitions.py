@@ -13,42 +13,53 @@ rge = {
 }
 # HTML pages paths of MetPy website
 html_pages = {
-    'main': {
-        'index': 'index.html',
-        'packages': 'packages.html',
-        'server': 'server.html',
-        'docs': 'docs.html',
-    },
+    'index': 'index.html',
     'packages': {
+        'index': 'packages.html',
         'magnitude': 'packages/magnitude.html',
     },
     'server': {
+        'index': 'server/index.html',
         'magnitude': 'server/physical-magnitude/index.html',
     },
     'documentation': {
+        'index': 'docs.html',
         'magnitude': 'docs/physical-magnitude/index.html',
     },
 
 }
 # HTML file paths for documentation building
 html_paths = {
-    'main': {
+    'public': {
         'index': './docs/index.html',
-        'packages': './docs/packages.html',
-        'server': './docs/server.html',
-        'docs': './docs/docs.html',
+        'packages': {
+            'index': './docs/packages.html',
+            'magnitude': './docs/packages/magnitude.html',
+        },
+        'server': {
+            'index': './docs/server/index.html',
+            'magnitude': './docs/server/physical-magnitude/index.html',
+        },
+        'documentation': './docs/docs.html',
     },
-    'packages': {
-        'magnitude': './docs/packages/magnitude.html',
+    'private': {
+        'index': './build/docs/index.html',
+        'packages': {
+            'index': './build/docs/packages.html',
+            'magnitude': './build/docs/packages/magnitude.html',
+        },
+        'server': {
+            'index': './build/docs/server/index.html',
+            'magnitude': './build/docs/server/physical-magnitude/index.html',
+        },
+        'documentation': './build/docs/docs.html',
     },
-    'server': {
-        'magnitude': './docs/server/physical-magnitude/index.html',
-    },
+
 }
 # README file paths for documentation building
 readme_paths = {
     'origin': {
-        'magnitude': './build/readme_magnitude.md'
+        'magnitude': './build/readme/magnitude.md'
     },
     'destination': {
         'magnitude': ''

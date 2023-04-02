@@ -15,21 +15,21 @@ packages = {
     'name': 'packages',
     'title': 'Packages',
     'brief_description': 'Packages of the MetPy ecosystem',
-    'html_path': df.html_pages['main']['packages'],
+    'html_path': df.html_pages['packages']['index'],
     'image': 'python.png'
 }
 server = {
     'name': 'server',
     'title': 'Python package server',
     'brief_description': 'Python package server for the MetPy packages',
-    'html_path': df.html_pages['main']['server'],
+    'html_path': df.html_pages['server']['index'],
     'image': 'folder.png'
 }
 documentation = {
     'name': 'documentation',
     'title': 'Documentation',
     'brief_description': 'Documentation of the MetPy packages',
-    'html_path': df.html_pages['main']['docs'],
+    'html_path': df.html_pages['documentation']['index'],
     'image': 'documents.png'
 }
 # MetPy website index page

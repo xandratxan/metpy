@@ -12,23 +12,27 @@ from src.readme.magnitude import package_magnitude_readme
 # TODO: add folder to build and test before update
 
 
-def metpy_pages():
+def metpy_pages(update):
     """Build the HTML pages of the MetPy site."""
+    if update:
+        destination = 'public'
+    else:
+        destination = 'private'
     files = [
-        df.html_paths['main']['index'],
-        df.html_paths['main']['packages'],
-        df.html_paths['main']['server'],
-        df.html_paths['main']['docs'],
-        df.html_paths['packages']['magnitude'],
-        df.html_paths['server']['magnitude'],
+        df.html_paths[destination]['index'],
+        df.html_paths[destination]['packages']['index'],
+        df.html_paths[destination]['packages']['magnitude'],
+        df.html_paths[destination]['server']['index'],
+        df.html_paths[destination]['server']['magnitude'],
+        df.html_paths[destination]['documentation'],
     ]
     texts = [
         metpy_index,
         metpy_packages,
-        metpy_server,
-        metpy_documentation,
         metpy_package_magnitude,
+        metpy_server,
         metpy_server_magnitude,
+        metpy_documentation,
     ]
     fnc.write_files(texts, files)
 
@@ -51,5 +55,6 @@ def magnitude_package_docs():
 
 # Build documentation
 if __name__ == '__main__':
-    metpy_pages()
+    metpy_pages(update=False)
+    metpy_pages(update=True)
     # magnitude_package_docs()
