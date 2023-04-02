@@ -1,4 +1,4 @@
-"""RST templates for package documentation index."""
+"""RST templates for package documentation."""
 import src.definitions as df
 
 
@@ -81,4 +81,67 @@ def author_contributor(contributor=False):
             f"    {contributor_name},\n"
             f"    `@GitHub <{contributor_github}>`_\n"
         )
+    return text
+
+
+def tutorial_template(name, install_from_server, install_from_github, install_from_clone, tutorial):
+    """RST template for package documentation tutorial."""
+    text = (
+        f"Tutorial\n"
+        f"========\n"
+        f"\n"
+        f"This part of the documentation provides a tutorial that introduces in how to get started with ``{name}``.\n"
+        f"\n"
+        f"Installation\n"
+        f"------------\n"
+        f"\n"
+        f"``{name}`` can be installed in three different ways.\n"
+        f"\n"
+        f"Install via pip from PyPi-like server:\n"
+        f"\n"
+        f".. code-block::\n"
+        f"\n"
+        f"    {install_from_server}\n"
+        f"\n"
+        f"Install via pip with GitHub repository url:\n"
+        f"\n"
+        f".. code-block::\n"
+        f"\n"
+        f"    {install_from_github}\n"
+        f"\n"
+        f"Clone GitHub repository and install via pip:\n"
+        f"\n"
+        f".. code-block::\n"
+        f"\n"
+        f"{install_from_clone}\n"
+        f"\n"
+        f"{tutorial}"
+    )
+    return text
+
+
+def documentation_howto(name):
+    """RST template for package documentation how-to."""
+    text = (
+        f"How to guides\n"
+        f"=============\n"
+        f"\n"
+        f"This part of the documentation describes how to accomplish common tasks with ``{name}``.\n"
+        f"\n"
+        f".. contents:: Table of Contents\n"
+        f"\n"
+    )
+    return text
+
+
+def api_template(name, api):
+    """RST template for package documentation API."""
+    text = (
+        f"API Reference\n"
+        f"=============\n"
+        f"\n"
+        f"This part of the documentation covers all the public interfaces of ``{name}``.\n"
+        f"\n"
+        f"{api}"
+    )
     return text
