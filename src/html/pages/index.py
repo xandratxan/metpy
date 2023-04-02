@@ -3,13 +3,6 @@ import src.definitions as df
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
 
-# Common sections
-footer = bs.base_footer_template(
-    url_author_github=df.xcb['github'],
-    url_author_email=df.xcb['email'],
-    url_lmri=df.external_urls['lmri'],
-    url_ciemat=df.external_urls['ciemat']
-)
 # Project cards
 packages = {
     'name': 'packages',
@@ -48,6 +41,6 @@ metpy_index = bs.base_template(
             cards=[packages, server, documentation]
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template()
 )

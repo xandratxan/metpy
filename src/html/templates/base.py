@@ -80,8 +80,14 @@ def base_main_template(main):
     return text
 
 
-def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciemat):
+def base_footer_template():
     """Template for footer section of base HTML templates for MetPy website."""
+    url_author_github = df.xcb['github'],
+    url_author_email = df.xcb['email'],
+    url_lmri = df.external_urls['lmri'],
+    url_ciemat = df.external_urls['ciemat']
+    url_design = df.external_urls['design']
+    url_icons = df.external_urls['icons']
     i = 8
     text = (
         f'{" " * i}<!-- Footer -->\n'
@@ -119,8 +125,8 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
         f'{" " * i}<div id="copyright">\n'
         f'{" " * i}    <ul>\n'
         f'{" " * i}        <li>@ 2023, Xandra Campo</li>\n'
-        f'{" " * i}        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>\n'
-        f'{" " * i}        <li><a href="https://www.flaticon.com/" title="python icons">Icons: Freepik</a></li>\n'
+        f'{" " * i}        <li>Design: <a href="{url_design}">HTML5 UP</a></li>\n'
+        f'{" " * i}        <li><a href="{url_icons}" title="python icons">Icons: Freepik</a></li>\n'
         f'{" " * i}    </ul>\n'
         f'{" " * i}</div>\n'
     )

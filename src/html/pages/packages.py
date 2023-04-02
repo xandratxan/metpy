@@ -5,7 +5,6 @@ import src.functions as fnc
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
 import src.html.templates.secondary_section as ss
-from src.html.pages.index import footer
 
 # MetPy website packages page
 # TODO: add subtitle and description as server
@@ -28,7 +27,7 @@ metpy_packages = bs.base_template(
             cards=[magnitude]
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template()
 )
 
@@ -127,6 +126,6 @@ metpy_package_magnitude = bs.base_template(
             ),
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template(parent=True)
 )

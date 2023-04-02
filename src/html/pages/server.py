@@ -3,7 +3,6 @@ import src.definitions as df
 import src.functions as fnc
 import src.html.templates.base as bs
 import src.html.templates.secondary_section as ss
-from src.html.pages.index import footer
 
 # Packages
 magnitude = {
@@ -43,7 +42,7 @@ metpy_server = bs.base_template(
             ),
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template(parent=True)
 )
 # MetPy server packages, physical-magnitude package page
@@ -76,5 +75,5 @@ metpy_server_magnitude = bs.base_template(
             ),
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template(grandparent=True))

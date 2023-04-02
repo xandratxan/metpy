@@ -69,6 +69,8 @@ readme_paths = {
 external_urls = {
     'ciemat': 'https://www.ciemat.es/portal.do',
     'lmri': 'http://rdgroups.ciemat.es/web/lmri/inicio?p_p_id=2_WAR_kaleodesignerportlet&p_p_lifecycle=0',
+    'design': 'https://html5up.net',
+    'icons': 'https://www.flaticon.com/',
 }
 # Packages information
 server = {

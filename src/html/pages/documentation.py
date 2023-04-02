@@ -3,7 +3,6 @@
 import src.definitions as df
 import src.html.templates.base as bs
 import src.html.templates.main_section as ms
-from src.html.pages.index import footer
 
 # MetPy website documentation page
 # TODO: add physical-magnitude documentation pages
@@ -27,6 +26,6 @@ metpy_documentation = bs.base_template(
             cards=[magnitude]
         )
     ),
-    footer=footer,
+    footer=bs.base_footer_template(),
     scripts=bs.base_scripts_template()
 )
