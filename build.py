@@ -31,7 +31,6 @@ def metpy_pages(update):
 
 
 def magnitude_package_docs(update):
-    # TODO: update readme in destination repo
     """Build the documentation of the physical-magnitude package."""
     destination = fnc.get_destination(update=update)
     files = [
@@ -48,7 +47,8 @@ def magnitude_package_docs(update):
     fnc.write_files(texts, files)
 
 
-# Build documentation
 if __name__ == '__main__':
-    metpy_pages(update=False)
-    magnitude_package_docs(update=False)
+    # Build documentation
+    update_docs = True
+    metpy_pages(update=update_docs)
+    magnitude_package_docs(update=update_docs)
