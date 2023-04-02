@@ -80,7 +80,7 @@ server = {
         f'This website server as a PyPi-like package server for the MetPy packages. '
         f'It conforms to Pep 503. It is based on a blog post by freeCodeCamp.'),  # TODO: how to add links HTML, README
     'image': 'folder.png',
-    'url_server': f"{xcb['github_pages']}python-package-server/",  # TODO: update
+    'url_server': f"https://xandratxan.github.io/python-package-server/",  # TODO: update
 }
 magnitude = {
     'name': 'physical-magnitude',
