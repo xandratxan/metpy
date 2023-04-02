@@ -7,6 +7,7 @@ from src.html.pages.index import footer
 
 # MetPy website documentation page
 # TODO: add physical-magnitude documentation pages
+# TODO: add subtitle and description as server
 magnitude = {
     'name': 'magnitude',
     'title': f"{df.magnitude['name']} package",

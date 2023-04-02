@@ -49,6 +49,6 @@ def magnitude_package_docs(update):
 
 if __name__ == '__main__':
     # Build documentation
-    update_docs = True
+    update_docs = False
     metpy_pages(update=update_docs)
     magnitude_package_docs(update=update_docs)
