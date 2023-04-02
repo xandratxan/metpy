@@ -58,10 +58,10 @@ html_paths = {
 }
 # README file paths for documentation building
 readme_paths = {
-    'origin': {
+    'private': {
         'magnitude': './build/readme/magnitude.md'
     },
-    'destination': {
+    'public': {
         'magnitude': ''
     },
 }
