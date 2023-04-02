@@ -2,8 +2,8 @@
 import src.definitions as df
 
 
-def index(name, description, non_stable_msg, versions, contributors,
-          last_version, last_release, url_source_code, url_documentation, url_issues, license_info):
+def index_template(name, description, non_stable_msg, versions, contributors,
+                   last_version, last_release, url_source_code, url_documentation, url_issues, license_info):
     """RST template for package documentation index."""
     authors = author_contributor(contributor=contributors)
     history = release_history(versions)

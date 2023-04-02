@@ -1,8 +1,9 @@
 """index.rst for physical-magnitude documentation."""
 import src.definitions as df
-from src.rst.templates.index import index
+from src.rst.templates.index import index_template
+from src.rst.templates.api import api_template
 
-package_magnitude_index = index(
+package_magnitude_index = index_template(
     name=df.magnitude['name'],
     description=df.magnitude['description'],
     non_stable_msg=df.non_stable_msg,
@@ -14,4 +15,15 @@ package_magnitude_index = index(
     url_source_code=df.magnitude['url_source_code'],
     url_issues=df.magnitude['url_issues'],
     url_documentation=df.magnitude['url_documentation']
+)
+
+package_magnitude_api = api_template(
+    name=df.magnitude['name'],
+    api=(
+        f"magnitude.magnitude\n"
+        f"-------------------\n"
+        f"\n"
+        f".. automodule:: magnitude.magnitude\n"
+        f"   :members:\n"
+    )
 )
