@@ -47,8 +47,8 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
         f'{" " * i}    <p>{brief_description}</p>\n'
         f'{" " * i}    <div class="row">\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
-        f'{" " * i}        <div class="col-2 col-12-small">'
-        f'{" " * i}            <span class="image fit"><img src="{path}/images/{image}" alt="{image}" /></span>'
+        f'{" " * i}        <div class="col-2 col-12-small">\n'
+        f'{" " * i}            <span class="image fit"><img src="{path}/images/{image}" alt="{image}" /></span>\n'
         f'{" " * i}        </div>\n'
         f'{" " * i}        <div class="col-5 col-12-small"></div>\n'
         f'{" " * i}    </div>\n'
@@ -99,9 +99,7 @@ def description_template(description):
     i = 12
     text = (
         f'{" " * i}<!-- Description -->\n'
-        f'{" " * i}<p>\n'
-        f'{" " * i}{description}\n'
-        f'{" " * i}</p>\n'
+        f'{" " * i}<p>{description}</p>\n'
     )
     return text
 
@@ -113,8 +111,8 @@ def installation_template(is_server, install_from_server):
     if is_server:
         text = (
             f'{" " * i}<!-- Installation -->\n'
-            f'{" " * i}<p>The packages available in this server can be used to specify dependencies in'
-            f'{" " * i}   <code>pyproject.toml</code> files including the entry '
+            f'{" " * i}<p>The packages available in this server can be used to specify dependencies in\n'
+            f'{" " * i}   <code>pyproject.toml</code> files including the entry\n'
             f'{" " * i}   <code>dependencies = ["package-name"]</code>\n'
             f'{" " * i}   They can also be installed via <code>pip</code>:<br/>\n'
             f'{" " * i}   <code>{install_from_server}</code></p>\n'
@@ -193,14 +191,15 @@ def packages_table_template(columns, packages, versions=False, parent=False, gra
 
 def packages_table_row_template(path, image, html_path, name, description):
     """Template of table of packages row of secondary section HTML templates for MetPy website."""
+    i = 24
     row = (
-        f'<tr>\n'
-        f'    <td style="text-align: center; vertical-align: middle;">'
-        f'        <img src="{path}/images/{image}" alt="{image}" width="40" height="40">'
-        f'    </td>\n'
-        f'    <td><a href="{html_path}">{name}</a></td>\n'
-        f'    <td>{description}</td>\n'
-        f'</tr>\n'
+        f'{" " * i}<tr>\n'
+        f'{" " * i}    <td style="text-align: center; vertical-align: middle;">\n'
+        f'{" " * i}        <img src="{path}/images/{image}" alt="{image}" width="40" height="40">\n'
+        f'{" " * i}    </td>\n'
+        f'{" " * i}    <td><a href="{html_path}">{name}</a></td>\n'
+        f'{" " * i}    <td>{description}</td>\n'
+        f'{" " * i}</tr>\n'
     )
     return row
 

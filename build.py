@@ -9,6 +9,7 @@ from src.readme.magnitude import package_magnitude_readme
 
 
 # TODO: update readme in destination repo
+# TODO: add folder to build and test before update
 
 
 def metpy_pages():

@@ -42,32 +42,30 @@ def base_header_template(active, parent=False, grandparent=False):
     html_server = df.html_pages['main']['server']
     html_docs = df.html_pages['main']['docs']
     url_author_github = df.xcb['github']
-    active_tab = '<li class="active">'
-    inactive_tab = '<li>'
     text = (
         f'{" " * i}<!-- Header-->\n'
         f'{" " * i}<header id="header"><a href="{path}/index.html" class="logo">MetPy</a></header>\n'
         f'{" " * i}<!-- Nav -->\n'
         f'{" " * i}<nav id="nav">\n'
         f'{" " * i}    <ul class="links">\n'
-        f'{" " * i}        {active_tab if active == "index" else inactive_tab}'
-        f'{" " * i}        <a href="{path}/{html_index}">MetPy</a></li>\n'
-        f'{" " * i}        {active_tab if active == "packages" else inactive_tab}'
-        f'{" " * i}        <a href="{path}/{html_packages}">Packages</a></li>\n'
-        f'{" " * i}        {active_tab if active == "server" else inactive_tab}'
-        f'{" " * i}        <a href="{path}/{html_server}">Package Server</a></li>\n'
-        f'{" " * i}        {active_tab if active == "docs" else inactive_tab}'
-        f'{" " * i}        <a href="{path}/{html_docs}">Documentation</a></li>\n'
-        f'{" " * i}    </ul>'
+        f'{" " * i}        {active_tab(active, "index")}<a href="{path}/{html_index}">MetPy</a></li>\n'
+        f'{" " * i}        {active_tab(active, "packages")}<a href="{path}/{html_packages}">Packages</a></li>\n'
+        f'{" " * i}        {active_tab(active, "server")}<a href="{path}/{html_server}">Package Server</a></li>\n'
+        f'{" " * i}        {active_tab(active, "docs")}<a href="{path}/{html_docs}">Documentation</a></li>\n'
+        f'{" " * i}    </ul>\n'
         f'{" " * i}    <ul class="icons">\n'
-        f'{" " * i}        <li>'
-        f'{" " * i}            <a href="{url_author_github}" class="icon brands fa-github">'
+        f'{" " * i}        <li>\n'
+        f'{" " * i}            <a href="{url_author_github}" class="icon brands fa-github">\n'
         f'{" " * i}            <span class="label">GitHub</span></a>\n'
         f'{" " * i}        </li>\n'
         f'{" " * i}    </ul>\n'
         f'{" " * i}</nav>\n'
     )
     return text
+
+
+def active_tab(active, tab):
+    return '<li class="active">' if active == tab else '<li>'
 
 
 def base_main_template(main):
@@ -93,16 +91,19 @@ def base_footer_template(url_author_github, url_author_email, url_lmri, url_ciem
         f'{" " * i}            <h3>ABOUT ME</h3>\n'
         f'{" " * i}            <p>Xandra Campo<br/>\n'
         f'{" " * i}               Researcher at the Neutron Standards Laboratory (LPN)<br/>\n'
-        f'{" " * i}               Ionizing Radiation Metrology Laboratory (<a href="{url_lmri}">LMRI</a>)<br/>\n'
-        f'{" " * i}               Research Centre for Energy, Environment and Technology '
+        f'{" " * i}               Ionizing Radiation Metrology Laboratory\n'
+        f'{" " * i}               (<a href="{url_lmri}">LMRI</a>)<br/>\n'
+        f'{" " * i}               Research Centre for Energy, Environment and Technology\n'
         f'{" " * i}               (<a href="{url_ciemat}">CIEMAT</a>)<br/>\n'
         f'{" " * i}               {url_author_email}</p>\n'
         f'{" " * i}        </section>\n'
         f'{" " * i}        <section>\n'
         f'{" " * i}            <h3>SOCIAL</h3>\n'
         f'{" " * i}            <ul class="icons alt">\n'
-        f'{" " * i}                <li><a href="{url_author_github}" class="icon brands alt fa-github">'
-        f'{" " * i}                <span class="label">GitHub</span></a></li>\n'
+        f'{" " * i}                <li>\n'
+        f'{" " * i}                    <a href="{url_author_github}" class="icon brands alt fa-github">\n'
+        f'{" " * i}                    <span class="label">GitHub</span></a>\n'
+        f'{" " * i}                </li>\n'
         f'{" " * i}            </ul>\n'
         f'{" " * i}        </section>\n'
         f'{" " * i}    </section>\n'
