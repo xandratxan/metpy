@@ -41,7 +41,7 @@ def base_header_template(active, parent=False, grandparent=False):
     html_packages = df.html_pages['packages']['index']
     html_server = df.html_pages['server']['index']
     html_docs = df.html_pages['documentation']['index']
-    url_author_github = df.xcb['github']
+    url_metpy_github = df.metpy['url_source_code']
     text = (
         f'{" " * i}<!-- Header-->\n'
         f'{" " * i}<header id="header"><a href="{path}/index.html" class="logo">MetPy</a></header>\n'
@@ -55,7 +55,7 @@ def base_header_template(active, parent=False, grandparent=False):
         f'{" " * i}    </ul>\n'
         f'{" " * i}    <ul class="icons">\n'
         f'{" " * i}        <li>\n'
-        f'{" " * i}            <a href="{url_author_github}" class="icon brands fa-github">\n'
+        f'{" " * i}            <a href="{url_metpy_github}" class="icon brands fa-github">\n'
         f'{" " * i}            <span class="label">GitHub</span></a>\n'
         f'{" " * i}        </li>\n'
         f'{" " * i}    </ul>\n'

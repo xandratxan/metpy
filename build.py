@@ -50,7 +50,7 @@ def build_magnitude_docs(update_readme, export_rst, import_html):
 
 
 if __name__ == '__main__':
-    update_local = False
+    update_local = True
     update_package = False
     update_public = False
     if update_local:

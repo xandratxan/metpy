@@ -95,6 +95,9 @@ external_urls = {
     'icons': 'https://www.flaticon.com/',
 }
 # Packages information
+metpy = {
+    'url_source_code': f"{xcb['github']}metpy#readme",
+}
 server = {
     'name': 'python-package-server',
     'brief_description': 'PyPi-like package server for the MetPy packages',
