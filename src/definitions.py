@@ -67,13 +67,11 @@ readme_paths = {
 }
 # RST file paths for documentation building
 rst_paths = {
-    'origin': {
-        'magnitude': {
-            'index': './build/rst/physical-magnitude/index.rst',
-            'tutorial': './build/rst/physical-magnitude/tutorial.rst',
-            'howto': './build/rst/physical-magnitude/howto.rst',
-            'api': './build/rst/physical-magnitude/api.rst',
-        },
+    'magnitude': {
+        'index': './build/rst/physical-magnitude/index.rst',
+        'tutorial': './build/rst/physical-magnitude/tutorial.rst',
+        'howto': './build/rst/physical-magnitude/howto.rst',
+        'api': './build/rst/physical-magnitude/api.rst',
     },
 }
 # HTML file paths for documentation building
