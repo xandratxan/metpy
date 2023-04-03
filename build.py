@@ -73,6 +73,6 @@ if __name__ == '__main__':
     # 1. Modify local metpy repository
     main(local=True)
     # 2. Modify local package repository
-    # main(package=True)
+    main(package=True)
     # 3. Modify public metpy repository
-    # main(public=True)
+    main(public=True)
