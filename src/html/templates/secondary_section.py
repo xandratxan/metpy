@@ -57,24 +57,19 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
     return text
 
 
-def info_template(last_version, last_release, license_info, url_source_code, url_issues, url_documentation):
+def info_template(last_version, license_info, url_source_code, url_issues, url_documentation):
     """Template of information section of secondary section HTML templates for MetPy website."""
     i = 12
     text = (
         f'{" " * i}<!-- Useful information -->\n'
         f'{" " * i}<div class="box">\n'
         f'{" " * i}    <div class="row">\n'
-        f'{" " * i}        <div class="col-4 col-12-small">\n'
+        f'{" " * i}        <div class="col-12 col-12-small">\n'
         f'{" " * i}            <b>Last version</b>: {last_version}<br/>\n'
-        f'{" " * i}            <b>Last release</b>: {last_release}\n'
-        f'{" " * i}        </div>\n'
-        f'{" " * i}        <div class="col-4 col-12-small">\n'
-        f'{" " * i}            <b>Source code</b>: <a href="{url_source_code}">GitHub</a><br/>\n'
-        f'{" " * i}            <b>Documentation</b>: <a href="{url_documentation}">GitHub</a>\n'
-        f'{" " * i}        </div>\n'
-        f'{" " * i}        <div class="col-3 col-12-small">\n'
-        f'{" " * i}            <b>Issues</b>: <a href="{url_issues}">GitHub</a><br/>\n'
         f'{" " * i}            <b>License</b>: {license_info}\n'
+        f'{" " * i}            <a href="{url_source_code}">Source code</a><br/>\n'
+        f'{" " * i}            <a href="{url_documentation}">Documentation</a>\n'
+        f'{" " * i}            <b>Issues</b>: <a href="{url_issues}">Issues</a><br/>\n'
         f'{" " * i}        </div>\n'
         f'{" " * i}    </div>\n'
         f'{" " * i}</div>\n'

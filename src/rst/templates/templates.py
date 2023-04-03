@@ -3,7 +3,7 @@ import src.definitions as df
 
 
 def index_template(name, description, non_stable_msg, versions, contributors,
-                   last_version, last_release, url_source_code, url_documentation, url_issues, license_info):
+                   last_version, url_source_code, url_documentation, url_issues, license_info):
     """RST template for package documentation index."""
     authors = author_contributor(contributor=contributors)
     history = release_history(versions)
@@ -17,7 +17,6 @@ def index_template(name, description, non_stable_msg, versions, contributors,
         f"   {non_stable_msg}\n"
         f"\n"
         f":Last version: {last_version}\n"
-        f":Last release: {last_release}\n"
         f":Source code: `GitHub <{url_source_code}>`_\n"
         f":Documentation: `GitHub Pages <{url_documentation}>`_\n"
         f":Issues: `GitHub <{url_issues}>`_\n"
@@ -62,17 +61,13 @@ def release_history(versions):
 def author_contributor(contributor=False):
     """RST template for authors and contributors section of package documentation index."""
     author_name = df.xcb['name']
-    author_email = df.xcb['email']
     author_github = df.xcb['github']
-    author_github_pages = df.xcb['github_pages']
     contributor_name = df.rge['name']
     contributor_github = df.rge['github']
     text = (
         f"Author:\n"
         f"    {author_name},\n"
         f"    `@GitHub <{author_github}>`_,\n"
-        f"    `@GitHub Pages <{author_github_pages}>`_,\n"
-        f"    {author_email}\n"
     )
     if contributor:
         text += (
