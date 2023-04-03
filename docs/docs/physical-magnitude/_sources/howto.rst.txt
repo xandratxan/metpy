@@ -1,7 +1,7 @@
 How to guides
 =============
 
-This section describes how to accomplish common tasks with ``physical-magnitude``.
+This part of the documentation describes how to accomplish common tasks with ``physical-magnitude``.
 
 .. contents:: Table of Contents
 
@@ -20,7 +20,7 @@ If standard uncertainty is provided, for example d = 100 ± 1 m, relative standa
 
 .. code-block::
 
-    >>> Magnitude(value=10, uncertainty=1, unit='m')
+    >>> Magnitude(value=100, uncertainty=1, unit='m')
     100.0 ± 1.0 m (1.0%)
 
 If relative standard uncertainty is provided, for example d = 100 m ± 1%, standard uncertainty will be calculated:
@@ -59,7 +59,7 @@ Magnitudes cannot be defined with negative uncertainties, since it has no physic
 
 .. code-block::
 
-    >>> Magnitude(value=10, uncertainty=-1, unit='m')
+    >>> Magnitude(value=100, uncertainty=-1, unit='m')
     ValueError: Uncertainty must be positive.
 
 .. code-block::

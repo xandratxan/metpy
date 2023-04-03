@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial &mdash; physical-magnitude 0.0.1 documentation</title>
+  <title>Tutorial &mdash; physical-magnitude 0.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How to guides" href="howto.html" />
-    <link rel="prev" title="About physical-magnitude" href="info.html" /> 
+    <link rel="prev" title="Welcome to physical-magnitude’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,11 +42,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="info.html">About <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="info.html#release-history">Release History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="info.html#authors-and-contributors">Authors and contributors</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#operating-with-magnitudes">Operating with magnitudes</a></li>
@@ -69,18 +64,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-magnitude.magnitude">magnitude.magnitude</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#classes">Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude"><code class="docutils literal notranslate"><span class="pre">Magnitude</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.value"><code class="docutils literal notranslate"><span class="pre">Magnitude.value</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.uncertainty</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.unit"><code class="docutils literal notranslate"><span class="pre">Magnitude.unit</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.percentage_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.percentage_uncertainty()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.relative_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.relative_uncertainty()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#magnitude-magnitude">magnitude.magnitude</a></li>
 </ul>
 </li>
 </ul>
@@ -111,12 +95,12 @@
              
   <section id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h1>
-<p>This tutorial is a good introduction in how to get started with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
+<p>This part of the documentation provides a tutorial that introduces in how to get started with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code> can be installed in three different ways.</p>
 <p>Install via pip from PyPi-like server:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">xandratxan</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">server</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">physical</span><span class="o">-</span><span class="n">magnitude</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">xandratxan</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">metpy</span><span class="o">/</span><span class="n">server</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Install via pip with GitHub repository url:</p>
@@ -140,31 +124,31 @@ including their values, uncertainties and units.</p>
 </div>
 <p>Now define two magnitudes to operate with, including their values, uncertainties and units.
 For example m1 = 10 ± 1 m (10%) and m2 = 20 ± 2 m (10%):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span>
-<span class="go">10.0 ± 1.0 m (10.0%)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="go">100.0 ± 1.0 m (1.0%)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span>
-<span class="go">20.0 ± 2.0 m (10.0%)</span>
+<span class="go">200.0 ± 2.0 m (1.0%)</span>
 </pre></div>
 </div>
 <p>Lets add these two magnitudes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_sum</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_sum</span>
-<span class="go">30.0 ± 2.23606797749979 m (7.4535599249993%)</span>
+<span class="go">300.0 ± 2.23606797749979 m (0.74535599249993%)</span>
 </pre></div>
 </div>
 <p>Lets subtract these two magnitudes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_dif</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_dif</span>
-<span class="go">10.0 ± 2.23606797749979 m (22.360679774997898%)</span>
+<span class="go">100.0 ± 2.23606797749979 m (2.23606797749979%)</span>
 </pre></div>
 </div>
 <p>Lets multiply these two magnitudes:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
-<span class="go">200.0 ± 28.284271247461906 (m)·(m) (14.142135623730953%)</span>
+<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -173,7 +157,7 @@ Lest modify the unit of <code class="docutils literal notranslate"><span class="
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m²&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
-<span class="go">200.0 ± 28.284271247461906 m² (14.142135623730953%)</span>
+<span class="go">20000.0 ± 282.842712474619 m² (1.4142135623730951%)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -181,15 +165,15 @@ Lest modify the unit of <code class="docutils literal notranslate"><span class="
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">/</span> <span class="n">m1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>
-<span class="go">2.0 ± 0.28284271247461906 (m)/(m) (14.142135623730953%)</span>
+<span class="go">2.0 ± 0.0282842712474619 (m)/(m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)/(m)</span></code>, which means that the magnitude <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is non-dimensional.
+<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)/(m)</span></code>, which means that the magnitude is non-dimensional.
 Lest modify the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> accordingly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>
-<span class="go">2.0 ± 0.28284271247461906  (14.142135623730953%)</span>
+<span class="go">2.0 ± 0.0282842712474619  (1.4142135623730951%)</span>
 </pre></div>
 </div>
 </section>
@@ -199,7 +183,7 @@ Lest modify the unit of <code class="docutils literal notranslate"><span class="
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="info.html" class="btn btn-neutral float-left" title="About physical-magnitude" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to physical-magnitude’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="howto.html" class="btn btn-neutral float-right" title="How to guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

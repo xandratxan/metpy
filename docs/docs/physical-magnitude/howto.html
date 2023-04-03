@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to guides &mdash; physical-magnitude 0.0.1 documentation</title>
+  <title>How to guides &mdash; physical-magnitude 0.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -42,11 +42,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="info.html">About <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="info.html#release-history">Release History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="info.html#authors-and-contributors">Authors and contributors</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial.html#operating-with-magnitudes">Operating with magnitudes</a></li>
@@ -69,18 +64,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-magnitude.magnitude">magnitude.magnitude</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#classes">Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude"><code class="docutils literal notranslate"><span class="pre">Magnitude</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.value"><code class="docutils literal notranslate"><span class="pre">Magnitude.value</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.uncertainty</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.unit"><code class="docutils literal notranslate"><span class="pre">Magnitude.unit</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.percentage_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.percentage_uncertainty()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api.html#magnitude.magnitude.Magnitude.relative_uncertainty"><code class="docutils literal notranslate"><span class="pre">Magnitude.relative_uncertainty()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#magnitude-magnitude">magnitude.magnitude</a></li>
 </ul>
 </li>
 </ul>
@@ -111,7 +95,7 @@
              
   <section id="how-to-guides">
 <h1><a class="toc-backref" href="#id1" role="doc-backlink">How to guides</a><a class="headerlink" href="#how-to-guides" title="Permalink to this heading"></a></h1>
-<p>This section describes how to accomplish common tasks with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
+<p>This part of the documentation describes how to accomplish common tasks with <code class="docutils literal notranslate"><span class="pre">physical-magnitude</span></code>.</p>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -146,7 +130,7 @@
 <li><p>Provide the relative standard uncertainty of the magnitude.</p></li>
 </ul>
 <p>If standard uncertainty is provided, for example d = 100 ± 1 m, relative standard uncertainty will be calculated:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
 <span class="go">100.0 ± 1.0 m (1.0%)</span>
 </pre></div>
 </div>
@@ -177,7 +161,7 @@
 <section id="how-to-not-define-a-magnitude">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">How to not define a magnitude</a><a class="headerlink" href="#how-to-not-define-a-magnitude" title="Permalink to this heading"></a></h3>
 <p>Magnitudes cannot be defined with negative uncertainties, since it has no physical meaning:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Magnitude</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
 <span class="go">ValueError: Uncertainty must be positive.</span>
 </pre></div>
 </div>
