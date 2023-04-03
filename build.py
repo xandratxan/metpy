@@ -49,23 +49,31 @@ def build_magnitude_docs(update_readme, export_rst, import_html):
                            update_readme=update_readme, export_rst=export_rst, import_html=import_html)
 
 
-if __name__ == '__main__':
-    update_local = True
-    update_package = False
-    update_public = False
-    if update_local:
+def main(local, package, public):
+    if local:
         # MODIFY LOCAL REPOSITORY
         # Build MetPy page in local test folder
         metpy_pages(update=False)
         # Build package documentation in local test folder
         build_magnitude_docs(update_readme=False, export_rst=False, import_html=False)
-    if update_package:
+    if package:
         # MODIFY PACKAGE REPOSITORY
         # Build package documentation and export to package repository (use Sphinx to generate HTML documentation)
-        build_magnitude_docs(update_readme=True, export_rst=True, import_html=True)
-    if update_public:
+        build_magnitude_docs(update_readme=True, export_rst=True, import_html=False)
+    if public:
         # MODIFY PUBLIC REPOSITORY
         # Build MetPy page in local public folder (push to publish)
         metpy_pages(update=True)
         # Import package documentation from package repository (push to publish)
         build_magnitude_docs(update_readme=False, export_rst=False, import_html=True)
+
+
+if __name__ == '__main__':
+    # MODIFY LOCAL REPOSITORY
+    # update_local, update_package, update_public = True, False, False
+    # MODIFY PACKAGE REPOSITORY
+    # update_local, update_package, update_public = False, True, False
+    # MODIFY PUBLIC REPOSITORY
+    update_local, update_package, update_public = False, False, True
+    # Build documentation
+    main(local=update_local, package=update_package, public=update_public)
