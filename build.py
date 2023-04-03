@@ -49,7 +49,7 @@ def build_magnitude_docs(update_readme, export_rst, import_html):
                            update_readme=update_readme, export_rst=export_rst, import_html=import_html)
 
 
-def main(local, package, public):
+def main(local=False, package=False, public=False):
     if local:
         # MODIFY LOCAL REPOSITORY
         # Build MetPy page in local test folder
@@ -69,11 +69,10 @@ def main(local, package, public):
 
 
 if __name__ == '__main__':
-    # MODIFY LOCAL REPOSITORY
-    # update_local, update_package, update_public = True, False, False
-    # MODIFY PACKAGE REPOSITORY
-    # update_local, update_package, update_public = False, True, False
-    # MODIFY PUBLIC REPOSITORY
-    update_local, update_package, update_public = False, False, True
-    # Build documentation
-    main(local=update_local, package=update_package, public=update_public)
+    # Select an option (uncomment the corresponding line):
+    # 1. Modify local metpy repository
+    main(local=True)
+    # 2. Modify local package repository
+    # main(package=True)
+    # 3. Modify public metpy repository
+    # main(public=True)
