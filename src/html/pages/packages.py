@@ -9,7 +9,7 @@ import src.html.templates.secondary_section as ss
 # MetPy website packages page
 magnitude = {
     'name': 'magnitude',
-    'title': f"{df.magnitude['name']} package",
+    'title': f"Physical magnitude",
     'brief_description': df.magnitude['brief_description'],
     'html_path': df.html_pages['packages']['magnitude'],
     'image': df.magnitude['image']
@@ -92,7 +92,7 @@ package_magnitude = bs.base_template(
         main=ss.package_template(
             title=ss.title_template(
                 parent=True,
-                title=f"{df.magnitude['name']} package",
+                title=f"Physical magnitude package",
                 brief_description=df.magnitude['brief_description'],
                 image=df.magnitude['image']
             ),

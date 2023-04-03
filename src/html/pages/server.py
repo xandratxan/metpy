@@ -53,7 +53,7 @@ server_magnitude = bs.base_template(
         main=ss.server_template(
             title=ss.title_template(
                 grandparent=True,
-                title=f"{df.magnitude['name']} package",
+                title=f"Physical magnitude package",
                 brief_description=df.magnitude['brief_description'],
                 image=df.magnitude['image'],
             ),

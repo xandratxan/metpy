@@ -118,10 +118,11 @@ magnitude = {
     'last_release': 'March 2023',
     'license': 'GNU GPL 3.0',
     'description': (
-        f'This package allows to perform simple operations with magnitudes including units and uncertainties. '
+        f'Package physical-magnitude allows to perform simple operations with magnitudes including units and '
+        f'uncertainties. '
         f'It allows to define magnitudes with value, uncertainty and unit. '
         f'It allows to compute simple operations providing the result not only for the magnitude value, '
-        f'but also its uncertainty and unit.'
+        f'but also its uncertainty and unit. '
         f'Available operations include summation, subtraction, multiplication and division.'),
     'image': 'scale.png',
     'import': 'from magnitude import Magnitude',

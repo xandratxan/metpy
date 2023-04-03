@@ -8,7 +8,7 @@ import src.html.templates.main_section as ms
 # TODO: add physical-magnitude documentation pages
 magnitude = {
     'name': 'magnitude',
-    'title': f"{df.magnitude['name']} package",
+    'title': f"Physical magnitude documentation",
     'brief_description': df.magnitude['brief_description'],
     'html_path': df.html_pages['documentation']['magnitude'],
     'image': df.magnitude['image']

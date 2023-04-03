@@ -13,7 +13,7 @@ packages = {
 }
 server = {
     'name': 'server',
-    'title': 'Python package server',
+    'title': 'Package server',
     'brief_description': 'Python package server for the MetPy packages',
     'html_path': df.html_pages['server']['index'],
     'image': 'folder.png'
