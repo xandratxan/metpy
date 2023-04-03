@@ -50,6 +50,22 @@ def build_magnitude_docs(update_readme, export_rst, import_html):
 
 
 if __name__ == '__main__':
-    # Build documentation
-    metpy_pages(update=False)
-    build_magnitude_docs(update_readme=False, export_rst=False, import_html=True)
+    update_local = False
+    update_package = False
+    update_public = False
+    if update_local:
+        # MODIFY LOCAL REPOSITORY
+        # Build MetPy page in local test folder
+        metpy_pages(update=False)
+        # Build package documentation in local test folder
+        build_magnitude_docs(update_readme=False, export_rst=False, import_html=False)
+    if update_package:
+        # MODIFY PACKAGE REPOSITORY
+        # Build package documentation and export to package repository (use Sphinx to generate HTML documentation)
+        build_magnitude_docs(update_readme=True, export_rst=True, import_html=True)
+    if update_public:
+        # MODIFY PUBLIC REPOSITORY
+        # Build MetPy page in local public folder (push to publish)
+        metpy_pages(update=True)
+        # Import package documentation from package repository (push to publish)
+        build_magnitude_docs(update_readme=False, export_rst=False, import_html=True)
