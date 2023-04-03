@@ -115,7 +115,6 @@ magnitude = {
     'url_issues': f"https://github.com/xandratxan/physical-magnitude/issues",
     'url_documentation': f"https://xandratxan.github.io/metpy/docs/physical-magnitude/index.html",
     'last_version': '0.1.0',
-    'last_release': 'March 2023',
     'license': 'GNU GPL 3.0',
     'description': (
         f'Package physical-magnitude allows to perform simple operations with magnitudes including units and '

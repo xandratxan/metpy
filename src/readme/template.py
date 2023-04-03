@@ -3,7 +3,7 @@ import src.definitions as df
 
 
 def readme(name, brief_description, description,
-           last_version, last_release, license_info, url_source_code, url_issues, url_documentation,
+           last_version, license_info, url_source_code, url_issues, url_documentation,
            non_stable_msg, install_from_server, install_from_github, install_from_clone,
            code_snippet, snippet_output, release_history, authors):
     """Template for package README file."""
@@ -12,13 +12,9 @@ def readme(name, brief_description, description,
         f"\n"
         f"> {brief_description}.\n"
         f"\n"
-        f"| Last version: {last_version}"
-        f"| Source code: [GitHub]({url_source_code}) "
-        f"| Issues: [GitHub]({url_issues}) |\n"
-        f"|------------------------------|------------------------------|------------------------------|\n"
-        f"| **Last release: {last_release}** "
-        f"| **Documentation : [GitHub Pages]({url_documentation})** "
-        f"| **License: {license_info}**|\n"
+        f"| Last version: {last_version} | License: {license_info} | "
+        f"[Source code]({url_source_code}) | [Issues]({url_issues}) | [Documentation]({url_documentation}) |\n"
+        f"|--------------------|--------------------|--------------------|--------------------|--------------------|\n"
         f"\n"
         f"> **WARNING**: {non_stable_msg}.\n"
         f"\n"
@@ -68,17 +64,13 @@ def readme(name, brief_description, description,
 def author_contributor(contributor=False):
     """Template for package Authors and contribution section of README file."""
     author_name = df.xcb['name']
-    author_email = df.xcb['email']
     author_github = df.xcb['github']
-    author_github_pages = df.xcb['github_pages']
     contributor_name = df.rge['name']
     contributor_github = df.rge['github']
     text = (
         f"Author:\n"
         f": {author_name},\n"
         f"[@GitHub]({author_github})\n"
-        f"[@GitHub Pages]({author_github_pages}),\n"
-        f"{author_email}\n"
     )
     if contributor:
         text += (
