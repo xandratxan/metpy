@@ -111,9 +111,9 @@ server = {
 magnitude = {
     'name': 'physical-magnitude',
     'brief_description': 'Simple operations with magnitudes including units and uncertainties',
-    'url_source_code': f"{xcb['github']}physical-magnitude/",
-    'url_issues': f"{xcb['github']}physical-magnitude/issues/",
-    'url_documentation': f"{xcb['github_pages']}physical-magnitude/",
+    'url_source_code': f"https://github.com/xandratxan/physical-magnitude",
+    'url_issues': f"https://github.com/xandratxan/physical-magnitude/issues",
+    'url_documentation': f"https://xandratxan.github.io/metpy/docs/physical-magnitude/index.html",
     'last_version': '0.1.0',
     'last_release': 'March 2023',
     'license': 'GNU GPL 3.0',
