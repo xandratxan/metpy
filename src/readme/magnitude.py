@@ -2,7 +2,7 @@
 import src.code.physical_magnitude as cd
 import src.definitions as df
 import src.functions as fnc
-from src.readme.template import readme, author_contributor
+import src.readme.template as tmp
 
 
 def code_snippet(import_package, str_m1, str_m2):
@@ -62,17 +62,8 @@ def snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
     return text
 
 
-def release_history():
-    """Template for release history section of README file for physical-magnitude package."""
-    text = (
-        f"* 0.1.0\n"
-        f"    * First release\n"
-    )
-    return text
-
-
 # README file for physical-magnitude package.
-readme = readme(
+readme = tmp.readme(
     name=df.magnitude['name'],
     brief_description=df.magnitude['brief_description'],
     description=df.magnitude['description'],
@@ -91,6 +82,6 @@ readme = readme(
     snippet_output=snippet_output(
         m1=cd.m8, m2=cd.m9, m_sum=cd.m_sum, m_dif=cd.m_dif,
         m_prod1=cd.m_prod1, m_prod2=cd.m_prod2, m_div1=cd.m_div1, m_div2=cd.m_div2),
-    release_history=release_history(),
-    authors=author_contributor()
+    release_history=tmp.releases(versions=df.magnitude['named_versions']),
+    authors=tmp.author_contributor(contributor=True)
 )

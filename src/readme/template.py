@@ -61,6 +61,15 @@ def readme(name, brief_description, description,
     return text
 
 
+def releases(versions):
+    """Template for package Release history section of README file."""
+    text = ''
+    for key, value in versions.items():
+        text += (f"* {key}\n"
+                 f"    * {value}\n")
+    return text
+
+
 def author_contributor(contributor=False):
     """Template for package Authors and contribution section of README file."""
     author_name = df.xcb['name']
