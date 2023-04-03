@@ -2,13 +2,12 @@
 
 import src.definitions as df
 import src.functions as fnc
-from src.html.pages.documentation import metpy_documentation
-from src.html.pages.index import metpy_index
-from src.html.pages.packages import metpy_packages, metpy_package_magnitude
-from src.html.pages.server import metpy_server, metpy_server_magnitude
-from src.readme.magnitude import package_magnitude_readme
-from src.rst.magnitude import package_magnitude_index, package_magnitude_tutorial, package_magnitude_api, \
-    package_magnitude_howto
+import src.html.pages.documentation as metpy_documentation
+import src.html.pages.index as metpy_index
+import src.html.pages.packages as metpy_packages
+import src.html.pages.server as metpy_server
+import src.readme.magnitude as magnitude_readme
+import src.rst.magnitude as magnitude_rst
 
 
 def metpy_pages(update):
@@ -23,12 +22,12 @@ def metpy_pages(update):
         df.html_paths[destination]['documentation'],
     ]
     texts = [
-        metpy_index,
-        metpy_packages,
-        metpy_package_magnitude,
-        metpy_server,
-        metpy_server_magnitude,
-        metpy_documentation,
+        metpy_index.index,
+        metpy_packages.packages,
+        metpy_packages.package_magnitude,
+        metpy_server.server,
+        metpy_server.server_magnitude,
+        metpy_documentation.documentation,
     ]
     for text, file in zip(texts, files):
         f = open(file, "w")
@@ -39,12 +38,12 @@ def metpy_pages(update):
 def build_magnitude_docs(update_readme, export_rst, import_html):
     """Build the documentation of the physical-magnitude package."""
     package = 'magnitude'
-    readme_text = package_magnitude_readme
+    readme_text = magnitude_readme.readme
     rst_texts = [
-        package_magnitude_index,
-        package_magnitude_tutorial,
-        package_magnitude_howto,
-        package_magnitude_api,
+        magnitude_rst.index,
+        magnitude_rst.tutorial,
+        magnitude_rst.howto,
+        magnitude_rst.api,
     ]
     fnc.build_package_docs(package=package, readme_text=readme_text, rst_texts=rst_texts,
                            update_readme=update_readme, export_rst=export_rst, import_html=import_html)

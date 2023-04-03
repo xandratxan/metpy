@@ -72,7 +72,7 @@ def release_history():
 
 
 # README file for physical-magnitude package.
-package_magnitude_readme = readme(
+readme = readme(
     name=df.magnitude['name'],
     brief_description=df.magnitude['brief_description'],
     description=df.magnitude['description'],

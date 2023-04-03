@@ -14,7 +14,7 @@ magnitude = {
     'html_path': df.html_pages['packages']['magnitude'],
     'image': df.magnitude['image']
 }
-metpy_packages = bs.base_template(
+packages = bs.base_template(
     title='MetPy-Packages',
     header=bs.base_header_template(active='packages'),
     main=bs.base_main_template(
@@ -84,7 +84,7 @@ def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
     return text
 
 
-metpy_package_magnitude = bs.base_template(
+package_magnitude = bs.base_template(
     parent=True,
     title='MetPy-Packages-Physical-magnitude',
     header=bs.base_header_template(active='packages', parent=True),

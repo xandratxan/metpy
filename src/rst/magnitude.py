@@ -6,7 +6,7 @@ import src.functions as fnc
 import src.code.physical_magnitude as cd
 
 # RST index file for physical-magnitude package
-package_magnitude_index = tmp.index_template(
+index = tmp.index_template(
     name=df.magnitude['name'],
     description=df.magnitude['description'],
     non_stable_msg=df.non_stable_msg,
@@ -20,12 +20,12 @@ package_magnitude_index = tmp.index_template(
     url_documentation=df.magnitude['url_documentation']
 )
 # RST API file for physical-magnitude package
-package_magnitude_api = tmp.api_template(
+api = tmp.api_template(
     name=df.magnitude['name'],
     api=mag.api()
 )
 # RST tutorial file for physical-magnitude package
-package_magnitude_tutorial = tmp.tutorial_template(
+tutorial = tmp.tutorial_template(
     name=df.magnitude['name'],
     install_from_server=fnc.install_from_server(df.magnitude['name'], df.server['url_server']),
     install_from_github=fnc.install_from_github(df.magnitude['name'], df.xcb['github']),
@@ -33,7 +33,7 @@ package_magnitude_tutorial = tmp.tutorial_template(
     tutorial=mag.tutorial(df.magnitude['import'], *cd.tutorial)
 )
 # RST how-to file for physical-magnitude package
-package_magnitude_howto = tmp.howto_template(
+howto = tmp.howto_template(
     name=df.magnitude['name'],
     howto=mag.howto(*cd.howto)
 )

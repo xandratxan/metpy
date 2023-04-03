@@ -26,7 +26,7 @@ documentation = {
     'image': 'documents.png'
 }
 # MetPy website index page
-metpy_index = bs.base_template(
+index = bs.base_template(
     title='MetPy',
     header=bs.base_header_template(active='index'),
     main=bs.base_main_template(

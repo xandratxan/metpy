@@ -13,7 +13,7 @@ magnitude = {
     'versions': df.magnitude['versions'],
 }
 # MetPy website server page
-metpy_server = bs.base_template(
+server = bs.base_template(
     parent=True,
     title='MetPy-Package Server',
     header=bs.base_header_template(active='server', parent=True),
@@ -45,7 +45,7 @@ metpy_server = bs.base_template(
     scripts=bs.base_scripts_template(parent=True)
 )
 # MetPy server packages, physical-magnitude package page
-metpy_server_magnitude = bs.base_template(
+server_magnitude = bs.base_template(
     grandparent=True,
     title='MetPy-Package Server',
     header=bs.base_header_template(active='server', grandparent=True),

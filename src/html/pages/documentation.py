@@ -13,7 +13,7 @@ magnitude = {
     'html_path': df.html_pages['documentation']['magnitude'],
     'image': df.magnitude['image']
 }
-metpy_documentation = bs.base_template(
+documentation = bs.base_template(
     title='MetPy-Documentation',
     header=bs.base_header_template(active='docs'),
     main=bs.base_main_template(
