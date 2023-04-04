@@ -1,7 +1,9 @@
 Tutorial
 ========
 
-This part of the documentation provides a tutorial that introduces in how to get started with ``physical-magnitude``.
+This tutorial is a good introduction on how to get started with ``physical-magnitude``.
+
+.. contents:: Table of Contents
 
 Installation
 ------------
@@ -41,7 +43,7 @@ In a Python console, import the ``Magnitude`` class:
     >>> from magnitude import Magnitude
 
 Now define two magnitudes to operate with, including their values, uncertainties and units.
-For example m1 = 10 ± 1 m (10%) and m2 = 20 ± 2 m (10%):
+For example m1 = 100 ± 1 m (1%) and m2 = 200 ± 2 m (1%):
 
 .. code-block::
 
@@ -70,7 +72,7 @@ Lets subtract these two magnitudes:
 
 Lets multiply these two magnitudes:
 
-  .. code-block::
+.. code-block::
 
     >>> m_prod = m1 * m2
     >>> m_prod
@@ -79,7 +81,7 @@ Lets multiply these two magnitudes:
 Note that the unit of ``m_prod`` is ``(m)·(m)``, which is m².
 Lest modify the unit of ``m_prod`` accordingly:
 
-  .. code-block::
+.. code-block::
 
     >>> m_prod.unit = 'm²'
     >>> m_prod
@@ -87,7 +89,7 @@ Lest modify the unit of ``m_prod`` accordingly:
 
 Lets divide these two magnitudes:
 
-  .. code-block::
+.. code-block::
 
     >>> m_div = m2 / m1
     >>> m_div

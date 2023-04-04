@@ -2,11 +2,26 @@
 
 
 def main_section_template(title, brief_description, description, image, cards):
-    """Main section HTML template for MetPy website."""
+    """Main section HTML template for MetPy website.
+
+    Parameters
+    ----------
+    title : str
+        Main section title.
+    brief_description : str
+        Main section brief description.
+    description : str
+        Main section description.
+    image : str
+        Main section image file name.
+    cards : list
+        Dictionaries for main section cards.
+    """
     i = 12
     cards_text = ''
     for card in cards:
-        cards_text += card_template(card['name'], card['title'], card['brief_description'], card['html_path'], card['image'])
+        cards_text += card_template(card['name'], card['title'], card['brief_description'],
+                                    card['html_path'], card['image'])
     text = (
         f'{" " * i}<!-- Introduction -->\n'
         f'{" " * i}<article class="post featured">\n'
@@ -32,7 +47,21 @@ def main_section_template(title, brief_description, description, image, cards):
 
 
 def card_template(name, title, brief_description, href, image):
-    """Template for card section of main section HTML templates for MetPy website."""
+    """Template for card section of main section HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    name : str
+        Card name.
+    title : str
+        Card title.
+    brief_description : str
+        Card brief description.
+    href : str
+        Card interactive link.
+    image : str
+        Card image file name.
+    """
     i = 16
     text = (
         f'{" " * i}<!-- Card {name} -->\n'

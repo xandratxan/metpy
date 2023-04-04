@@ -4,17 +4,40 @@
 def api():
     """RST template for physical-magnitude package documentation API."""
     text = (
-        f"magnitude.magnitude\n"
-        f"-------------------\n"
-        f"\n"
-        f".. automodule:: magnitude.magnitude\n"
+        f".. autoclass:: magnitude.magnitude.Magnitude\n"
         f"   :members:\n"
     )
     return text
 
 
 def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
-    """RST template for physical-magnitude package documentation tutorial."""
+    """RST template for physical-magnitude package documentation tutorial.
+
+    Parameters
+    ----------
+    import_package : str
+        Statement to import Magnitude class.
+    str_m1 : str
+        Signature of m1 Magnitude object.
+    str_m2 : str
+        Signature of m2 Magnitude object.
+    m1 : str
+        Representation of m1 Magnitude object.
+    m2 : str
+        Representation of m2 Magnitude object.
+    m_sum : str
+        Representation of m1 + m2 Magnitude object.
+    m_dif : str
+        Representation of m2 - m1 Magnitude object.
+    m_prod1 : str
+        Representation of m1 * m2 Magnitude object.
+    m_prod2 : str
+        Representation of m1 * m2 Magnitude object with modified units.
+    m_div1 : str
+        Representation of m2 / m1 Magnitude object.
+    m_div2 : str
+        Representation of m2 / m1 Magnitude object with modified units.
+    """
     text = (
         f"Operating with magnitudes\n"
         f"-------------------------\n"
@@ -29,7 +52,7 @@ def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_pr
         f"    >>> {import_package}\n"
         f"\n"
         f"Now define two magnitudes to operate with, including their values, uncertainties and units.\n"
-        f"For example m1 = 10 ± 1 m (10%) and m2 = 20 ± 2 m (10%):\n"
+        f"For example m1 = 100 ± 1 m (1%) and m2 = 200 ± 2 m (1%):\n"
         f"\n"
         f".. code-block::\n"
         f"\n"
@@ -58,7 +81,7 @@ def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_pr
         f"\n"
         f"Lets multiply these two magnitudes:\n"
         f"\n"
-        f"  .. code-block::\n"
+        f".. code-block::\n"
         f"\n"
         f"    >>> m_prod = m1 * m2\n"
         f"    >>> m_prod\n"
@@ -67,7 +90,7 @@ def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_pr
         f"Note that the unit of ``m_prod`` is ``(m)·(m)``, which is m².\n"
         f"Lest modify the unit of ``m_prod`` accordingly:\n"
         f"\n"
-        f"  .. code-block::\n"
+        f".. code-block::\n"
         f"\n"
         f"    >>> m_prod.unit = 'm²'\n"
         f"    >>> m_prod\n"
@@ -75,7 +98,7 @@ def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_pr
         f"\n"
         f"Lets divide these two magnitudes:\n"
         f"\n"
-        f"  .. code-block::\n"
+        f".. code-block::\n"
         f"\n"
         f"    >>> m_div = m2 / m1\n"
         f"    >>> m_div\n"
@@ -95,8 +118,71 @@ def tutorial(import_package, str_m1, str_m2, m1, m2, m_sum, m_dif, m_prod1, m_pr
 
 
 def howto(m1, str_m1, m2, str_m2, m3, str_m3, m4, str_m4, m5, str_m5, m6, str_m6, m7, str_m7,
-                    str_m8, str_m9, str_m10, str_m11, m_sum, m_dif, m_sum_exc, m_dif_exc, m_prod1, m_div1,
-                    m_multi_sum, m_multi_prod, m_multi_comb, m_multi_comb1, m_multi_comb2):
+          str_m8, str_m9, str_m10, str_m11, m_sum, m_dif, m_sum_exc, m_dif_exc, m_prod1, m_div1,
+          m_multi_sum, m_multi_prod, m_multi_comb, m_multi_comb1, m_multi_comb2):
+    """RST template for physical-magnitude package documentation tutorial.
+
+    Parameters
+    ----------
+    m1 : str
+        Representation of m1 Magnitude object.
+    str_m1 : str
+        Signature of m1 Magnitude object.
+    m2 : str
+        Representation of m2 Magnitude object.
+    str_m2 : str
+        Signature of m2 Magnitude object.
+    m3 : str
+        Representation of m3 Magnitude object.
+    str_m3 : str
+        Signature of m3 Magnitude object.
+    m4 : str
+        Representation of m4 Magnitude object.
+    str_m4 : str
+        Signature of m4 Magnitude object.
+    m5 : str
+        Representation of m5 Magnitude object.
+    str_m5 : str
+        Signature of m5 Magnitude object.
+    m6 : str
+        Representation of m6 Magnitude object.
+    str_m6 : str
+        Signature of m6 Magnitude object.
+    m7 : str
+        Representation of m7 Magnitude object.
+    str_m7 : str
+        Signature of m7 Magnitude object.
+    str_m8 : str
+        Signature of m8 Magnitude object.
+    str_m9 : str
+        Signature of m9 Magnitude object.
+    str_m10 : str
+        Signature of m10 Magnitude object.
+    str_m11 : str
+        Signature of m11 Magnitude object.
+    m_sum : str
+        Representation of m8 + m9 Magnitude object.
+    m_sum_exc : str
+        Representation of m8 + m10 Magnitude object with different units.
+    m_dif : str
+        Representation of m9 - m8 Magnitude object.
+    m_dif_exc : str
+        Representation of m9 - m10 Magnitude object with different units.
+    m_prod1 : str
+        Representation of m8 * m9 Magnitude object.
+    m_div1 : str
+        Representation of m9 / m8 Magnitude object.
+    m_multi_sum : str
+        Representation of m8 + m9 + m8 - m9 Magnitude object.
+    m_multi_prod : str
+        Representation of m8 * m9 / m10 Magnitude object.
+    m_multi_comb : str
+        Representation of m8 * m9 + m11 Magnitude object.
+    m_multi_comb1 : str
+        Representation of m8 * m9 Magnitude object.
+    m_multi_comb2 : str
+        Representation of m8 * m9 Magnitude object with changed units.
+    """
     text = (
         f"How to define a magnitude\n"
         f"-------------------------\n"
@@ -109,14 +195,16 @@ def howto(m1, str_m1, m2, str_m2, m3, str_m3, m4, str_m4, m5, str_m5, m6, str_m6
         f"- Provide the standard uncertainty of the magnitude.\n"
         f"- Provide the relative standard uncertainty of the magnitude.\n"
         f"\n"
-        f"If standard uncertainty is provided, for example d = 100 ± 1 m, relative standard uncertainty will be calculated:\n"
+        f"If standard uncertainty is provided, for example d = 100 ± 1 m, "
+        f"relative standard uncertainty will be calculated:\n"
         f"\n"
         f".. code-block::\n"
         f"\n"
         f"    >>> {str_m1}\n"
         f"    {m1}\n"
         f"\n"
-        f"If relative standard uncertainty is provided, for example d = 100 m ± 1%, standard uncertainty will be calculated:\n"
+        f"If relative standard uncertainty is provided, for example d = 100 m ± 1%, "
+        f"standard uncertainty will be calculated:\n"
         f"\n"
         f".. code-block::\n"
         f"\n"

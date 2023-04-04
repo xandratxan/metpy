@@ -4,7 +4,25 @@ import src.functions as fnc
 
 
 def base_template(title, header, main, footer, scripts, parent=False, grandparent=False):
-    """Base HTML template for MetPy website."""
+    """Base HTML template for MetPy website.
+
+    Parameters
+    ----------
+    title : str
+        Web page tab title.
+    header : str
+        Header section of HTML base template.
+    main : str
+        Main section of HTML base template.
+    footer : str
+        Footer section of HTML base template.
+    scripts : str
+        Java scripts section of HTML base template.
+    parent : bool, optional
+        HTML resource folder in parent folder, default False.
+    grandparent : bool, optional
+        HTML resource folder in grandparent folder, default False.
+    """
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
         f'<!DOCTYPE HTML>\n'
@@ -34,7 +52,17 @@ def base_template(title, header, main, footer, scripts, parent=False, grandparen
 
 
 def base_header_template(active, parent=False, grandparent=False):
-    """Template for header section of base HTML templates for MetPy website."""
+    """Template for header section of base HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    active : str
+        Active navigation bar tab name (index, packages, server or documentation).
+    parent : bool, optional
+        HTML resource folder in parent folder, default False.
+    grandparent : bool, optional
+        HTML resource folder in grandparent folder, default False.
+    """
     i = 8
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     html_index = df.html_pages['index']
@@ -65,11 +93,26 @@ def base_header_template(active, parent=False, grandparent=False):
 
 
 def active_tab(active, tab):
+    """Template for Active navigation bar tab.
+
+    Parameters
+    ----------
+    active : str
+        Active navigation bar tab name (index, packages, server or documentation).
+    tab : str
+        Navigation bar tab name (index, packages, server or documentation).
+    """
     return '<li class="active">' if active == tab else '<li>'
 
 
 def base_main_template(main):
-    """Template for main section of base HTML templates for MetPy website."""
+    """Template for main section of base HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    main : str
+        Main section of HTML base template.
+    """
     i = 8
     text = (
         f'{" " * i}<!-- Main -->\n'
@@ -134,7 +177,15 @@ def base_footer_template():
 
 
 def base_scripts_template(parent=False, grandparent=False):
-    """Template for scripts section of base HTML templates for MetPy website."""
+    """Template for scripts section of base HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    parent : bool, optional
+        HTML resource folder in parent folder, default False.
+    grandparent : bool, optional
+        HTML resource folder in grandparent folder, default False.
+    """
     i = 4
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (

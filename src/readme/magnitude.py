@@ -6,7 +6,17 @@ import src.readme.template as tmp
 
 
 def code_snippet(import_package, str_m1, str_m2):
-    """Template for code snippet section of README file for physical-magnitude package."""
+    """MarkDown template for physical-magnitude package README code snippet.
+
+    Parameters
+    ----------
+    import_package : str
+        Statement to import Magnitude class.
+    str_m1 : str
+        Signature of m1 Magnitude object.
+    str_m2 : str
+        Signature of m2 Magnitude object.
+    """
     text = (
         f"```python\n"
         f"{import_package}\n"
@@ -42,7 +52,27 @@ def code_snippet(import_package, str_m1, str_m2):
 
 
 def snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
-    """Template for code snippet output section of README file for physical-magnitude package."""
+    """MarkDown template for physical-magnitude package README code snippet output.
+
+    Parameters
+    ----------
+    m1 : str
+        Representation of m1 Magnitude object.
+    m2 : str
+        Representation of m2 Magnitude object.
+    m_sum : str
+        Representation of m1 + m2 Magnitude object.
+    m_dif : str
+        Representation of m2 - m1 Magnitude object.
+    m_prod1 : str
+        Representation of m1 * m2 Magnitude object.
+    m_prod2 : str
+        Representation of m1 * m2 Magnitude object with modified units.
+    m_div1 : str
+        Representation of m2 / m1 Magnitude object.
+    m_div2 : str
+        Representation of m2 / m1 Magnitude object with modified units.
+    """
     text = (
         f"```\n"
         f"m1: {m1}\n"
@@ -67,7 +97,7 @@ readme = tmp.readme(
     name=df.magnitude['name'],
     brief_description=df.magnitude['brief_description'],
     description=df.magnitude['description'],
-    last_version=df.magnitude['last_version'],
+    last_version=fnc.last_version(df.magnitude['named_versions']),
     license_info=df.magnitude['license'],
     url_source_code=df.magnitude['url_source_code'],
     url_issues=df.magnitude['url_issues'],

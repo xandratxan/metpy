@@ -5,7 +5,6 @@ import src.html.templates.base as bs
 import src.html.templates.main_section as ms
 
 # MetPy website documentation page
-# TODO: add physical-magnitude documentation pages
 magnitude = {
     'name': 'magnitude',
     'title': f"Physical magnitude documentation",

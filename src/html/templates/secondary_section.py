@@ -1,10 +1,26 @@
-"""Secondary section HTML templates for MetPy website."""
+"""Package/Server section HTML templates for MetPy website."""
 import src.definitions as df
 import src.functions as fnc
 
 
 def package_template(title, information, warning, description, installation, code_snippet):
-    """Package section HTML templates for MetPy website."""
+    """Package section HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    title : str
+        Section title.
+    information : str
+        Package information.
+    warning : str
+        Non-stable warning.
+    description : str
+        Package description.
+    installation : str
+        Package installation instructions.
+    code_snippet : str
+        Package code snippet.
+    """
     i = 12
     text = (
         f'{" " * i}<!-- Package -->\n'
@@ -21,7 +37,21 @@ def package_template(title, information, warning, description, installation, cod
 
 
 def server_template(title, warning, description, installation, packages_table):
-    """Server section HTML templates for MetPy website."""
+    """Server section HTML templates for MetPy website.
+
+    Parameters
+    ----------
+    title : str
+        Section title.
+    warning : str
+        Non-stable warning.
+    description : str
+        Package description.
+    installation : str
+        Package installation instructions.
+    packages_table : str
+        Packages table.
+    """
     i = 12
     text = (
         f'{" " * i}<!-- Package -->\n'
@@ -37,7 +67,21 @@ def server_template(title, warning, description, installation, packages_table):
 
 
 def title_template(title, brief_description, image, parent=False, grandparent=False):
-    """Template of title section of secondary section HTML templates for MetPy website."""
+    """Title section HTML template of package/server section for MetPy website.
+
+    Parameters
+    ----------
+    title : str
+        Package title.
+    brief_description : str
+        Package brief description.
+    image : str
+        Package image file name.
+    parent : bool, optional
+        HTML resource folder in parent folder, default False.
+    grandparent : bool, optional
+        HTML resource folder in grandparent folder, default False.
+    """
     i = 12
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     text = (
@@ -58,27 +102,49 @@ def title_template(title, brief_description, image, parent=False, grandparent=Fa
 
 
 def info_template(last_version, license_info, url_source_code, url_issues, url_documentation):
-    """Template of information section of secondary section HTML templates for MetPy website."""
+    """Package information section HTML template of package section for MetPy website.
+
+    Parameters
+    ----------
+    last_version : str
+        Package last version number.
+    license_info : str
+        Package license information.
+    url_source_code : str
+        URL to package repository source code on GitHub.
+    url_issues : str
+        URL to package repository issues on GitHub.
+    url_documentation : str
+        URL to package documentation on GitHub Pages.
+    """
     i = 12
     text = (
         f'{" " * i}<!-- Useful information -->\n'
-        f'{" " * i}<div class="box">\n'
-        f'{" " * i}    <div class="row">\n'
-        f'{" " * i}        <div class="col-12 col-12-small">\n'
-        f'{" " * i}            <b>Last version</b>: {last_version}<br/>\n'
-        f'{" " * i}            <b>License</b>: {license_info}\n'
-        f'{" " * i}            <a href="{url_source_code}">Source code</a><br/>\n'
-        f'{" " * i}            <a href="{url_documentation}">Documentation</a>\n'
-        f'{" " * i}            <b>Issues</b>: <a href="{url_issues}">Issues</a><br/>\n'
-        f'{" " * i}        </div>\n'
-        f'{" " * i}    </div>\n'
+        f'{" " * i}<div class="table-wrapper">\n'
+        f'{" " * i}    <table>\n'
+        f'{" " * i}        <tbody>\n'
+        f'{" " * i}            <tr>\n'
+        f'{" " * i}                <td>Last version</b>: {last_version}</td>\n'
+        f'{" " * i}                <td>License</b>: {license_info}</td>\n'
+        f'{" " * i}                <td><a href="{url_source_code}">Source code</a></td>\n'
+        f'{" " * i}                <td><a href="{url_documentation}">Documentation</a></td>\n'
+        f'{" " * i}                <td><a href="{url_issues}">Issues</a><br/></td>\n'
+        f'{" " * i}            </tr>\n'
+        f'{" " * i}        </tbody>\n'
+        f'{" " * i}    </table>\n'
         f'{" " * i}</div>\n'
     )
     return text
 
 
 def warning_template(message):
-    """Template of warning section of secondary section HTML templates for MetPy website."""
+    """Warning section HTML template of package/server section for MetPy website.
+
+    Parameters
+    ----------
+    message : str
+        Warning message.
+    """
     i = 12
     text = (
         f'{" " * i}<!-- Warning -->\n'
@@ -89,20 +155,51 @@ def warning_template(message):
     return text
 
 
-def description_template(description):
-    """Template of description section of secondary section HTML templates for MetPy website."""
+def description_template(name, description):
+    """Package description section HTML template of package/server section for MetPy website.
+
+    Parameters
+    ----------
+    name : str
+        Package name.
+    description : str
+        Package description.
+    """
     i = 12
     text = (
         f'{" " * i}<!-- Description -->\n'
-        f'{" " * i}<p>{description}</p>\n'
+        f'{" " * i}<p>Package <code>{name}</code> {description}</p>\n'
+    )
+    return text
+
+
+def server_description_template():
+    """Server description section HTML template of package/server section for MetPy website."""
+    pep503 = df.external_urls['pep503']
+    blog_post = df.external_urls['blog post']
+    i = 12
+    text = (
+        f'{" " * i}<!-- Description -->\n'
+        f'{" " * i}<p>\n'
+        f'{" " * i}This website serves as a PyPI-like Python package server for the MetPy packages. '
+        f'{" " * i}It conforms to <a href="{pep503}" title="python icons">Pep 503</a>. '
+        f'{" " * i}It is based on a <a href="{blog_post}" title="python icons">blog post</a> by freeCodeCamp.\n'
+        f'{" " * i}</p>\n'
     )
     return text
 
 
 def installation_template(is_server, install_from_server):
-    """Template of installation section of secondary section HTML templates for MetPy website."""
+    """Installation section HTML template of package/server section for MetPy website.
+
+    Parameters
+    ----------
+    is_server : bool
+        True if the installation instructions are for the server section, False otherwise.
+    install_from_server : str
+        Command to install a package via pip from custom server.
+    """
     i = 12
-    # Template for section of package pages at my website at GitHub Pages
     if is_server:
         text = (
             f'{" " * i}<!-- Installation -->\n'
@@ -122,9 +219,18 @@ def installation_template(is_server, install_from_server):
 
 
 def code_snippet_template(name, code, output):
-    """Template of code snippet section of secondary section HTML templates for MetPy website."""
+    """Code snippet section HTML template of package section for MetPy website.
+
+    Parameters
+    ----------
+    name : str
+        Package name.
+    code : str
+        Package code snippet input.
+    output : str
+        Package code snippet output.
+    """
     i = 12
-    # Template for section of package pages at my website at GitHub Pages
     text = (
         f'{" " * i}<!-- Code snippet -->\n'
         f'{" " * i}<p>Below you can find a code snippet to illustrate how to work with '
@@ -141,7 +247,21 @@ def code_snippet_template(name, code, output):
 
 
 def packages_table_template(columns, packages, versions=False, parent=False, grandparent=False):
-    """Template of table of packages of secondary section HTML templates for MetPy website."""
+    """Package table HTML template of server section for MetPy website.
+
+    Parameters
+    ----------
+    columns : list
+        List of table column headers.
+    packages : list or dict
+        Dictionaries of package information for packages table or package dictionary for package versions table.
+    versions : bool, optional
+        True if the table is to list package versions, False if table is to list packages, default False.
+    parent : bool, optional
+        HTML resource folder in parent folder, default False.
+    grandparent : bool, optional
+        HTML resource folder in grandparent folder, default False.
+    """
     i = 12
     path = fnc.html_resources(parent=parent, grandparent=grandparent)
     body = ''
@@ -185,7 +305,21 @@ def packages_table_template(columns, packages, versions=False, parent=False, gra
 
 
 def packages_table_row_template(path, image, html_path, name, description):
-    """Template of table of packages row of secondary section HTML templates for MetPy website."""
+    """Package table row HTML template of server section for MetPy website.
+
+    Parameters
+    ----------
+    path : str
+        Path to HTML resources folder.
+    image : str
+        Package image.
+    html_path : str
+        Link to package details.
+    name : str
+        Package name.
+    description : str
+        Package description.
+    """
     i = 24
     row = (
         f'{" " * i}<tr>\n'

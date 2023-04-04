@@ -10,7 +10,7 @@ magnitude = {
     'brief_description': df.magnitude['brief_description'],
     'html_path': df.html_pages['server']['magnitude'],
     'image': df.magnitude['image'],
-    'versions': df.magnitude['versions'],
+    'versions': fnc.versions(df.magnitude['named_versions']),
 }
 # MetPy website server page
 server = bs.base_template(
@@ -26,7 +26,7 @@ server = bs.base_template(
                 image=df.server['image']
             ),
             warning='',
-            description=ss.description_template(description=df.server['description']),
+            description=ss.server_description_template(),
             installation=ss.installation_template(
                 is_server=True,
                 install_from_server=fnc.install_from_server(
@@ -58,7 +58,9 @@ server_magnitude = bs.base_template(
                 image=df.magnitude['image'],
             ),
             warning=ss.warning_template(message=df.non_stable_msg),
-            description=ss.description_template(description=df.magnitude['description']),
+            description=ss.description_template(
+                name=df.magnitude['name'],
+                description=df.magnitude['description']),
             installation=ss.installation_template(
                 is_server=False,
                 install_from_server=fnc.install_from_server(

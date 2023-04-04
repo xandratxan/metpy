@@ -12,11 +12,10 @@ index = tmp.index_template(
     non_stable_msg=df.non_stable_msg,
     versions=df.magnitude['named_versions'],
     contributors=True,
-    last_version=df.magnitude['last_version'],
+    last_version=fnc.last_version(df.magnitude['named_versions']),
     license_info=df.magnitude['license'],
     url_source_code=df.magnitude['url_source_code'],
     url_issues=df.magnitude['url_issues'],
-    url_documentation=df.magnitude['url_documentation']
 )
 # RST API file for physical-magnitude package
 api = tmp.api_template(

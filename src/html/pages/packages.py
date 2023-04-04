@@ -34,6 +34,17 @@ packages = bs.base_template(
 
 # MetPy website packages, physical-magnitude package page
 def html_code_snippet(import_package, str_m1, str_m2):
+    """HTML template for physical-magnitude package page code snippet.
+
+    Parameters
+    ----------
+    import_package : str
+        Statement to import Magnitude class.
+    str_m1 : str
+        Signature of m1 Magnitude object.
+    str_m2 : str
+        Signature of m2 Magnitude object.
+    """
     text = (
         f'{import_package}\n'
         f'\n'
@@ -67,6 +78,27 @@ def html_code_snippet(import_package, str_m1, str_m2):
 
 
 def html_snippet_output(m1, m2, m_sum, m_dif, m_prod1, m_prod2, m_div1, m_div2):
+    """HTML template for physical-magnitude package page code snippet output.
+
+    Parameters
+    ----------
+    m1 : str
+        Representation of m1 Magnitude object.
+    m2 : str
+        Representation of m2 Magnitude object.
+    m_sum : str
+        Representation of m1 + m2 Magnitude object.
+    m_dif : str
+        Representation of m2 - m1 Magnitude object.
+    m_prod1 : str
+        Representation of m1 * m2 Magnitude object.
+    m_prod2 : str
+        Representation of m1 * m2 Magnitude object with modified units.
+    m_div1 : str
+        Representation of m2 / m1 Magnitude object.
+    m_div2 : str
+        Representation of m2 / m1 Magnitude object with modified units.
+    """
     text = (
         f"m1: {m1}\n"
         f"m2: {m2}\n"
@@ -97,14 +129,16 @@ package_magnitude = bs.base_template(
                 image=df.magnitude['image']
             ),
             information=ss.info_template(
-                last_version=df.magnitude['last_version'],
+                last_version=fnc.last_version(df.magnitude['named_versions']),
                 license_info=df.magnitude['license'],
                 url_source_code=df.magnitude['url_source_code'],
                 url_issues=df.magnitude['url_issues'],
                 url_documentation=df.magnitude['url_documentation']
             ),
             warning=ss.warning_template(message=df.non_stable_msg),
-            description=ss.description_template(description=df.magnitude['description']),
+            description=ss.description_template(
+                name=df.magnitude['name'],
+                description=df.magnitude['description']),
             installation=ss.installation_template(
                 is_server=False,
                 install_from_server=fnc.install_from_server(
