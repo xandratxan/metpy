@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to guides &mdash; physical-magnitude 0.1.0 documentation</title>
+  <title>How to guides &mdash; physical-magnitude 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -217,11 +217,11 @@
 <p>Magnitudes can be multiplied or divided independently of their units.
 The unit resulting from the product or the division will be the concatenation of the individual magnitudes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
-<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+<span class="go">20000.0 ± 282.842712474619 (m·m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">/</span> <span class="n">m1</span>
-<span class="go">2.0 ± 0.0282842712474619 (m)/(m) (1.4142135623730951%)</span>
+<span class="go">2.0 ± 0.0282842712474619 (m/m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
 </section>
@@ -241,11 +241,11 @@ The unit resulting from the product or the division will be the concatenation of
 </div>
 <p>Multiple magnitudes can be multiplied and/or divided independently of their units:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span> <span class="o">/</span> <span class="n">m3</span>
-<span class="go">100.0 ± 1.7320508075688772 ((m)·(m))/(cm) (1.7320508075688772%)</span>
+<span class="go">100.0 ± 1.7320508075688772 ((m·m)/cm) (1.7320508075688772%)</span>
 </pre></div>
 </div>
 <p>Combining summation/subtraction with product/division require some unit management.
-Trying to do <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span> <span class="pre">+</span> <span class="pre">m4</span></code> will raise an error since the units of <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span></code> are <code class="docutils literal notranslate"><span class="pre">'m·m'</span></code>
+Trying to do <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span> <span class="pre">+</span> <span class="pre">m4</span></code> will raise an error since the units of <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span></code> are <code class="docutils literal notranslate"><span class="pre">'(m·m)'</span></code>
 while the units of <code class="docutils literal notranslate"><span class="pre">m4</span></code> are <code class="docutils literal notranslate"><span class="pre">'m²'</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span> <span class="o">+</span> <span class="n">m4</span>
 <span class="go">TypeError: Added magnitudes must have the same units.</span>
@@ -254,13 +254,13 @@ while the units of <code class="docutils literal notranslate"><span class="pre">
 <p>To work around this, first we need to define a new magnitude <code class="docutils literal notranslate"><span class="pre">m</span></code> as <code class="docutils literal notranslate"><span class="pre">m1</span> <span class="pre">*</span> <span class="pre">m2</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
-<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+<span class="go">20000.0 ± 282.842712474619 (m·m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
-<p>Then, we need to change the unit of <code class="docutils literal notranslate"><span class="pre">m</span></code> from <code class="docutils literal notranslate"><span class="pre">'(m)·(m)'</span></code> to <code class="docutils literal notranslate"><span class="pre">'m²'</span></code>:</p>
+<p>Then, we need to change the unit of <code class="docutils literal notranslate"><span class="pre">m</span></code> from <code class="docutils literal notranslate"><span class="pre">'(m·m)'</span></code> to <code class="docutils literal notranslate"><span class="pre">'m²'</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m²&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
-<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+<span class="go">20000.0 ± 282.842712474619 m² (1.4142135623730951%)</span>
 </pre></div>
 </div>
 <p>Finally we can do <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">+</span> <span class="pre">m4</span></code>:</p>

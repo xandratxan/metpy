@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial &mdash; physical-magnitude 0.1.0 documentation</title>
+  <title>Tutorial &mdash; physical-magnitude 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -165,10 +165,10 @@ For example m1 = 100 ± 1 m (1%) and m2 = 200 ± 2 m (1%):</p>
 <p>Lets multiply these two magnitudes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
-<span class="go">20000.0 ± 282.842712474619 (m)·(m) (1.4142135623730951%)</span>
+<span class="go">20000.0 ± 282.842712474619 (m·m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
-<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_prod</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)·(m)</span></code>, which is m².
+<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_prod</span></code> is <code class="docutils literal notranslate"><span class="pre">(m·m)</span></code>, which is m².
 Lest modify the unit of <code class="docutils literal notranslate"><span class="pre">m_prod</span></code> accordingly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m²&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_prod</span>
@@ -178,10 +178,10 @@ Lest modify the unit of <code class="docutils literal notranslate"><span class="
 <p>Lets divide these two magnitudes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span> <span class="o">=</span> <span class="n">m2</span> <span class="o">/</span> <span class="n">m1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>
-<span class="go">2.0 ± 0.0282842712474619 (m)/(m) (1.4142135623730951%)</span>
+<span class="go">2.0 ± 0.0282842712474619 (m/m) (1.4142135623730951%)</span>
 </pre></div>
 </div>
-<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is <code class="docutils literal notranslate"><span class="pre">(m)/(m)</span></code>, which means that the magnitude is non-dimensional.
+<p>Note that the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> is <code class="docutils literal notranslate"><span class="pre">(m/m)</span></code>, which means that the magnitude is non-dimensional.
 Lest modify the unit of <code class="docutils literal notranslate"><span class="pre">m_div</span></code> accordingly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m_div</span>

@@ -71,8 +71,8 @@ def main(local=False, package=False, public=False):
 if __name__ == '__main__':
     # Select an option (uncomment the corresponding line):
     # 1. Modify local metpy repository
-    main(local=True)
+    # main(local=True)
     # 2. Modify local package repository
-    main(package=True)
+    # main(package=True)
     # 3. Modify public metpy repository
     main(public=True)
