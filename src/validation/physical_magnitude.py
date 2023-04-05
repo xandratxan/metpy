@@ -87,7 +87,7 @@ message = 'How to multiply magnitudes'
 value = value1 * value2
 relative_uncertainty = sqrt(relative_uncertainty1 ** 2 + relative_uncertainty2 ** 2)
 uncertainty = value * relative_uncertainty
-unit = '(m)·(m)'
+unit = '(m·m)'
 magnitude = m1 * m2
 check_magnitude_definition(magnitude, value, uncertainty, relative_uncertainty, unit, message)
 
@@ -96,6 +96,6 @@ message = 'How to divide magnitudes'
 value = value2 / value1
 relative_uncertainty = sqrt(relative_uncertainty1 ** 2 + relative_uncertainty2 ** 2)
 uncertainty = value * relative_uncertainty
-unit = '(m)/(m)'
+unit = '(m/m)'
 magnitude = m2 / m1
 check_magnitude_definition(magnitude, value, uncertainty, relative_uncertainty, unit, message)
