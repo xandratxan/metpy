@@ -125,7 +125,7 @@ magnitude = {
         f'Available operations include summation, subtraction, multiplication and division.'),
     'image': 'scale.png',
     'import': 'from magnitude import Magnitude',
-    'named_versions': {'0.1.0': 'Initial release'}
+    'named_versions': {'0.0.1': 'Initial release'}
 }
 # Miscellanea
 non_stable_msg = 'This package is under active development. The current version is considered non-stable.'
